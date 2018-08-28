@@ -52,7 +52,7 @@ public class SubPool
     //回收游戏对象
     public void UnSpawn(GameObject go)
     {
-        if(m_objects.Contains(go))
+        if(Contains(go))
         {
             go.GetComponent<ReusableObject>().OnUnSpawn();
             go.SetActive(false);
@@ -69,6 +69,12 @@ public class SubPool
                 UnSpawn(obj);
             }
         }
+    }
+
+    //判断池子中是否包含该游戏对象
+    public bool Contains(GameObject go)
+    {
+        return m_objects.Contains(go);
     }
 }
 
