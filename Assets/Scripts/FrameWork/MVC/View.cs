@@ -10,10 +10,26 @@ public abstract class View : MonoBehaviour
     //名字标识
     public abstract string Name { get; }
 
-    //该view所处理事件列表
-    public List<string> attentionList = new List<string>();
+    //事件关心列表
+    [HideInInspector]
+    public List<string> AttentionList = new List<string>();
 
-    //处理事件--通过事件名判断处理那个事件
+    //注册事件关心事件
+    public virtual void RegisterAttentionEvent() { }
+
+    //处理事件
     public abstract void HandleEvent(string name, object data = null);
-	
+
+    //发送事件
+    protected void SendEvent(string eventName, object data = null)
+    {
+        MVC.SendEvent(eventName, data);
+    }
+
+    //获取Model
+    protected Model GetModel<T>() where T:Model
+    {
+        return MVC.GetModle<T>();
+    }
+
 }

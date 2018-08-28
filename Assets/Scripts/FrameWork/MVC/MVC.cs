@@ -14,6 +14,7 @@ public static class MVC
     //注册view
     public static void RegisterView(View view)
     {
+        view.RegisterAttentionEvent();
         Views[view.Name] = view;
     }
 
@@ -70,7 +71,7 @@ public static class MVC
         //View处理
         foreach(var v in Views.Values)
         {
-            if(v.attentionList.Contains(eventName))
+            if(v.AttentionList.Contains(eventName))
             {
                 //执行
                 v.HandleEvent(eventName, data);
