@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 单例模板
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public abstract class MonoSingleton<T> : MonoBehaviour where T :MonoBehaviour
 {
     private static T m_instance;

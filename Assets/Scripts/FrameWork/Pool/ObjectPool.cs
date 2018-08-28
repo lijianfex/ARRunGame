@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectPool : MonoSingleton<ObjectPool> {
 
     //资源目录
-    public string ResourcePath = "";
+    public string ResourceObjectPath = "";
 
     //子池子字典
     Dictionary<string, SubPool> m_pools = new Dictionary<string, SubPool>();
@@ -53,7 +53,7 @@ public class ObjectPool : MonoSingleton<ObjectPool> {
     //新建池子
     void RegieterNew(string name,Transform trans)
     {
-        string path = ResourcePath + "/" + name;
+        string path = ResourceObjectPath + "/" + name;
         GameObject go = Resources.Load<GameObject>(path);
         SubPool pool = new SubPool(trans, go);
         m_pools.Add(pool.Name, pool);
