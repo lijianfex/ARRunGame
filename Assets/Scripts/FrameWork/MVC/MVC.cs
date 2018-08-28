@@ -12,19 +12,19 @@ public static class MVC
     public static Dictionary<string, Type> CommandMap = new Dictionary<string, Type>(); //事件名字---类型
 
     //注册view
-    public static void RegieterView(View view)
+    public static void RegisterView(View view)
     {
         Views[view.Name] = view;
     }
 
     //注册model
-    public static void RegieterModel(Model model)
+    public static void RegisterModel(Model model)
     {
         Models[model.Name] = model;
     }
 
     //注册controller
-    public static void RegieterController(string eventName,Type controllerType)
+    public static void RegisterController(string eventName,Type controllerType)
     {
         CommandMap[eventName] = controllerType;
     }
@@ -53,5 +53,28 @@ public static class MVC
             }
         }
         return null;
+    }
+
+    //发送事件
+    public static void SendEvent(string eventName,object data=null)
+    {
+        //controller执行
+        if(CommandMap.ContainsKey(eventName))
+        {
+            Type t = CommandMap[eventName];
+            //控制器生成
+            Controller c = Activator.CreateInstance(t) as Controller;
+            c.Execute(data);
+        }
+
+        //View处理
+        foreach(var v in Views.Values)
+        {
+            if(v.attentionList.Contains(eventName))
+            {
+                //执行
+                v.HandleEvent(eventName, data);
+            }
+        }
     }
 }

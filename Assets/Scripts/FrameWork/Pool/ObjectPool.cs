@@ -16,7 +16,7 @@ public class ObjectPool : MonoSingleton<ObjectPool> {
         SubPool pool = null;
         if(!m_pools.ContainsKey(name))
         {
-            RegieterNew(name, trans);
+            RegisterNew(name, trans);
         }
         pool = m_pools[name];
         return pool.Spawn();
@@ -51,7 +51,7 @@ public class ObjectPool : MonoSingleton<ObjectPool> {
     }
 
     //新建池子
-    void RegieterNew(string name,Transform trans)
+    void RegisterNew(string name,Transform trans)
     {
         string path = ResourceObjectPath + "/" + name;
         GameObject go = Resources.Load<GameObject>(path);
