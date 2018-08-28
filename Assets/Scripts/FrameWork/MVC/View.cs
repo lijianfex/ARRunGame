@@ -27,9 +27,9 @@ public abstract class View : MonoBehaviour
     }
 
     //获取Model
-    protected Model GetModel<T>() where T:Model
+    protected T GetModel<T>() where T:Model
     {
-        return MVC.GetModle<T>();
+        return MVC.GetModle<T>() as T;
     }
 
 }
