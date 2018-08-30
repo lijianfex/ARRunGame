@@ -41,8 +41,10 @@ public class RodeChange : MonoBehaviour {
 
     void SpawnNewRoad()
     {
+        int i = Random.Range(1, 5);//随机生成跑道
+
         roadNow = roadNext;
-        roadNext = Game.Instance.Pool.Spawn("Pattern_4",parent.transform);
+        roadNext = Game.Instance.Pool.Spawn("Pattern_"+i.ToString(),parent.transform);
         roadNext.transform.position = roadNow.transform.position + new Vector3(0, 0, 160);
     }
 }
