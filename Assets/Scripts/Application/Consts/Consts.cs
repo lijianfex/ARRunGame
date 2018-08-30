@@ -27,3 +27,10 @@ public enum InputDirection
     Up,
     Down
 }
+//跑道
+public enum RunWay
+{
+    Left=0,
+    Middle,
+    Right
+}

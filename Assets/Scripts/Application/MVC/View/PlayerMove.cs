@@ -12,12 +12,19 @@ public class PlayerMove : View
     #endregion
 
     #region 字段
-    public float speed = 20f;
+    public float speed = 20f;//移动速度
 
-    private CharacterController m_cc;
-    InputDirection m_InputDir = InputDirection.NULL;
+    private CharacterController m_cc;//角色控制器
+
+    InputDirection m_InputDir = InputDirection.NULL;//输入
     bool activeInput = false;
     Vector3 m_mousePos;
+
+    RunWay nowRunWay = RunWay.Middle;
+    RunWay targetRunWay = RunWay.Middle;
+    float m_xDistance = 0;
+    float m_moveSpeed = 20f;
+
     #endregion
 
     #region 属性
@@ -30,15 +37,24 @@ public class PlayerMove : View
         while (true)
         {
             m_cc.Move(transform.forward * speed * Time.deltaTime);
-            GetInputDirection();
+            UpdatePostion();
             yield return 0;
         }
     }
 
+
+
+    void UpdatePostion()
+    {
+        GetInputDirection();
+        MovePostion();
+    }
     //获取输入
     void GetInputDirection()
     {
         m_InputDir = InputDirection.NULL;
+
+
 
         //手势识别
         if (Input.GetMouseButtonDown(0))
@@ -77,7 +93,7 @@ public class PlayerMove : View
         {
             m_InputDir = InputDirection.Up;
         }
-        else if(Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
             m_InputDir = InputDirection.Down;
         }
@@ -93,6 +109,59 @@ public class PlayerMove : View
         print(m_InputDir);
     }
 
+    //移动
+    void MovePostion()
+    {
+
+        switch (m_InputDir)
+        {
+            case InputDirection.NULL:
+                break;
+            case InputDirection.Right:
+                if (targetRunWay < RunWay.Right)
+                {
+                    targetRunWay++;
+                    m_xDistance = 2;
+                }
+                break;
+            case InputDirection.Left:
+                if (targetRunWay > RunWay.Left)
+                {
+                    targetRunWay--;
+                    m_xDistance = -2;
+                }
+                break;
+            case InputDirection.Up:
+                break;
+            case InputDirection.Down:
+                break;
+        }
+        if (targetRunWay != nowRunWay)
+        {
+            float move = Mathf.Lerp(0, m_xDistance, m_moveSpeed * Time.deltaTime);
+            transform.position += new Vector3(move, 0, 0);
+            m_xDistance -= move;
+            if (Mathf.Abs(m_xDistance) < 0.05)
+            {
+                m_xDistance = 0;
+                nowRunWay = targetRunWay;
+                switch (nowRunWay)
+                {
+                    case RunWay.Left:
+                        transform.position = new Vector3(-2, transform.position.y, transform.position.z);
+                        break;
+                    case RunWay.Middle:
+                        transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                        break;
+                    case RunWay.Right:
+                        transform.position = new Vector3(2, transform.position.y, transform.position.z);
+                        break;
+                }
+            }
+
+        }
+    }
+
     #endregion
 
     #region Unity回调
@@ -106,7 +175,6 @@ public class PlayerMove : View
         StartCoroutine(UpdateAction());
     }
 
-
     #endregion
 
     #region 事件回调
@@ -119,12 +187,12 @@ public class PlayerMove : View
     #region 帮助方法
     #endregion
 
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
