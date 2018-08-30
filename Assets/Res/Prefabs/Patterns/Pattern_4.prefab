@@ -7413,6 +7413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4466699013649122}
   - component: {fileID: 65134348105515694}
+  - component: {fileID: 65662445761010730}
   m_Layer: 0
   m_Name: Pattern_4
   m_TagString: Untagged
@@ -56147,6 +56148,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 160}
   m_Center: {x: 0, y: -5, z: 76}
+--- !u!65 &65662445761010730
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518833612421670}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 30, y: 20, z: 6}
+  m_Center: {x: 0, y: 0, z: 165}
 --- !u!95 &95008066621566710
 Animator:
   serializedVersion: 3
