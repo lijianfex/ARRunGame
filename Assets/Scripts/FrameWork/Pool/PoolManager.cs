@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoSingleton<ObjectPool> {
+public class PoolManager : MonoSingleton<PoolManager> {
 
     //资源目录
     public string ResourceObjectPath = "";
