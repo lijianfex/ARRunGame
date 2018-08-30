@@ -1606,7 +1606,6 @@ GameObject:
   - component: {fileID: 4940789074279476}
   - component: {fileID: 33163713164862240}
   - component: {fileID: 23307678736966052}
-  - component: {fileID: 114097724341356094}
   m_Layer: 4
   m_Name: Tile
   m_TagString: Untagged
@@ -3531,10 +3530,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4052840635301740}
-  - component: {fileID: 114199453394887868}
-  - component: {fileID: 114883847742832524}
-  - component: {fileID: 114712376375092500}
-  - component: {fileID: 114180670215204912}
   m_Layer: 0
   m_Name: Water4Example (Simple)
   m_TagString: Untagged
@@ -6064,7 +6059,6 @@ GameObject:
   - component: {fileID: 4128268425279840}
   - component: {fileID: 33637460646734064}
   - component: {fileID: 23987951031294810}
-  - component: {fileID: 114792778105192666}
   m_Layer: 4
   m_Name: Tile
   m_TagString: Untagged
@@ -62425,72 +62419,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &114097724341356094
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1103572221045054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114180670215204912
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244496904637436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114199453394887868
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244496904637436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114712376375092500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244496904637436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114792778105192666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1413881128757676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114883847742832524
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244496904637436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!137 &137337470033710664
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

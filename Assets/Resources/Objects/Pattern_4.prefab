@@ -2202,7 +2202,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4145624218999190}
-  - component: {fileID: 114933444603910034}
   m_Layer: 0
   m_Name: Patterns_Port_96
   m_TagString: Untagged
@@ -10962,10 +10961,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4275914644705994}
-  - component: {fileID: 114008525047152188}
-  - component: {fileID: 114136999419968832}
-  - component: {fileID: 114188167662484912}
-  - component: {fileID: 114837034245214750}
   m_Layer: 0
   m_Name: Water4Example (Simple)
   m_TagString: Untagged
@@ -11864,7 +11859,6 @@ GameObject:
   - component: {fileID: 4460635854158106}
   - component: {fileID: 33165425983142454}
   - component: {fileID: 23140803041586356}
-  - component: {fileID: 114970643476005480}
   m_Layer: 4
   m_Name: Tile
   m_TagString: Untagged
@@ -14583,7 +14577,6 @@ GameObject:
   - component: {fileID: 4487026884168738}
   - component: {fileID: 33586688074491892}
   - component: {fileID: 23580818340902620}
-  - component: {fileID: 114194884159297550}
   m_Layer: 4
   m_Name: Tile
   m_TagString: Untagged
@@ -60304,83 +60297,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &114008525047152188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1750334762092316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114136999419968832
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1750334762092316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114188167662484912
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1750334762092316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114194884159297550
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1998942267317456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114837034245214750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1750334762092316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114933444603910034
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1169293815441722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114970643476005480
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1802677735966972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!137 &137139143548788148
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -1339,7 +1339,6 @@ GameObject:
   - component: {fileID: 4612993678603754}
   - component: {fileID: 33962648012196314}
   - component: {fileID: 23943765038572012}
-  - component: {fileID: 114331319636165310}
   m_Layer: 4
   m_Name: Tile
   m_TagString: Untagged
@@ -3821,7 +3820,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4087099933674188}
-  - component: {fileID: 114527345254423722}
   m_Layer: 0
   m_Name: Pattern_2
   m_TagString: Untagged
@@ -8307,7 +8305,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4273580625628460}
-  - component: {fileID: 114741432638646452}
   m_Layer: 0
   m_Name: Pattern_1_Special_32
   m_TagString: Untagged
@@ -11085,10 +11082,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4160271595495094}
-  - component: {fileID: 114166417023129742}
-  - component: {fileID: 114055056736328554}
-  - component: {fileID: 114119660951680454}
-  - component: {fileID: 114570166060737386}
   m_Layer: 0
   m_Name: Water4Example (Simple)
   m_TagString: Untagged
@@ -11930,7 +11923,6 @@ GameObject:
   - component: {fileID: 4063126681240262}
   - component: {fileID: 33805920516083874}
   - component: {fileID: 23435905514954072}
-  - component: {fileID: 114721056152432244}
   m_Layer: 4
   m_Name: Tile
   m_TagString: Untagged
@@ -13121,7 +13113,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4035583922497326}
-  - component: {fileID: 114364160780744190}
   m_Layer: 0
   m_Name: Patterns_1_Special2_32
   m_TagString: Untagged
@@ -56083,102 +56074,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114055056736328554
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1794492997553644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114119660951680454
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1794492997553644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114166417023129742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1794492997553644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114331319636165310
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1101886849490198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114364160780744190
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923065641213320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114527345254423722
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1278121729335790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114570166060737386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1794492997553644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114721056152432244
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1850349322553300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114741432638646452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598079744377960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
