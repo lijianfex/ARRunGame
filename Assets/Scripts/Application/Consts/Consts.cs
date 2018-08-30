@@ -13,4 +13,17 @@ public static class Consts
     //View名字
     public const string V_PlayerMove = "V_PlayerMove";
 
+    //Model名字
+
+
+}
+
+//输入枚举
+public enum InputDirection
+{
+    NULL,
+    Right,
+    Left,
+    Up,
+    Down
 }

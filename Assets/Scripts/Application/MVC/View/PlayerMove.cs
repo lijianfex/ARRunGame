@@ -5,24 +5,105 @@ using UnityEngine;
 [RequireComponent(typeof(RodeChange))]
 public class PlayerMove : View
 {
+    #region 常量
+    #endregion
+
+    #region 事件
+    #endregion
+
+    #region 字段
     public float speed = 20f;
 
     private CharacterController m_cc;
+    private InputDirection m_InputDir = InputDirection.NULL;
+    bool activeInput = false;
+    Vector3 m_mousePos;
+    #endregion
 
-    public override string Name{ get{ return Consts.V_PlayerMove;} }
+    #region 属性
+    public override string Name { get { return Consts.V_PlayerMove; } }
+    #endregion
 
-    public override void HandleEvent(string name, object data = null)
+    #region 方法
+    IEnumerator UpdateAction()
     {
-        
+        while (true)
+        {
+            m_cc.Move(transform.forward * speed * Time.deltaTime);
+            GetInputDirection();
+            yield return 0;
+        }
     }
 
+    //获取输入
+    void GetInputDirection()
+    {
+        m_InputDir = InputDirection.NULL;
+        if (Input.GetMouseButtonDown(0))
+        {
+            activeInput = true;
+            m_mousePos = Input.mousePosition;
+        }
+        if (Input.GetMouseButton(0) && activeInput)
+        {
+            Vector3 Dir = Input.mousePosition - m_mousePos;
+            if (Dir.magnitude > 20f)
+            {
+                if (Mathf.Abs(Dir.x) > Mathf.Abs(Dir.y) && Dir.x > 0)
+                {
+                    m_InputDir = InputDirection.Right;
+                }
+                else if(Mathf.Abs(Dir.x) > Mathf.Abs(Dir.y) && Dir.x < 0)
+                {
+                    m_InputDir = InputDirection.Left;
+                }
+                else if (Mathf.Abs(Dir.x) < Mathf.Abs(Dir.y) && Dir.y > 0)
+                {
+                    m_InputDir = InputDirection.Up;
+                }
+                else if (Mathf.Abs(Dir.x) < Mathf.Abs(Dir.y) && Dir.y < 0)
+                {
+                    m_InputDir = InputDirection.Down;
+                }
+                activeInput = false;
+            }
+            
+        }
+        print(m_InputDir);
+    }
+
+    #endregion
+
+    #region Unity回调
     private void Awake()
     {
         m_cc = GetComponent<CharacterController>();
     }
 
-    private void Update()
+    private void Start()
     {
-        m_cc.Move(transform.forward * speed * Time.deltaTime);
+        StartCoroutine(UpdateAction());
     }
+
+
+    #endregion
+
+    #region 事件回调
+    public override void HandleEvent(string name, object data = null)
+    {
+
+    }
+    #endregion
+
+    #region 帮助方法
+    #endregion
+
+
+
+
+
+
+
+
+
 }
