@@ -39,6 +39,8 @@ public class PlayerMove : View
     void GetInputDirection()
     {
         m_InputDir = InputDirection.NULL;
+
+        //手势识别
         if (Input.GetMouseButtonDown(0))
         {
             activeInput = true;
@@ -47,13 +49,13 @@ public class PlayerMove : View
         if (Input.GetMouseButton(0) && activeInput)
         {
             Vector3 Dir = Input.mousePosition - m_mousePos;
-            if (Dir.magnitude > 20f)
+            if (Dir.magnitude > 30f)
             {
                 if (Mathf.Abs(Dir.x) > Mathf.Abs(Dir.y) && Dir.x > 0)
                 {
                     m_InputDir = InputDirection.Right;
                 }
-                else if(Mathf.Abs(Dir.x) > Mathf.Abs(Dir.y) && Dir.x < 0)
+                else if (Mathf.Abs(Dir.x) > Mathf.Abs(Dir.y) && Dir.x < 0)
                 {
                     m_InputDir = InputDirection.Left;
                 }
@@ -67,9 +69,28 @@ public class PlayerMove : View
                 }
                 activeInput = false;
             }
-            
+
         }
-        print(m_InputDir);
+
+        //键盘输入
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        {
+            m_InputDir = InputDirection.Up;
+        }
+        else if(Input.GetKeyDown(KeyCode.S))
+        {
+            m_InputDir = InputDirection.Down;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            m_InputDir = InputDirection.Left;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            m_InputDir = InputDirection.Right;
+        }
+
+        //print(m_InputDir);
     }
 
     #endregion
