@@ -15,7 +15,7 @@ public class PlayerMove : View
     public float speed = 20f;
 
     private CharacterController m_cc;
-    private InputDirection m_InputDir = InputDirection.NULL;
+    InputDirection m_InputDir = InputDirection.NULL;
     bool activeInput = false;
     Vector3 m_mousePos;
     #endregion
@@ -90,7 +90,7 @@ public class PlayerMove : View
             m_InputDir = InputDirection.Right;
         }
 
-        //print(m_InputDir);
+        print(m_InputDir);
     }
 
     #endregion
