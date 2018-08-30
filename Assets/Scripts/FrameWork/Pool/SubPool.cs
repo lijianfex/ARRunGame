@@ -44,7 +44,7 @@ public class SubPool
         }
 
         go.SetActive(true);
-        go.GetComponent<ReusableObject>().OnSpawn();
+        go.SendMessage("OnSpawn",SendMessageOptions.DontRequireReceiver);
         return go;
    
     }
@@ -54,7 +54,7 @@ public class SubPool
     {
         if(Contains(go))
         {
-            go.GetComponent<ReusableObject>().OnUnSpawn();
+            go.SendMessage("OnUnSpawn", SendMessageOptions.DontRequireReceiver);
             go.SetActive(false);
         }
     }

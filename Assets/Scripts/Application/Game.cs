@@ -32,7 +32,7 @@ public class Game : MonoSingleton<Game>
         //初始化
 
         //切换场景
-        Game.Instance.Level.LoadLevel(1);
+        Game.Instance.Level.LoadLevel(4);
     }
 
 

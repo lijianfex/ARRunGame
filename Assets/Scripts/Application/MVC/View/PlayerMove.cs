@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(RodeChange))]
 public class PlayerMove : View
 {
     public float speed = 20f;

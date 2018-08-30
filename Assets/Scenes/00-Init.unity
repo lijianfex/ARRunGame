@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa7315ae0e27c149a423bdc8f630551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResourceObjectPath: 
+  ResourceObjectPath: Objects
 --- !u!114 &1445921305
 MonoBehaviour:
   m_ObjectHideFlags: 0
