@@ -7,12 +7,17 @@ public class PlayerMove : View
 {
     #region 常量
     #endregion
+    const float m_SpeedAddDis = 200f;//加速距离
+    const float m_SpeedAddRate = 0.5f;//每次加速值
+    const float m_MaxRunSpeed = 40f;//最大速度
 
     #region 事件
     #endregion
 
     #region 字段
-    public float Runspeed = 20f;//前向移动速度
+    [SerializeField]
+    private float runspeed = 20f;//前向移动速度
+
     public float MoveSpeed = 20f;//左右移动速度
     public float JumpValue = 5f;//跳跃高度
     public float Grivaty = 9.8f;//重力值
@@ -25,15 +30,36 @@ public class PlayerMove : View
 
     RunWay nowRunWay = RunWay.Middle;//跑道切换
     RunWay targetRunWay = RunWay.Middle;
-    float m_xDistance = 0;   
-    
+    float m_xDistance = 0;
+
     float m_yDistance = 0;   //跳跃
-   
+
+    bool m_isSlide = false;//防止一直滚动
+    float m_slideTime;
+
+    float m_SpeedAddCount;//更新加速
+    
+
 
     #endregion
 
     #region 属性
     public override string Name { get { return Consts.V_PlayerMove; } }
+
+
+    public float Runspeed
+    {
+        get
+        {
+            return runspeed;
+        }
+
+        set
+        {
+            runspeed = value;
+            runspeed = runspeed >= m_MaxRunSpeed ? m_MaxRunSpeed : runspeed;
+        }
+    }
     #endregion
 
     #region 方法
@@ -42,8 +68,9 @@ public class PlayerMove : View
         while (true)
         {
             m_yDistance -= Grivaty * Time.deltaTime;
-            m_cc.Move((transform.forward * Runspeed + new Vector3(0,m_yDistance,0))* Time.deltaTime);
+            m_cc.Move((transform.forward * Runspeed + new Vector3(0, m_yDistance, 0)) * Time.deltaTime);
             UpdatePostion();
+            UpdateRunSpeed();
             yield return 0;
         }
     }
@@ -118,7 +145,7 @@ public class PlayerMove : View
     //移动
     void MovePostion()
     {
-
+        //判断切换跑道
         switch (m_InputDir)
         {
             case InputDirection.NULL:
@@ -145,10 +172,15 @@ public class PlayerMove : View
                     m_yDistance = JumpValue;
                     SendMessage("AnimManager", m_InputDir);
                 }
-                
+
                 break;
             case InputDirection.Down:
-                SendMessage("AnimManager", m_InputDir);
+                if (m_isSlide == false)
+                {
+                    m_isSlide = true;
+                    m_slideTime = 0.773f;
+                    SendMessage("AnimManager", m_InputDir);
+                }
                 break;
         }
         //切换跑道
@@ -174,10 +206,30 @@ public class PlayerMove : View
                         break;
                 }
             }
-
         }
+        //roll滚动计时
+        if (m_isSlide)
+        {
+            m_slideTime -= Time.deltaTime;
+            if (m_slideTime <= 0)
+            {
+                m_slideTime = 0;
+                m_isSlide = false;
+            }
+        }
+
     }
 
+    //更新速度
+    void UpdateRunSpeed()
+    {
+        m_SpeedAddCount += Runspeed * Time.deltaTime;
+        if (m_SpeedAddCount >= m_SpeedAddDis)
+        {
+            m_SpeedAddCount = 0f;
+            Runspeed += m_SpeedAddRate;
+        }
+    }
     #endregion
 
     #region Unity回调
