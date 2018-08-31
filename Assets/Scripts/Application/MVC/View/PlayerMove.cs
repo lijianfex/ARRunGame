@@ -12,7 +12,10 @@ public class PlayerMove : View
     #endregion
 
     #region 字段
-    public float speed = 20f;//移动速度
+    public float Runspeed = 20f;//前向移动速度
+    public float MoveSpeed = 20f;//左右移动速度
+    public float JumpValue = 5f;//跳跃高度
+    public float Grivaty = 9.8f;//重力值
 
     private CharacterController m_cc;//角色控制器
 
@@ -20,13 +23,12 @@ public class PlayerMove : View
     bool activeInput = false;
     Vector3 m_mousePos;
 
-    RunWay nowRunWay = RunWay.Middle;
+    RunWay nowRunWay = RunWay.Middle;//跑道切换
     RunWay targetRunWay = RunWay.Middle;
-    float m_xDistance = 0;
-    float m_moveSpeed = 20f;
-    float m_yDistance = 0;
-    float m_jumpValue = 5f;
-    float m_grivaty = 9.8f;
+    float m_xDistance = 0;   
+    
+    float m_yDistance = 0;   //跳跃
+   
 
     #endregion
 
@@ -39,8 +41,8 @@ public class PlayerMove : View
     {
         while (true)
         {
-            m_yDistance -= m_grivaty * Time.deltaTime;
-            m_cc.Move((transform.forward * speed +new Vector3(0,m_yDistance,0))* Time.deltaTime);
+            m_yDistance -= Grivaty * Time.deltaTime;
+            m_cc.Move((transform.forward * Runspeed + new Vector3(0,m_yDistance,0))* Time.deltaTime);
             UpdatePostion();
             yield return 0;
         }
@@ -140,7 +142,7 @@ public class PlayerMove : View
             case InputDirection.Up:
                 if (m_cc.isGrounded)
                 {
-                    m_yDistance = m_jumpValue;
+                    m_yDistance = JumpValue;
                     SendMessage("AnimManager", m_InputDir);
                 }
                 
@@ -149,9 +151,10 @@ public class PlayerMove : View
                 SendMessage("AnimManager", m_InputDir);
                 break;
         }
+        //切换跑道
         if (targetRunWay != nowRunWay)
         {
-            float move = Mathf.Lerp(0, m_xDistance, m_moveSpeed * Time.deltaTime);
+            float move = Mathf.Lerp(0, m_xDistance, MoveSpeed * Time.deltaTime);
             transform.position += new Vector3(move, 0, 0);
             m_xDistance -= move;
             if (Mathf.Abs(m_xDistance) < 0.05)

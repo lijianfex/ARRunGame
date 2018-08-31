@@ -405,7 +405,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttentionList: []
-  speed: 20
+  Runspeed: 20
+  MoveSpeed: 20
+  JumpValue: 5
+  Grivaty: 9.8
 --- !u!143 &1035940161
 CharacterController:
   m_ObjectHideFlags: 0
