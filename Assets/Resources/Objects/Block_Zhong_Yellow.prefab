@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4401212947119126}
   - component: {fileID: 65135097399433590}
   - component: {fileID: 54443589249637964}
+  - component: {fileID: 114645653121383156}
   m_Layer: 0
   m_Name: Block_Zhong_Yellow
   m_TagString: BigFence
@@ -248,3 +249,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114645653121383156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888468883193076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e235885ab5910409915b615e6b256a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

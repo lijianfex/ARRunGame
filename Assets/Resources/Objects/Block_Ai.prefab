@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4502941790226270}
   - component: {fileID: 65820119102538864}
   - component: {fileID: 54704077147637140}
+  - component: {fileID: 114460562090218132}
   m_Layer: 0
   m_Name: Block_Ai
   m_TagString: SmallFence
@@ -158,3 +159,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114460562090218132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169099780256688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e235885ab5910409915b615e6b256a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
