@@ -4,6 +4,10 @@ using UnityEngine;
 
 public static class Tag
 {
-    public const string road = "Road";
-    public const string player = "Player";
+    public const string road = "Road";//跑道
+    public const string player = "Player";//玩家
+    public const string smallFence = "SmallFence";//小栅栏
+    public const string bigFence = "BigFence";//大栅栏
+
+
 }

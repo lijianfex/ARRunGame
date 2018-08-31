@@ -41,6 +41,13 @@ public class PlayerMove : View
 
     GameModel m_GM;
 
+    //是否撞击
+    bool m_IsHit = false;
+    //记录减速前速度
+    float m_MaskSpeed;
+    //增加速度的速率
+    float m_AddSpeedRate = 10f;
+
     #endregion
 
     #region 属性
@@ -67,13 +74,13 @@ public class PlayerMove : View
     {
         while (true)
         {
-            if(m_GM.IsPlay&&!m_GM.IsPause)
+            if (m_GM.IsPlay && !m_GM.IsPause)
             {
                 m_yDistance -= Grivaty * Time.deltaTime;
                 m_cc.Move((transform.forward * Runspeed + new Vector3(0, m_yDistance, 0)) * Time.deltaTime);
                 UpdatePostion();
                 UpdateRunSpeed();
-            }            
+            }
             yield return 0;
         }
     }
@@ -239,6 +246,27 @@ public class PlayerMove : View
             Runspeed += m_SpeedAddRate;
         }
     }
+
+    //减速
+    public void HitObstacle()
+    {
+        if (m_IsHit)
+            return;
+        m_IsHit = true;
+        m_MaskSpeed = Runspeed;
+        Runspeed = 0f;
+        StartCoroutine(DescreseSpeed());
+    }
+
+    IEnumerator DescreseSpeed()
+    {
+        while (Runspeed < m_MaskSpeed)
+        {
+            Runspeed += Time.deltaTime * m_AddSpeedRate;
+            yield return 0;
+        }
+        m_IsHit = true;
+    }
     #endregion
 
     #region Unity回调
@@ -251,6 +279,24 @@ public class PlayerMove : View
     private void Start()
     {
         StartCoroutine(UpdateAction());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == Tag.smallFence)
+        {
+            other.gameObject.SendMessage("HitPlayer",transform.position);
+            //减速
+            HitObstacle();
+        }
+        else if (other.gameObject.tag == Tag.bigFence)
+        {
+            if (m_isSlide)
+                return;
+            other.gameObject.SendMessage("HitPlayer", transform.position);
+            //减速
+            HitObstacle();
+        }
     }
 
     #endregion
