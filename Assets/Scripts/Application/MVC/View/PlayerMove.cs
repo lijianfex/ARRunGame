@@ -123,6 +123,7 @@ public class PlayerMove : View
                     targetRunWay++;
                     m_xDistance = 2;
                 }
+                SendMessage("AnimManager", m_InputDir);
                 break;
             case InputDirection.Left:
                 if (targetRunWay > RunWay.Left)
@@ -130,10 +131,13 @@ public class PlayerMove : View
                     targetRunWay--;
                     m_xDistance = -2;
                 }
+                SendMessage("AnimManager", m_InputDir);
                 break;
             case InputDirection.Up:
+                SendMessage("AnimManager", m_InputDir);
                 break;
             case InputDirection.Down:
+                SendMessage("AnimManager", m_InputDir);
                 break;
         }
         if (targetRunWay != nowRunWay)
