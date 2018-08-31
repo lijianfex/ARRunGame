@@ -8,14 +8,14 @@ public static class Consts
     public const string E_ExitScene = "E_ExitScene";
     public const string E_EnterScene = "E_EnterScene";
 
-    public const string E_StartUp = "E_StartUp";
+    public const string E_AppInit = "E_AppInit";
+
+
+    //Model名字
+    public const string M_GameModle = "M_GameModle";
 
     //View名字
     public const string V_PlayerMove = "V_PlayerMove";
-
-    //Model名字
-
-
 }
 
 //输入枚举

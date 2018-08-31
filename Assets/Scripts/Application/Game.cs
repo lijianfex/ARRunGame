@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,9 +31,24 @@ public class Game : MonoSingleton<Game>
         //游戏启动
 
         //初始化
+        RegisterController(Consts.E_AppInit, typeof(AppInitCtrl));
 
+        SendEvent(Consts.E_AppInit);
+       
         //切换场景
         Game.Instance.Level.LoadLevel(4);
+    }
+
+    //注册controller
+    void RegisterController(string eventName, Type controllerType)
+    {
+        MVC.RegisterController(eventName, controllerType);
+    }
+
+    //发送事件
+     void SendEvent(string eventName, object data = null)
+    {
+        MVC.SendEvent(eventName, data);
     }
 
 

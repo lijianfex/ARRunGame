@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Model基类
 /// </summary>
-public abstract class Model : MonoBehaviour
+public abstract class Model 
 {
     //名字标识
     public abstract string Name { get; }

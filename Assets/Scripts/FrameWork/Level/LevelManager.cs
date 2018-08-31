@@ -38,9 +38,6 @@ public class LevelManager : MonoSingleton<LevelManager>
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
-    
-
     
 
     //发送事件

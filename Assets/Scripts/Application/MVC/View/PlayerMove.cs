@@ -38,8 +38,8 @@ public class PlayerMove : View
     float m_slideTime;
 
     float m_SpeedAddCount;//更新加速
-    
 
+    GameModel m_GM;
 
     #endregion
 
@@ -67,10 +67,13 @@ public class PlayerMove : View
     {
         while (true)
         {
-            m_yDistance -= Grivaty * Time.deltaTime;
-            m_cc.Move((transform.forward * Runspeed + new Vector3(0, m_yDistance, 0)) * Time.deltaTime);
-            UpdatePostion();
-            UpdateRunSpeed();
+            if(m_GM.IsPlay&&!m_GM.IsPause)
+            {
+                m_yDistance -= Grivaty * Time.deltaTime;
+                m_cc.Move((transform.forward * Runspeed + new Vector3(0, m_yDistance, 0)) * Time.deltaTime);
+                UpdatePostion();
+                UpdateRunSpeed();
+            }            
             yield return 0;
         }
     }
@@ -236,6 +239,7 @@ public class PlayerMove : View
     private void Awake()
     {
         m_cc = GetComponent<CharacterController>();
+        m_GM = GetModel<GameModel>();
     }
 
     private void Start()
