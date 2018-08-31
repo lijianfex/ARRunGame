@@ -24,6 +24,9 @@ public class PlayerMove : View
     RunWay targetRunWay = RunWay.Middle;
     float m_xDistance = 0;
     float m_moveSpeed = 20f;
+    float m_yDistance = 0;
+    float m_jumpValue = 5f;
+    float m_grivaty = 9.8f;
 
     #endregion
 
@@ -36,7 +39,8 @@ public class PlayerMove : View
     {
         while (true)
         {
-            m_cc.Move(transform.forward * speed * Time.deltaTime);
+            m_yDistance -= m_grivaty * Time.deltaTime;
+            m_cc.Move((transform.forward * speed +new Vector3(0,m_yDistance,0))* Time.deltaTime);
             UpdatePostion();
             yield return 0;
         }
@@ -134,7 +138,12 @@ public class PlayerMove : View
                 SendMessage("AnimManager", m_InputDir);
                 break;
             case InputDirection.Up:
-                SendMessage("AnimManager", m_InputDir);
+                if (m_cc.isGrounded)
+                {
+                    m_yDistance = m_jumpValue;
+                    SendMessage("AnimManager", m_InputDir);
+                }
+                
                 break;
             case InputDirection.Down:
                 SendMessage("AnimManager", m_InputDir);
