@@ -158,24 +158,29 @@ public class PlayerMove : View
                 {
                     targetRunWay++;
                     m_xDistance = 2;
+                    SendMessage("AnimManager", m_InputDir);
+                    Game.Instance.Sound.PlayEffect("Se_UI_Huadong");
+
                 }
-                SendMessage("AnimManager", m_InputDir);
                 break;
             case InputDirection.Left:
                 if (targetRunWay > RunWay.Left)
                 {
                     targetRunWay--;
                     m_xDistance = -2;
+                    SendMessage("AnimManager", m_InputDir);
+                    Game.Instance.Sound.PlayEffect("Se_UI_Huadong");
+
                 }
-                SendMessage("AnimManager", m_InputDir);
+
                 break;
             case InputDirection.Up:
                 if (m_cc.isGrounded)
                 {
                     m_yDistance = JumpValue;
                     SendMessage("AnimManager", m_InputDir);
+                    Game.Instance.Sound.PlayEffect("Se_UI_Jump");
                 }
-
                 break;
             case InputDirection.Down:
                 if (m_isSlide == false)
@@ -183,6 +188,7 @@ public class PlayerMove : View
                     m_isSlide = true;
                     m_slideTime = 0.773f;
                     SendMessage("AnimManager", m_InputDir);
+                    Game.Instance.Sound.PlayEffect("Se_UI_Slide");
                 }
                 break;
         }
