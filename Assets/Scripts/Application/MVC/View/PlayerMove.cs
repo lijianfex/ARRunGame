@@ -255,10 +255,10 @@ public class PlayerMove : View
         m_IsHit = true;
         m_MaskSpeed = Runspeed;
         Runspeed = 0f;
-        StartCoroutine(DescreseSpeed());
+        StartCoroutine(DescreaseSpeed());
     }
 
-    IEnumerator DescreseSpeed()
+    IEnumerator DescreaseSpeed()
     {
         while (Runspeed < m_MaskSpeed)
         {
@@ -297,7 +297,7 @@ public class PlayerMove : View
             //减速
             HitObstacle();
         }
-        else if (other.gameObject.tag == Tag.block) //撞到，结束
+        else if (other.gameObject.tag == Tag.block) //撞到撞到集装箱，结束
         {
             
             other.gameObject.SendMessage("HitPlayer", transform.position);
@@ -305,6 +305,14 @@ public class PlayerMove : View
             //结束游戏 sendEvent
             SendEvent(Consts.E_EndGame);
 
+        }
+        else if (other.gameObject.tag == Tag.smallBlock) //撞到集装箱前部，结束
+        {
+
+            other.gameObject.transform.parent.parent.SendMessage("HitPlayer", transform.position);
+            
+            //结束游戏 sendEvent
+            SendEvent(Consts.E_EndGame);
         }
 
     }

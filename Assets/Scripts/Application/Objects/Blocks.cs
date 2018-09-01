@@ -28,7 +28,7 @@ public class Blocks : ReusableObject {
         go.transform.position = Hitpos;
 
         //2.声音
-        Game.Instance.Sound.PlayEffect("Se_UI_Hit");
+        Game.Instance.Sound.PlayEffect("Se_UI_End");
 
         //3.回收
         //Game.Instance.Pool.UnSpawn(gameObject);
