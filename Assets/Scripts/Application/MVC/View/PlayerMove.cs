@@ -314,6 +314,12 @@ public class PlayerMove : View
             //结束游戏 sendEvent
             SendEvent(Consts.E_EndGame);
         }
+        else if (other.gameObject.tag == Tag.carBeforeTrigger) //撞到车前的触发器，车可以移动
+        {
+
+            other.transform.parent.SendMessage("HitTrigger", SendMessageOptions.RequireReceiver);
+           
+        }
 
     }
 

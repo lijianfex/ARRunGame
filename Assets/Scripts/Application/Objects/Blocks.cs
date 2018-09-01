@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Blocks : ReusableObject {
+    
+    protected Transform effectParent;
 
-	Transform effectParent;
-
-    private void Awake()
+    protected virtual void Awake()
     {
         effectParent = GameObject.Find("EffectParent").transform;
     }
@@ -21,7 +21,7 @@ public class Blocks : ReusableObject {
 
     }
 
-    public void HitPlayer(Vector3 Hitpos)
+    public virtual void HitPlayer(Vector3 Hitpos)
     {
         //1.生成特效
         GameObject go = Game.Instance.Pool.Spawn("FX_ZhuangJi", effectParent);
@@ -35,4 +35,6 @@ public class Blocks : ReusableObject {
         Destroy(gameObject);
 
     }
+
+
 }
