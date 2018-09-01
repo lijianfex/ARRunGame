@@ -12,6 +12,8 @@ public class AppInitCtrl : Controller
         //注册Controller
         RegisterController(Consts.E_EnterScene, typeof(EnterScenesCtrl));
 
+        RegisterController(Consts.E_EndGame, typeof(EndGameCtrl));
+
         //注册model
         RegisterModel(new GameModel());
     }

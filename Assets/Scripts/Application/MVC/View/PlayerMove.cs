@@ -297,6 +297,16 @@ public class PlayerMove : View
             //减速
             HitObstacle();
         }
+        else if (other.gameObject.tag == Tag.block) //撞到，结束
+        {
+            
+            other.gameObject.SendMessage("HitPlayer", transform.position);
+
+            //结束游戏 sendEvent
+            SendEvent(Consts.E_EndGame);
+
+        }
+
     }
 
     #endregion

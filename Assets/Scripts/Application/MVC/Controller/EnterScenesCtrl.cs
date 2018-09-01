@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 进入场景
+/// 进入场景事件
 /// </summary>
 public class EnterScenesCtrl : Controller
 {
@@ -25,6 +25,7 @@ public class EnterScenesCtrl : Controller
                 break;
             case 4:
                 RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerMove>());
+                RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerAnim>());
                 break;
             default:
                 break;

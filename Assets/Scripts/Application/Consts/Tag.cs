@@ -9,5 +9,7 @@ public static class Tag
     public const string smallFence = "SmallFence";//小栅栏
     public const string bigFence = "BigFence";//大栅栏
 
+    public const string block = "Block";//集装箱
+
 
 }
