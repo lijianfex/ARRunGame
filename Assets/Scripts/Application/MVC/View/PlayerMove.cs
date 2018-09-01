@@ -248,7 +248,7 @@ public class PlayerMove : View
     }
 
     //减速
-    public void HitObstacle()
+    void HitObstacle()
     {
         if (m_IsHit)
             return;
@@ -267,6 +267,14 @@ public class PlayerMove : View
         }
         m_IsHit = true;
     }
+
+    //吃金币
+    public void EatCoin()
+    {
+        print("1");
+    }
+
+
     #endregion
 
     #region Unity回调
