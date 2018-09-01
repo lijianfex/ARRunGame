@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 车
+/// </summary>
 public class Car : Blocks {
 
     public bool canMove = false;
@@ -32,8 +35,7 @@ public class Car : Blocks {
     //碰到触发区域
     public void HitTrigger()
     {
-        isBlock = true;
-        print("111");
+        isBlock = true;        
     }
 
     private void Update()
