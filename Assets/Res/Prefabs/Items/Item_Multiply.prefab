@@ -26,7 +26,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400002}
-  - component: {fileID: 11400000}
   - component: {fileID: 5400000}
   - component: {fileID: 6500000}
   m_Layer: 0
@@ -148,38 +147,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6de0b986e64e443489b226f2dff9398, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreAdd: 0
-  decreaseLife: 0
-  itemID: 8
-  itemIndex: 0
-  ShootkeeperID: 0
-  duration: 15
-  itemEffectValue: 2
-  itemEffectValue2: 0
-  itemRotate: {fileID: 0}
-  before_trigger: {fileID: 0}
-  effectHit: {fileID: 0}
-  effectID: 0
-  otherObjects: []
-  itemRoot: {fileID: 0}
-  PosStand: 0
-  Pos_Left: {x: 0, y: 0, z: 0}
-  Pos_Middle: {x: 0, y: 0, z: 0}
-  Pos_Right: {x: 0, y: 0, z: 0}
-  isOnTriggerClick: 0
-  typeItem: 7
-  useAbsorb: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

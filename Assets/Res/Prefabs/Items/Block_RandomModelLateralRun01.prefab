@@ -568,7 +568,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400076}
   - component: {fileID: 6500000}
-  - component: {fileID: 11400002}
   m_Layer: 0
   m_Name: LateralRun
   m_TagString: ItemBeforeTrigger
@@ -584,7 +583,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400074}
-  - component: {fileID: 11400000}
   m_Layer: 0
   m_Name: RandomModelControl
   m_TagString: Untagged
@@ -600,7 +598,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400078}
-  - component: {fileID: 11400004}
   - component: {fileID: 6500002}
   - component: {fileID: 5400000}
   m_Layer: 0
@@ -1265,65 +1262,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50fa4c70ae6a59f46bea427c53a36573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mModelAtlas: {fileID: 11400000, guid: 3f433f2395ed60a48a3cdd18bd43fd3d, type: 2}
-  mModelRoot: {fileID: 400070}
-  mShowModel: {fileID: 100070}
-  model: {fileID: 0}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cdbd65e3b16e954b882e293ebeee85e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400004}
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b46b5248f4be8514d8278e3489e31ac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreAdd: 0
-  decreaseLife: 0
-  itemID: 80
-  itemIndex: 0
-  ShootkeeperID: 0
-  duration: 0
-  itemEffectValue: 5
-  itemEffectValue2: 0
-  itemRotate: {fileID: 0}
-  before_trigger: {fileID: 6500000}
-  effectHit: {fileID: 0}
-  effectID: 0
-  otherObjects: []
-  itemRoot: {fileID: 0}
-  PosStand: 0
-  Pos_Left: {x: 0, y: 0, z: 0}
-  Pos_Middle: {x: 0, y: 0, z: 0}
-  Pos_Right: {x: 0, y: 0, z: 0}
-  isOnTriggerClick: 0
-  typeItem: 19
-  useAbsorb: 0
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

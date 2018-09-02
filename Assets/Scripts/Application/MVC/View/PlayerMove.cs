@@ -48,6 +48,12 @@ public class PlayerMove : View
     //增加速度的速率
     float m_AddSpeedRate = 10f;
 
+    //Item
+    public int m_isDoubleTime = 1;
+    int m_SkillTime;//双倍时长
+
+    IEnumerator MutiplyCor; //双倍金币协程
+
     #endregion
 
     #region 属性
@@ -269,11 +275,28 @@ public class PlayerMove : View
     }
 
     //吃金币
-    public void EatCoin()
+    public void HitCoin()
     {
         print("1");
     }
 
+    //双倍金币
+    public void HitMutiply()
+    {
+        if(MutiplyCor!=null)
+        {
+            StopCoroutine(MutiplyCor);
+        }
+        MutiplyCor = MutiplyCoroTime();
+        StartCoroutine(MutiplyCor);
+    }
+
+    IEnumerator MutiplyCoroTime()
+    {
+        m_isDoubleTime = 2;
+        yield return new WaitForSeconds(m_SkillTime);
+        m_isDoubleTime = 1;
+    }
 
     #endregion
 
@@ -282,6 +305,7 @@ public class PlayerMove : View
     {
         m_cc = GetComponent<CharacterController>();
         m_GM = GetModel<GameModel>();
+        m_SkillTime = m_GM.SkillTime;
     }
 
     private void Start()

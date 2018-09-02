@@ -13,6 +13,7 @@ public class GameModel : Model
     #region 字段
     bool isPlay=true;//游戏是否进行
     bool isPause=false;//是否暂停
+    int skillTime = 5;//技能时间
     #endregion
 
     #region 属性
@@ -47,6 +48,19 @@ public class GameModel : Model
         set
         {
             isPause = value;
+        }
+    }
+
+    public int SkillTime
+    {
+        get
+        {
+            return skillTime;
+        }
+
+        set
+        {
+            skillTime = value;
         }
     }
     #endregion
