@@ -54,6 +54,9 @@ public class PlayerMove : View
 
     IEnumerator MutiplyCor; //双倍金币协程
 
+    //吸铁石检测
+    SphereCollider MagnetCollider;
+    IEnumerator MagnetCor;
     #endregion
 
     #region 属性
@@ -291,11 +294,31 @@ public class PlayerMove : View
         StartCoroutine(MutiplyCor);
     }
 
+    
+
     IEnumerator MutiplyCoroTime()
     {
         m_isDoubleTime = 2;
         yield return new WaitForSeconds(m_SkillTime);
         m_isDoubleTime = 1;
+    }
+
+    //吸铁石
+    public void HitMagnet()
+    {
+        if (MagnetCor != null)
+        {
+            StopCoroutine(MagnetCor);
+        }
+        MagnetCor = MagnetCoroTime();
+        StartCoroutine(MagnetCor);
+    }
+
+    IEnumerator MagnetCoroTime()
+    {
+        MagnetCollider.enabled = true;
+        yield return new WaitForSeconds(m_SkillTime);
+        MagnetCollider.enabled = false;
     }
 
     #endregion
@@ -306,6 +329,9 @@ public class PlayerMove : View
         m_cc = GetComponent<CharacterController>();
         m_GM = GetModel<GameModel>();
         m_SkillTime = m_GM.SkillTime;
+
+        MagnetCollider = GetComponentInChildren<SphereCollider>();
+        MagnetCollider.enabled = false;
     }
 
     private void Start()
