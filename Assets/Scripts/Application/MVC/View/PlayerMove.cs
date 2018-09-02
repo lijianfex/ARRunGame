@@ -279,7 +279,8 @@ public class PlayerMove : View
     //吃金币
     public void HitCoin()
     {
-        print("Eat");
+        //sendEvent 加金币数
+        print("Eat coin");
     }
 
     //双倍金币
@@ -292,8 +293,6 @@ public class PlayerMove : View
         MutiplyCor = MutiplyCoroTime();
         StartCoroutine(MutiplyCor);
     }
-
-    
 
     IEnumerator MutiplyCoroTime()
     {
@@ -318,6 +317,13 @@ public class PlayerMove : View
         MagnetCollider.enabled = true;
         yield return new WaitForSeconds(m_SkillTime);
         MagnetCollider.enabled = false;
+    }
+
+    //加时间
+    public void HitAddTime()
+    {
+        //sendEvent 加时间
+        print("Add time");
     }
 
     #endregion
