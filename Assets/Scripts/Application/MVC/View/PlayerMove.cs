@@ -157,8 +157,7 @@ public class PlayerMove : View
         {
             m_InputDir = InputDirection.Right;
         }
-
-        print(m_InputDir);
+        
     }
 
     //移动
@@ -280,7 +279,7 @@ public class PlayerMove : View
     //吃金币
     public void HitCoin()
     {
-        print("1");
+        print("Eat");
     }
 
     //双倍金币
