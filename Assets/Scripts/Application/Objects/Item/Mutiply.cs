@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 双倍道具
+/// </summary>
 public class Mutiply : Item
 {
     

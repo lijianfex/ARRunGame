@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 吸铁石道具
+/// </summary>
 public class Magnet : Item {
 
     public override void OnSpawn()
@@ -17,7 +19,7 @@ public class Magnet : Item {
     public override void HitPlayer(Vector3 pos)
     {
         //2.播放音效
-        Game.Instance.Sound.PlayEffect("Se_UI_Stars");
+        Game.Instance.Sound.PlayEffect("Se_UI_Magnet");
 
         //3.回收
         //Game.Instance.Pool.UnSpawn(gameObject);

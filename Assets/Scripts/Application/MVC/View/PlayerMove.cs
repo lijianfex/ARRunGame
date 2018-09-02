@@ -55,8 +55,12 @@ public class PlayerMove : View
     IEnumerator MutiplyCor; //双倍金币协程
 
     //吸铁石检测
-    SphereCollider MagnetCollider;
+    SphereCollider MagnetCollider;//吸铁石协程
     IEnumerator MagnetCor;
+
+    //无敌
+    bool m_IsInvincible = false;
+    IEnumerator InvincibleCor;//无敌协程
     #endregion
 
     #region 属性
@@ -326,6 +330,24 @@ public class PlayerMove : View
         print("Add time");
     }
 
+    //无敌状态
+    public void HitInvincible()
+    {
+        if (InvincibleCor != null)
+        {
+            StopCoroutine(InvincibleCor);
+        }
+        InvincibleCor = InvincibleCoroutine();
+        StartCoroutine(InvincibleCor);
+    }
+
+    IEnumerator InvincibleCoroutine()
+    {
+        m_IsInvincible = true;
+        yield return new WaitForSeconds(m_SkillTime);
+        m_IsInvincible = false;
+    }
+
     #endregion
 
     #region Unity回调
@@ -348,12 +370,16 @@ public class PlayerMove : View
     {
         if (other.gameObject.tag == Tag.smallFence)
         {
+            if (m_IsInvincible)
+                return;
             other.gameObject.SendMessage("HitPlayer",transform.position);
             //减速
             HitObstacle();
         }
         else if (other.gameObject.tag == Tag.bigFence)
         {
+            if (m_IsInvincible)
+                return;
             if (m_isSlide)
                 return;
             other.gameObject.SendMessage("HitPlayer", transform.position);

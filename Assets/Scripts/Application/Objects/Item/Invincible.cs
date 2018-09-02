@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 加时道具
+/// 无敌状态
 /// </summary>
-public class AddTime : Item
-{
+public class Invincible : Item {
+
     public override void OnSpawn()
     {
         base.OnSpawn();
@@ -19,9 +19,11 @@ public class AddTime : Item
 
     public override void HitPlayer(Vector3 pos)
     {
-        //声音
-        Game.Instance.Sound.PlayEffect("Se_UI_Time");
+        base.HitPlayer(pos);
+        //2.播放音效
+        Game.Instance.Sound.PlayEffect("Se_UI_Whist");
 
+        //3.回收
         //Game.Instance.Pool.UnSpawn(gameObject);
         Destroy(gameObject);
     }
@@ -31,8 +33,7 @@ public class AddTime : Item
         if(other.tag==Tag.player)
         {
             HitPlayer(other.transform.position);
-            other.SendMessage("HitAddTime", SendMessageOptions.RequireReceiver);
+            other.SendMessage("HitInvincible", SendMessageOptions.RequireReceiver);
         }
     }
-
 }
