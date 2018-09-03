@@ -89,6 +89,9 @@ public class PlayerMove : View
         {
             if (m_GM.IsPlay && !m_GM.IsPause)
             {
+                //更新UI
+                UpdateDis();//更新距离
+
                 m_yDistance -= Grivaty * Time.deltaTime;
                 m_cc.Move((transform.forward * Runspeed + new Vector3(0, m_yDistance, 0)) * Time.deltaTime);
                 UpdatePostion();
@@ -96,6 +99,16 @@ public class PlayerMove : View
             }
             yield return 0;
         }
+    }
+    //UI更新
+
+    void UpdateDis()
+    {
+        DistanceArgs args = new DistanceArgs
+        {
+            Distance = (int)transform.position.z
+        };
+        SendEvent(Consts.E_UpdataDis, args);
     }
 
 
@@ -161,7 +174,7 @@ public class PlayerMove : View
         {
             m_InputDir = InputDirection.Right;
         }
-        
+
     }
 
     //移动
@@ -290,7 +303,7 @@ public class PlayerMove : View
     //双倍金币
     public void HitMutiply()
     {
-        if(MutiplyCor!=null)
+        if (MutiplyCor != null)
         {
             StopCoroutine(MutiplyCor);
         }
@@ -372,7 +385,7 @@ public class PlayerMove : View
         {
             if (m_IsInvincible)
                 return;
-            other.gameObject.SendMessage("HitPlayer",transform.position);
+            other.gameObject.SendMessage("HitPlayer", transform.position);
             //减速
             HitObstacle();
         }
@@ -388,7 +401,7 @@ public class PlayerMove : View
         }
         else if (other.gameObject.tag == Tag.block) //撞到撞到集装箱，结束
         {
-            
+
             other.gameObject.SendMessage("HitPlayer", transform.position);
 
             //结束游戏 sendEvent
@@ -399,7 +412,7 @@ public class PlayerMove : View
         {
 
             other.gameObject.transform.parent.parent.SendMessage("HitPlayer", transform.position);
-            
+
             //结束游戏 sendEvent
             SendEvent(Consts.E_EndGame);
         }
@@ -407,7 +420,7 @@ public class PlayerMove : View
         {
 
             other.transform.parent.SendMessage("HitTrigger", SendMessageOptions.RequireReceiver);
-           
+
         }
 
     }

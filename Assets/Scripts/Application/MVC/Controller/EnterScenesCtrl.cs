@@ -26,6 +26,7 @@ public class EnterScenesCtrl : Controller
             case 4:
                 RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerMove>());
                 RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerAnim>());
+                RegisterView(GameObject.Find("Canvas").transform.Find("UIBoard").GetComponent<UIBoard>());
                 break;
             default:
                 break;

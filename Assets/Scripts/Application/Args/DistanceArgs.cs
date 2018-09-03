@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 场景切换的数据
+/// 距离参数
 /// </summary>
-
-public class ScenesArgs
+public  class DistanceArgs
 {
-    public int scenesIndex;
-	
+    public int Distance;
 }
