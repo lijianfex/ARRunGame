@@ -346,6 +346,7 @@ public class PlayerMove : View
     {
         //sendEvent 加时间
         print("Add time");
+        SendEvent(Consts.E_HitAddTime);
     }
 
     //无敌状态

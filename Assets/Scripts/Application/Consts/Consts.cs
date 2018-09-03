@@ -14,6 +14,7 @@ public static class Consts
     //UI相关事件
     public const string E_UpdateDis = "E_UpdateDis";//更新距离//DistanceArgs
     public const string E_UpdateCoin = "E_UpdateCoin";//更新金币//CoinArgs
+    public const string E_HitAddTime = "E_HitAddTime";//更新时间
 
 
 
