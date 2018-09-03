@@ -1262,7 +1262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 0
 --- !u!222 &335841526
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4094,7 +4094,6 @@ GameObject:
   - component: {fileID: 1070325038}
   - component: {fileID: 1070325035}
   - component: {fileID: 1070325037}
-  - component: {fileID: 1070325036}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -4138,13 +4137,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1070325036
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1070325034}
-  m_Enabled: 1
 --- !u!124 &1070325037
 Behaviour:
   m_ObjectHideFlags: 0

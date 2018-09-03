@@ -12,7 +12,8 @@ public static class Consts
     public const string E_EndGame = "E_EndGame";//结束游戏
 
     //UI相关事件
-    public const string E_UpdataDis = "E_UpdataDis";//更新距离//DistanceArgs
+    public const string E_UpdateDis = "E_UpdateDis";//更新距离//DistanceArgs
+    public const string E_UpdateCoin = "E_UpdateCoin";//更新金币//CoinArgs
 
 
 

@@ -72,16 +72,21 @@ public class UIBoard : View
     #region 事件回调
     public override void RegisterAttentionEvent()
     {
-        AttentionList.Add(Consts.E_UpdataDis);
+        AttentionList.Add(Consts.E_UpdateDis);
+        AttentionList.Add(Consts.E_UpdateCoin);
     }
 
     public override void HandleEvent(string name, object data = null)
     {
         switch (name)
         {
-            case Consts.E_UpdataDis:
-                DistanceArgs args = data as DistanceArgs;
-                Distance = args.Distance;
+            case Consts.E_UpdateDis:
+                DistanceArgs Disargs = data as DistanceArgs;
+                Distance = Disargs.Distance;
+                break;
+            case Consts.E_UpdateCoin:
+                CoinArgs c = data as CoinArgs;
+                Coin += c.CoinCount;
                 break;
             default:
                 break;

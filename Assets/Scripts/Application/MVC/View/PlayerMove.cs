@@ -108,7 +108,7 @@ public class PlayerMove : View
         {
             Distance = (int)transform.position.z
         };
-        SendEvent(Consts.E_UpdataDis, args);
+        SendEvent(Consts.E_UpdateDis, args);
     }
 
 
@@ -298,6 +298,11 @@ public class PlayerMove : View
     {
         //sendEvent 加金币数
         print("Eat coin");
+        CoinArgs args = new CoinArgs
+        {
+            CoinCount = m_isDoubleTime
+        };
+        SendEvent(Consts.E_UpdateCoin, args);
     }
 
     //双倍金币
