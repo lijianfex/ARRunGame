@@ -17,6 +17,7 @@ public class UIBoard : View
     #region 字段
     int m_Coin = 0;
     int m_Distance = 0;
+    int m_GoalCount = 0;
     float m_Curtime;
     GameModel m_GM;
 
@@ -64,7 +65,7 @@ public class UIBoard : View
         set
         {
             m_Distance = value;
-            Distance_txt.text = value.ToString()+"米";
+            Distance_txt.text = value.ToString() + "米";
         }
     }
 
@@ -77,23 +78,48 @@ public class UIBoard : View
 
         set
         {
-            if(value<=0)
+            if (value <= 0)
             {
                 value = 0;
                 SendEvent(Consts.E_EndGame);
             }
-            else if(value>StartTime)
+            else if (value > StartTime)
             {
                 value = StartTime;
             }
             m_Curtime = value;
-            Timer_txt.text = value.ToString("f2")+"s";
+            Timer_txt.text = value.ToString("f2") + "s";
             Timer_slider.value = value / StartTime;
+        }
+    }
+
+    public int GoalCount
+    {
+        get
+        {
+            return m_GoalCount;
+        }
+
+        set
+        {
+            m_GoalCount = value;
         }
     }
     #endregion
 
     #region 方法
+    //点击暂停按钮
+    public void OnPauseBtnClick()
+    {
+        PauseArgs e = new PauseArgs
+        {
+            coinCount = Coin,
+            distance = Distance,
+            score = Coin * 3 + Distance + GoalCount * 30
+        };
+        SendEvent(Consts.E_PauseGame, e);
+    }
+
     #endregion
 
     #region Unity回调
@@ -107,9 +133,9 @@ public class UIBoard : View
     {
         if (m_GM.IsPlay && !m_GM.IsPause)
         {
-           Curtime -= Time.deltaTime;
+            Curtime -= Time.deltaTime;
         }
-            
+
     }
     #endregion
 
@@ -141,7 +167,7 @@ public class UIBoard : View
         }
 
     }
-    
+
     #endregion
 
     #region 帮助方法

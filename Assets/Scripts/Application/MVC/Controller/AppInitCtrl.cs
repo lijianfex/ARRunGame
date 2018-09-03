@@ -14,6 +14,11 @@ public class AppInitCtrl : Controller
 
         RegisterController(Consts.E_EndGame, typeof(EndGameCtrl));
 
+        RegisterController(Consts.E_PauseGame, typeof(PauseGameCtrl));
+
+        RegisterController(Consts.E_ResumeGame, typeof(ResumeGameCtrl));
+
+
         //注册model
         RegisterModel(new GameModel());
     }

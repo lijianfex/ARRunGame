@@ -27,6 +27,9 @@ public class EnterScenesCtrl : Controller
                 RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerMove>());
                 RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerAnim>());
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIBoard").GetComponent<UIBoard>());
+                RegisterView(GameObject.Find("Canvas").transform.Find("UIPause").GetComponent<UIPause>());
+                RegisterView(GameObject.Find("Canvas").transform.Find("UIResume").GetComponent<UIResume>());
+
                 break;
             default:
                 break;

@@ -10,11 +10,16 @@ public static class Consts
     public const string E_ExitScene = "E_ExitScene"; //退出场景 //SenceArgs
     public const string E_EnterScene = "E_EnterScene";//进入场景//SenceArgs
     public const string E_EndGame = "E_EndGame";//结束游戏
+    public const string E_PauseGame = "E_PauseGame";//暂停游戏
+    public const string E_ResumeGame = "E_ResumeGame";//返回游戏
 
     //UI相关事件
     public const string E_UpdateDis = "E_UpdateDis";//更新距离//DistanceArgs
     public const string E_UpdateCoin = "E_UpdateCoin";//更新金币//CoinArgs
     public const string E_HitAddTime = "E_HitAddTime";//更新时间
+
+
+   
 
 
 
@@ -26,6 +31,8 @@ public static class Consts
     public const string V_PlayerAnim = "V_PlayerAnim";
 
     public const string V_UIBoard = "V_UIBoard";
+    public const string V_UIPause = "V_UIPause";
+    public const string V_UIResume = "V_UIResume";
 }
 
 //输入枚举
