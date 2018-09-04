@@ -420,6 +420,7 @@ public class PlayerMove : View
         {
             StopCoroutine(GoalCor);
         }
+        SendMessage("MessagePlayShot");//播放射门动画
         m_ShotTrail.SetActive(true);
         m_Ball.SetActive(false);
         GoalCor = MoveBall();
@@ -430,7 +431,7 @@ public class PlayerMove : View
     {
         while (true)
         {
-            m_ShotTrail.transform.Translate(transform.forward * 30 * Time.deltaTime);
+            m_ShotTrail.transform.Translate(transform.forward * 40 * Time.deltaTime);
             yield return 0;
         }
     }

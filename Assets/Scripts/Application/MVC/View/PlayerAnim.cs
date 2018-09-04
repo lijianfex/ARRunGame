@@ -82,6 +82,20 @@ public class PlayerAnim : View
         }
 
     }
+    void PlayShot()
+    {
+        anim.Play("Shoot01");
+        if (anim["Shoot01"].normalizedTime > 0.95)
+        {
+            PlayAnim = PlayRun;
+        }
+    }
+
+    public void MessagePlayShot()
+    {
+        PlayAnim = PlayShot;
+    }
+
 
     public void AnimManager(InputDirection dir)
     {
