@@ -100,8 +100,8 @@ public class PlayerMove : View
             yield return 0;
         }
     }
-    //UI更新
 
+    //UI更新
     void UpdateDis()
     {
         DistanceArgs args = new DistanceArgs
@@ -110,7 +110,6 @@ public class PlayerMove : View
         };
         SendEvent(Consts.E_UpdateDis, args);
     }
-
 
 
     void UpdatePostion()
@@ -319,6 +318,9 @@ public class PlayerMove : View
             case ItemType.ItemMagnet:
                 HitMagnet();
                 break;
+            case ItemType.ItemAddTime:
+                HitAddTime();
+                break;
             default:
                 break;
         }
@@ -338,7 +340,16 @@ public class PlayerMove : View
     IEnumerator MutiplyCoroTime()
     {
         m_isDoubleTime = 2;
-        yield return new WaitForSeconds(m_SkillTime);
+        float timer = m_SkillTime;
+        while(timer>0)
+        {
+            if(m_GM.IsPlay&&!m_GM.IsPause)
+            {
+                timer -= Time.deltaTime;
+            }
+            yield return 0;
+        }
+        //yield return new WaitForSeconds(m_SkillTime);
         m_isDoubleTime = 1;
     }
 
@@ -356,7 +367,16 @@ public class PlayerMove : View
     IEnumerator MagnetCoroTime()
     {
         MagnetCollider.enabled = true;
-        yield return new WaitForSeconds(m_SkillTime);
+        float timer = m_SkillTime;
+        while (timer > 0)
+        {
+            if (m_GM.IsPlay && !m_GM.IsPause)
+            {
+                timer -= Time.deltaTime;
+            }
+            yield return 0;
+        }
+        //yield return new WaitForSeconds(m_SkillTime);
         MagnetCollider.enabled = false;
     }
 
@@ -374,7 +394,16 @@ public class PlayerMove : View
     IEnumerator InvincibleCoroutine()
     {
         m_IsInvincible = true;
-        yield return new WaitForSeconds(m_SkillTime);
+        float timer = m_SkillTime;
+        while (timer > 0)
+        {
+            if (m_GM.IsPlay && !m_GM.IsPause)
+            {
+                timer -= Time.deltaTime;
+            }
+            yield return 0;
+        }
+        //yield return new WaitForSeconds(m_SkillTime);
         m_IsInvincible = false;
     }
 

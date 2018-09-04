@@ -31,7 +31,9 @@ public class AddTime : Item
         if(other.tag==Tag.player)
         {
             HitPlayer(other.transform.position);
-            other.SendMessage("HitAddTime", SendMessageOptions.RequireReceiver);
+            //other.SendMessage("HitAddTime", SendMessageOptions.RequireReceiver);
+            other.gameObject.SendMessage("HitItem", ItemType.ItemAddTime);
+
         }
     }
 

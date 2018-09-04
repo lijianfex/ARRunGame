@@ -57,5 +57,6 @@ public enum ItemType
 {
     ItemInvincible,
     ItemMultiply,
-    ItemMagnet
+    ItemMagnet,
+    ItemAddTime
 }
