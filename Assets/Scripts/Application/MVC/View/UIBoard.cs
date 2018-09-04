@@ -302,6 +302,12 @@ public class UIBoard : View
         Football_slider.value = 0f;
     }
 
+    public void OnFootBallBtnClick()
+    {
+        SendEvent(Consts.E_FootShotClick);
+        Football_slider.value = 0f;
+    }
+
     #endregion
 
     #region Unity回调
@@ -328,7 +334,7 @@ public class UIBoard : View
         AttentionList.Add(Consts.E_UpdateDis);
         AttentionList.Add(Consts.E_UpdateCoin);
         AttentionList.Add(Consts.E_HitAddTime);
-        AttentionList.Add(Consts.E_HitGoalTrigger);
+        AttentionList.Add(Consts.E_HitGoalTrigger);        
     }
 
     public override void HandleEvent(string name, object data = null)

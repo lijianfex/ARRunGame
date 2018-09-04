@@ -61,6 +61,13 @@ public class PlayerMove : View
     //无敌
     bool m_IsInvincible = false;
     IEnumerator InvincibleCor;//无敌协程
+
+
+    //射门相关
+    GameObject m_Ball;//球
+    GameObject m_ShotTrail;//射门特效
+
+    IEnumerator GoalCor;//射门协程
     #endregion
 
     #region 属性
@@ -309,8 +316,8 @@ public class PlayerMove : View
     {
         ItemArgs e = new ItemArgs
         {
-            hitCount=0,
-            itemtype=item
+            hitCount = 0,
+            itemtype = item
         };
         SendEvent(Consts.E_HitItem, e);
     }
@@ -330,9 +337,9 @@ public class PlayerMove : View
     {
         m_isDoubleTime = 2;
         float timer = m_SkillTime;
-        while(timer>0)
+        while (timer > 0)
         {
-            if(m_GM.IsPlay&&!m_GM.IsPause)
+            if (m_GM.IsPlay && !m_GM.IsPause)
             {
                 timer -= Time.deltaTime;
             }
@@ -404,6 +411,30 @@ public class PlayerMove : View
         SendEvent(Consts.E_HitAddTime);
     }
 
+
+    //------------------------
+    //射门相关
+    public void OnFootBallClick()
+    {
+        if (GoalCor != null)
+        {
+            StopCoroutine(GoalCor);
+        }
+        m_ShotTrail.SetActive(true);
+        m_Ball.SetActive(false);
+        GoalCor = MoveBall();
+        StartCoroutine(GoalCor);
+    }
+
+    IEnumerator MoveBall()
+    {
+        while (true)
+        {
+            m_ShotTrail.transform.Translate(transform.forward * 30 * Time.deltaTime);
+            yield return 0;
+        }
+    }
+
     #endregion
 
     #region Unity回调
@@ -413,8 +444,14 @@ public class PlayerMove : View
         m_GM = GetModel<GameModel>();
         m_SkillTime = m_GM.SkillTime;
 
+        //获取吸铁石检测器
         MagnetCollider = GetComponentInChildren<SphereCollider>();
         MagnetCollider.enabled = false;
+
+        //射门
+        m_Ball = transform.Find("Ball").gameObject;
+        m_ShotTrail = transform.Find("Effect").transform.Find("ShotTrail").gameObject;
+        m_ShotTrail.SetActive(false);
     }
 
     private void Start()
@@ -465,7 +502,7 @@ public class PlayerMove : View
             other.transform.parent.SendMessage("HitTrigger", SendMessageOptions.RequireReceiver);
 
         }
-        else if(other.gameObject.tag==Tag.beforeGoalTrigger)//碰到球门前的触发器
+        else if (other.gameObject.tag == Tag.beforeGoalTrigger)//碰到球门前的触发器
         {
             //可以射球，并且开始倒计时
             SendEvent(Consts.E_HitGoalTrigger);
@@ -477,9 +514,21 @@ public class PlayerMove : View
     #endregion
 
     #region 事件回调
+    public override void RegisterAttentionEvent()
+    {
+        AttentionList.Add(Consts.E_FootShotClick);
+    }
+
     public override void HandleEvent(string name, object data = null)
     {
-
+        switch (name)
+        {
+            case Consts.E_FootShotClick:
+                OnFootBallClick();
+                break;
+            default:
+                break;
+        }
     }
     #endregion
 

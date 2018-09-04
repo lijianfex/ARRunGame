@@ -14,6 +14,7 @@ public static class Consts
     public const string E_ResumeGame = "E_ResumeGame";//返回游戏
 
     public const string E_HitItem = "E_HitItem";//更新道具
+    
 
     //UI相关事件
     public const string E_UpdateDis = "E_UpdateDis";//更新距离//DistanceArgs
@@ -21,6 +22,7 @@ public static class Consts
     public const string E_HitAddTime = "E_HitAddTime";//更新时间
 
     public const string E_HitGoalTrigger = "E_HitGoalTrigger";//可以射门
+    public const string E_FootShotClick = "E_FootShotClick";//点击射门
 
 
 
