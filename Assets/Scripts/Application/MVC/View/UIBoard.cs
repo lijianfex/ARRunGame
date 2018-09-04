@@ -19,19 +19,29 @@ public class UIBoard : View
     int m_Distance = 0;
     int m_GoalCount = 0;
     float m_Curtime;
+    float m_SkillTime;
     GameModel m_GM;
 
 
-    public Text Coin_txt;
-    public Text Distance_txt;
+    public Text Coin_txt;//金币
+    public Text Distance_txt;//距离
 
-    public Text Timer_txt;
+    public Text Timer_txt;//时间
+    public Slider Timer_slider;//时间slider
 
-    public Slider Timer_slider;
+    public Text MagnetTime_txt;
+    public Text MultiplyTime_txt;
+    public Text InvincibleTime_txt;
 
     public Button Magnet_btn;
     public Button Multiply_btn;
     public Button Invincible_btn;
+
+    IEnumerator MutiplyCor; //双倍金币协程
+    
+    IEnumerator MagnetCor;//吸铁石协程
+
+    IEnumerator InvincibleCor;//无敌协程
 
 
     #endregion
@@ -147,13 +157,132 @@ public class UIBoard : View
     }
 
 
+    //双倍金币
+    public void HitMutiply()
+    {
+        if (MutiplyCor != null)
+        {
+            StopCoroutine(MutiplyCor);
+        }
+        MutiplyCor = MutiplyCoroTime();
+        StartCoroutine(MutiplyCor);
+    }
+
+    IEnumerator MutiplyCoroTime()
+    {
+        
+        float timer = m_SkillTime;
+        MultiplyTime_txt.transform.parent.gameObject.SetActive(true);
+        while (timer > 0)
+        {
+            if (m_GM.IsPlay && !m_GM.IsPause)
+            {
+                timer -= Time.deltaTime;
+                MultiplyTime_txt.text = GetTime(timer);
+            }
+            yield return 0;
+        }
+        MultiplyTime_txt.transform.parent.gameObject.SetActive(false);
+
+    }
+
+    //吸铁石
+    public void HitMagnet()
+    {
+        if (MagnetCor != null)
+        {
+            StopCoroutine(MagnetCor);
+        }
+        MagnetCor = MagnetCoroTime();
+        StartCoroutine(MagnetCor);
+    }
+
+    IEnumerator MagnetCoroTime()
+    {
+
+        float timer = m_SkillTime;
+        MagnetTime_txt.transform.parent.gameObject.SetActive(true);
+        while (timer > 0)
+        {
+            if (m_GM.IsPlay && !m_GM.IsPause)
+            {
+                timer -= Time.deltaTime;
+                MagnetTime_txt.text = GetTime(timer);
+            }
+            yield return 0;
+        }
+        MagnetTime_txt.transform.parent.gameObject.SetActive(false);
+
+    }
+
+    //无敌状态
+    public void HitInvincible()
+    {
+        if (InvincibleCor != null)
+        {
+            StopCoroutine(InvincibleCor);
+        }
+        InvincibleCor = InvincibleCoroutine();
+        StartCoroutine(InvincibleCor);
+    }
+
+    IEnumerator InvincibleCoroutine()
+    {
+
+        float timer = m_SkillTime;
+        InvincibleTime_txt.transform.parent.gameObject.SetActive(true);
+        while (timer > 0)
+        {
+            if (m_GM.IsPlay && !m_GM.IsPause)
+            {
+                timer -= Time.deltaTime;
+                InvincibleTime_txt.text = GetTime(timer);
+            }
+            yield return 0;
+        }
+        InvincibleTime_txt.transform.parent.gameObject.SetActive(false);
+    }
+
+
+    //按钮点击吸铁石
+    public void OnMagnetBtnClick()
+    {
+        ItemArgs e = new ItemArgs
+        {
+            hitCount = 1,
+            itemtype = ItemType.ItemMagnet
+        };
+        SendEvent(Consts.E_HitItem, e);
+    }
+    //按钮点击加倍金币
+    public void OnMultiplyBtnClick()
+    {
+        ItemArgs e = new ItemArgs
+        {
+            hitCount = 1,
+            itemtype = ItemType.ItemMultiply
+        };
+        SendEvent(Consts.E_HitItem, e);
+    }
+    //按钮点击无敌口哨
+    public void OnInvincibleBtnClick()
+    {
+        ItemArgs e = new ItemArgs
+        {
+            hitCount = 1,
+            itemtype = ItemType.ItemInvincible
+        };
+        SendEvent(Consts.E_HitItem, e);
+    }
     #endregion
 
     #region Unity回调
     private void Awake()
     {
         Curtime = StartTime;
-        m_GM = GetModel<GameModel>();        
+        m_GM = GetModel<GameModel>();
+        UpdateUI();
+        m_SkillTime = m_GM.SkillTime;
     }
 
     private void Update()
@@ -162,7 +291,6 @@ public class UIBoard : View
         {
             Curtime -= Time.deltaTime;            
         }
-
     }
     #endregion
 
@@ -198,5 +326,9 @@ public class UIBoard : View
     #endregion
 
     #region 帮助方法
+    string GetTime(float time)
+    {
+        return ((int)time+1).ToString();
+    }
     #endregion
 }

@@ -18,6 +18,8 @@ public class AppInitCtrl : Controller
 
         RegisterController(Consts.E_ResumeGame, typeof(ResumeGameCtrl));
 
+        RegisterController(Consts.E_HitItem, typeof(HitItemCtrl));
+
 
         //注册model
         RegisterModel(new GameModel());

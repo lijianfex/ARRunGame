@@ -307,23 +307,12 @@ public class PlayerMove : View
     //处理碰到奖励物品
     public void HitItem(ItemType item)
     {
-        switch (item)
+        ItemArgs e = new ItemArgs
         {
-            case ItemType.ItemInvincible:
-                HitInvincible();
-                break;
-            case ItemType.ItemMultiply:
-                HitMutiply();
-                break;
-            case ItemType.ItemMagnet:
-                HitMagnet();
-                break;
-            case ItemType.ItemAddTime:
-                HitAddTime();
-                break;
-            default:
-                break;
-        }
+            hitCount=0,
+            itemtype=item
+        };
+        SendEvent(Consts.E_HitItem, e);
     }
 
     //双倍金币

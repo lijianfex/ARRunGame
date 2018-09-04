@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 71982583}
   - component: {fileID: 71982582}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MagnetTime_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 458284577}
   - component: {fileID: 458284576}
   m_Layer: 5
-  m_Name: Double
+  m_Name: Multiply
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1805,7 +1805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39, y: 750.5}
+  m_AnchoredPosition: {x: -78, y: 750.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458284576
@@ -2557,7 +2557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 88, y: 748}
+  m_AnchoredPosition: {x: 49, y: 748}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621213326
@@ -3422,6 +3422,10 @@ Prefab:
     - target: {fileID: 4551916672533556, guid: 4963b8e9f55018845b8726df0908a569, type: 2}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234527784020986, guid: 4963b8e9f55018845b8726df0908a569, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4963b8e9f55018845b8726df0908a569, type: 2}
@@ -4758,11 +4762,11 @@ RectTransform:
   - {fileID: 111482723}
   - {fileID: 420258590}
   m_Father: {fileID: 1711751939}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -410, y: -603}
+  m_AnchoredPosition: {x: -410, y: -213}
   m_SizeDelta: {x: 164.9, y: 164.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143638352
@@ -4803,7 +4807,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1143638353}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1711751942}
+        m_MethodName: OnMagnetBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1143638353
@@ -5102,7 +5117,7 @@ GameObject:
   - component: {fileID: 1302566272}
   - component: {fileID: 1302566271}
   m_Layer: 5
-  m_Name: Text
+  m_Name: InvincibleTime_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5583,7 +5598,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1450463269}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1711751942}
+        m_MethodName: OnMultiplyBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1450463269
@@ -5662,7 +5688,7 @@ GameObject:
   - component: {fileID: 1516664581}
   - component: {fileID: 1516664580}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MultiplyTime_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5809,6 +5835,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1878211880147762, guid: 25f080f3a54f11748b32ac2acc0a1272, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25f080f3a54f11748b32ac2acc0a1272, type: 2}
   m_IsPrefabParent: 0
@@ -5850,6 +5880,10 @@ Prefab:
     - target: {fileID: 4275328103044162, guid: 58d71f16686a3a14faba79d7074aa410, type: 2}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771464089958228, guid: 58d71f16686a3a14faba79d7074aa410, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d71f16686a3a14faba79d7074aa410, type: 2}
@@ -6095,7 +6129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -167, y: 753}
+  m_AnchoredPosition: {x: -206, y: 753}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1594075349
@@ -6210,9 +6244,9 @@ RectTransform:
   - {fileID: 1770561280}
   - {fileID: 1080739147}
   - {fileID: 902553415}
-  - {fileID: 2024545872}
-  - {fileID: 1450463267}
   - {fileID: 1143638351}
+  - {fileID: 1450463267}
+  - {fileID: 2024545872}
   - {fileID: 1594075348}
   - {fileID: 458284575}
   - {fileID: 621213325}
@@ -6273,6 +6307,9 @@ MonoBehaviour:
   Distance_txt: {fileID: 212310187}
   Timer_txt: {fileID: 151268628}
   Timer_slider: {fileID: 341415364}
+  MagnetTime_txt: {fileID: 71982583}
+  MultiplyTime_txt: {fileID: 1516664581}
+  InvincibleTime_txt: {fileID: 1302566272}
   Magnet_btn: {fileID: 1143638352}
   Multiply_btn: {fileID: 1450463268}
   Invincible_btn: {fileID: 2024545873}
@@ -8148,11 +8185,11 @@ RectTransform:
   - {fileID: 578835055}
   - {fileID: 1183105884}
   m_Father: {fileID: 1711751939}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -410, y: -213}
+  m_AnchoredPosition: {x: -416, y: -603.65}
   m_SizeDelta: {x: 164.9, y: 164.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024545873
@@ -8193,7 +8230,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2024545874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1711751942}
+        m_MethodName: OnInvincibleBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2024545874
@@ -8487,7 +8535,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1293164240787230, guid: 034376683ea886e46ab18907f3d2f643, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 034376683ea886e46ab18907f3d2f643, type: 2}
