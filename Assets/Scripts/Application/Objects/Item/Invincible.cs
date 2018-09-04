@@ -33,7 +33,8 @@ public class Invincible : Item {
         if(other.tag==Tag.player)
         {
             HitPlayer(other.transform.position);
-            other.SendMessage("HitInvincible", SendMessageOptions.RequireReceiver);
+            //other.SendMessage("HitInvincible", SendMessageOptions.RequireReceiver);
+            other.gameObject.SendMessage("HitItem", ItemType.ItemInvincible);
         }
     }
 }

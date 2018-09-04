@@ -43,7 +43,9 @@ public class Mutiply : Item
         if (other.tag == Tag.player)
         {
             HitPlayer(other.transform.position);
-            other.gameObject.SendMessage("HitMutiply", SendMessageOptions.RequireReceiver);
+            //other.gameObject.SendMessage("HitMutiply", SendMessageOptions.RequireReceiver);
+            other.gameObject.SendMessage("HitItem", ItemType.ItemMultiply);
+
         }
     }
 

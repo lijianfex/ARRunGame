@@ -31,7 +31,9 @@ public class Magnet : Item {
         if (other.tag == Tag.player)
         {
             HitPlayer(other.transform.position);
-            other.gameObject.SendMessage("HitMagnet", SendMessageOptions.RequireReceiver);
+            //other.gameObject.SendMessage("HitMagnet", SendMessageOptions.RequireReceiver);
+            other.gameObject.SendMessage("HitItem",ItemType.ItemMagnet);
+
         }
     }
 }

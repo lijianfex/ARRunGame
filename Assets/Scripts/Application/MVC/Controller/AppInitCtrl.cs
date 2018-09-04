@@ -21,5 +21,10 @@ public class AppInitCtrl : Controller
 
         //注册model
         RegisterModel(new GameModel());
+        //初始化
+        GameModel gm = GetModel<GameModel>();
+        gm.Init();
+
+
     }
 }

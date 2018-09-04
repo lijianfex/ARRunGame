@@ -305,6 +305,25 @@ public class PlayerMove : View
         SendEvent(Consts.E_UpdateCoin, args);
     }
 
+    //处理碰到奖励物品
+    public void HitItem(ItemType item)
+    {
+        switch (item)
+        {
+            case ItemType.ItemInvincible:
+                HitInvincible();
+                break;
+            case ItemType.ItemMultiply:
+                HitMutiply();
+                break;
+            case ItemType.ItemMagnet:
+                HitMagnet();
+                break;
+            default:
+                break;
+        }
+    }
+
     //双倍金币
     public void HitMutiply()
     {
@@ -341,14 +360,6 @@ public class PlayerMove : View
         MagnetCollider.enabled = false;
     }
 
-    //加时间
-    public void HitAddTime()
-    {
-        //sendEvent 加时间
-        print("Add time");
-        SendEvent(Consts.E_HitAddTime);
-    }
-
     //无敌状态
     public void HitInvincible()
     {
@@ -365,6 +376,14 @@ public class PlayerMove : View
         m_IsInvincible = true;
         yield return new WaitForSeconds(m_SkillTime);
         m_IsInvincible = false;
+    }
+
+    //加时间
+    public void HitAddTime()
+    {
+        //sendEvent 加时间
+        print("Add time");
+        SendEvent(Consts.E_HitAddTime);
     }
 
     #endregion
@@ -430,6 +449,7 @@ public class PlayerMove : View
         }
 
     }
+
 
     #endregion
 

@@ -404,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &78383501
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1621,7 +1621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &420258590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4922,7 +4922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1183105884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5519,7 +5519,7 @@ GameObject:
   - component: {fileID: 1450463269}
   - component: {fileID: 1450463268}
   m_Layer: 5
-  m_Name: Double_btn
+  m_Name: Multiply_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6273,6 +6273,9 @@ MonoBehaviour:
   Distance_txt: {fileID: 212310187}
   Timer_txt: {fileID: 151268628}
   Timer_slider: {fileID: 341415364}
+  Magnet_btn: {fileID: 1143638352}
+  Multiply_btn: {fileID: 1450463268}
+  Invincible_btn: {fileID: 2024545873}
 --- !u!1 &1712622379
 GameObject:
   m_ObjectHideFlags: 0

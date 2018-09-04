@@ -29,6 +29,10 @@ public class UIBoard : View
 
     public Slider Timer_slider;
 
+    public Button Magnet_btn;
+    public Button Multiply_btn;
+    public Button Invincible_btn;
+
 
     #endregion
 
@@ -120,20 +124,43 @@ public class UIBoard : View
         SendEvent(Consts.E_PauseGame, e);
     }
 
+    //更新UI
+    public void UpdateUI()
+    {
+        ShowOrHide(m_GM.Magnet, Magnet_btn);
+        ShowOrHide(m_GM.Multiply, Multiply_btn);
+        ShowOrHide(m_GM.Invincible, Invincible_btn);
+    }
+
+    void ShowOrHide(int i,Button btn)
+    {
+        if(i>0)
+        {
+            btn.interactable = true;
+            btn.transform.Find("Mask").gameObject.SetActive(false);
+        }
+        else
+        {
+            btn.interactable = false;
+            btn.transform.Find("Mask").gameObject.SetActive(true);
+        }
+    }
+
+
     #endregion
 
     #region Unity回调
     private void Awake()
     {
         Curtime = StartTime;
-        m_GM = GetModel<GameModel>();
+        m_GM = GetModel<GameModel>();        
     }
 
     private void Update()
     {
         if (m_GM.IsPlay && !m_GM.IsPause)
         {
-            Curtime -= Time.deltaTime;
+            Curtime -= Time.deltaTime;            
         }
 
     }

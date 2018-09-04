@@ -51,3 +51,11 @@ public enum RunWay
     Middle,
     Right
 }
+
+//奖励物品类型
+public enum ItemType
+{
+    ItemInvincible,
+    ItemMultiply,
+    ItemMagnet
+}
