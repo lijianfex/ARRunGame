@@ -20,8 +20,10 @@ public static class Consts
     public const string E_UpdateCoin = "E_UpdateCoin";//更新金币//CoinArgs
     public const string E_HitAddTime = "E_HitAddTime";//更新时间
 
-    
-   
+    public const string E_HitGoalTrigger = "E_HitGoalTrigger";//可以射门
+
+
+
 
 
 

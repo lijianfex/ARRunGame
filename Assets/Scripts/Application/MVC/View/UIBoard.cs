@@ -29,13 +29,19 @@ public class UIBoard : View
     public Text Timer_txt;//时间
     public Slider Timer_slider;//时间slider
 
+    //技能时间
     public Text MagnetTime_txt;
     public Text MultiplyTime_txt;
     public Text InvincibleTime_txt;
 
+    //技能按钮
     public Button Magnet_btn;
     public Button Multiply_btn;
     public Button Invincible_btn;
+
+    //射门
+    public Slider Football_slider;
+    public Button Football_btn;
 
     IEnumerator MutiplyCor; //双倍金币协程
     
@@ -274,6 +280,28 @@ public class UIBoard : View
         };
         SendEvent(Consts.E_HitItem, e);
     }
+
+    //射门
+    void ShowGoalClick()
+    {
+        StartCoroutine(ShotGoalCor());
+    }
+
+    IEnumerator ShotGoalCor()
+    {
+        Football_btn.interactable = true;
+        Football_slider.value = 1f;
+        float timer = 1f;
+        while(timer>0)
+        {
+            timer -= Time.deltaTime;
+            Football_slider.value = timer / 1f;
+            yield return 0;
+        }
+        Football_btn.interactable = false;
+        Football_slider.value = 0f;
+    }
+
     #endregion
 
     #region Unity回调
@@ -300,6 +328,7 @@ public class UIBoard : View
         AttentionList.Add(Consts.E_UpdateDis);
         AttentionList.Add(Consts.E_UpdateCoin);
         AttentionList.Add(Consts.E_HitAddTime);
+        AttentionList.Add(Consts.E_HitGoalTrigger);
     }
 
     public override void HandleEvent(string name, object data = null)
@@ -317,6 +346,9 @@ public class UIBoard : View
             case Consts.E_HitAddTime:
                 Curtime += 10f;
                 break;
+            case Consts.E_HitGoalTrigger:
+                ShowGoalClick();
+                break;
             default:
                 break;
         }
@@ -326,9 +358,13 @@ public class UIBoard : View
     #endregion
 
     #region 帮助方法
+    //将时间转为string
     string GetTime(float time)
     {
         return ((int)time+1).ToString();
     }
+
+   
+
     #endregion
 }

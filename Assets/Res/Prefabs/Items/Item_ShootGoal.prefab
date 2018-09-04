@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 11100004}
   - component: {fileID: 54327790249895482}
   - component: {fileID: 65948919935059188}
-  - component: {fileID: 114687780654954490}
   m_Layer: 0
   m_Name: QiuMen
   m_TagString: Untagged
@@ -179,7 +178,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400022}
   - component: {fileID: 13600000}
-  - component: {fileID: 114386538492443840}
   m_Layer: 0
   m_Name: goalkeeper
   m_TagString: Goalkeeper
@@ -1863,30 +1861,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.31, y: 5.9, z: 0.53}
   m_Center: {x: 0, y: 2.58, z: 1.36}
---- !u!114 &114386538492443840
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399d97f2af979a64983e7d084296dadc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flySpeed: 4
---- !u!114 &114687780654954490
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24726fca126825545abfefa79b8942ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  net: {fileID: 1199133072973662, guid: 4bc6ead621f25164ea85b897a439b712, type: 2}
 --- !u!114 &114884438624483224
 MonoBehaviour:
   m_ObjectHideFlags: 1

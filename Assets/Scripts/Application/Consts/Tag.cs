@@ -12,9 +12,12 @@ public static class Tag
     public const string block = "Block";//集装箱
     public const string smallBlock = "SmallBlock";//集装箱前部
 
-    public const string carBeforeTrigger = "BeforeTrigger"; //车前部
+    public const string carBeforeTrigger = "BeforeTrigger"; //车前部的触发器
 
     public const string magnetCollider = "MagnetCollider"; //吸铁石
+
+    //射门
+    public const string beforeGoalTrigger = "BeforeGoalTrigger";//球门前的触发器
 
 
 }

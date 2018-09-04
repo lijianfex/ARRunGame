@@ -465,6 +465,11 @@ public class PlayerMove : View
             other.transform.parent.SendMessage("HitTrigger", SendMessageOptions.RequireReceiver);
 
         }
+        else if(other.gameObject.tag==Tag.beforeGoalTrigger)//碰到球门前的触发器
+        {
+            //可以射球，并且开始倒计时
+            SendEvent(Consts.E_HitGoalTrigger);
+        }
 
     }
 
