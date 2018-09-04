@@ -18,6 +18,7 @@ public static class Tag
 
     //射门
     public const string beforeGoalTrigger = "BeforeGoalTrigger";//球门前的触发器
+    public const string ball = "Ball";//球
 
 
 }

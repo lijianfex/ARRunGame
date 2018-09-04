@@ -65,9 +65,12 @@ public class PlayerMove : View
 
     //射门相关
     GameObject m_Ball;//球
-    GameObject m_ShotTrail;//射门特效
+    GameObject m_ShotTrail;//射门的球
 
+    Vector3 m_OldTrailPos;//特效原来的位置
     IEnumerator GoalCor;//射门协程
+    bool m_isGoalBall = false;//是否进球
+    
     #endregion
 
     #region 属性
@@ -436,6 +439,28 @@ public class PlayerMove : View
         }
     }
 
+    //球进了
+    public void HitBallDoor()
+    {
+        //停止协程
+        StopCoroutine(GoalCor);
+
+        //把球归位
+        m_ShotTrail.transform.localPosition = m_OldTrailPos;
+        m_ShotTrail.SetActive(false);
+        m_Ball.SetActive(true);
+
+        //是否进球
+        m_isGoalBall = true;
+
+        //特效
+        Game.Instance.Pool.Spawn("FX_GOAL", m_ShotTrail.transform.parent);
+
+        //声音
+        Game.Instance.Sound.PlayEffect("Se_UI_Goal");
+
+    }
+
     #endregion
 
     #region Unity回调
@@ -452,6 +477,7 @@ public class PlayerMove : View
         //射门
         m_Ball = transform.Find("Ball").gameObject;
         m_ShotTrail = transform.Find("Effect").transform.Find("ShotTrail").gameObject;
+        m_OldTrailPos = m_ShotTrail.transform.localPosition;
         m_ShotTrail.SetActive(false);
     }
 
