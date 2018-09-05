@@ -15,6 +15,9 @@ public class GameModel : Model
     bool isPause=false;//是否暂停
     int skillTime = 5;//技能时间
 
+    int m_Level;
+    int m_Exp;
+
     int m_Magnet;
     int m_Multiply;
     int m_Invincible;
@@ -106,6 +109,41 @@ public class GameModel : Model
             m_Invincible = value;
         }
     }
+
+    public int Level
+    {
+        get
+        {
+            return m_Level;
+        }
+
+        set
+        {
+            m_Level = value;
+        }
+    }
+
+    public int Exp
+    {
+        get
+        {
+            return m_Exp;
+        }
+
+        set
+        {
+            while(value > 10 + (Level * 3))
+            {
+                //消耗经验
+                value -= 10 + (Level * 3);
+                //升级
+                Level++;
+            }
+            m_Exp = value;
+        }
+    }
+
+
     #endregion
 
     #region 方法
@@ -116,6 +154,8 @@ public class GameModel : Model
         m_Multiply = 0;
         m_Invincible = 0;
         skillTime = 5;
+        m_Exp = 0;
+        m_Level = 1;        
     }
 
     #endregion

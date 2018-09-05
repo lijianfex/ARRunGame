@@ -136,7 +136,7 @@ public class UIBoard : View
         {
             coinCount = Coin,
             distance = Distance,
-            score = Coin * 3 + Distance + GoalCount * 30
+            score = Coin + Distance * (GoalCount + 1)
         };
         SendEvent(Consts.E_PauseGame, e);//通知PauseGameCtrl
     }

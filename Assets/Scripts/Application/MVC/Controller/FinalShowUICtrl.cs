@@ -12,9 +12,17 @@ public class FinalShowUICtrl : Controller
         UIBoard board = GetView<UIBoard>();
         UIFinalScore finalScore = GetView<UIFinalScore>();
         UIDead dead = GetView<UIDead>();
+
+        GameModel gm = GetModel<GameModel>();
+
         board.Hide();
         dead.Hide();
         finalScore.Show();
+
+        //1.更新Exp
+        gm.Exp += board.Coin + board.Distance * (board.GoalCount + 1);
+        //2.更新UI
+        finalScore.UpdateUI(board.Distance, board.Coin, board.GoalCount,gm.Exp,gm.Level);
 
     }
 }
