@@ -70,7 +70,7 @@ public class PlayerMove : View
     Vector3 m_OldTrailPos;//特效原来的位置
     IEnumerator GoalCor;//射门协程
     bool m_isGoalBall = false;//是否进球
-    
+
     #endregion
 
     #region 属性
@@ -477,7 +477,7 @@ public class PlayerMove : View
         //射门
         m_Ball = transform.Find("Ball").gameObject;
         m_ShotTrail = transform.Find("Effect").transform.Find("ShotTrail").gameObject;
-        m_OldTrailPos = m_ShotTrail.transform.localPosition;
+        m_OldTrailPos = m_ShotTrail.transform.localPosition;//记录球的原来的位置
         m_ShotTrail.SetActive(false);
     }
 
@@ -488,7 +488,7 @@ public class PlayerMove : View
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == Tag.smallFence)
+        if (other.gameObject.tag == Tag.smallFence)//小栅栏
         {
             if (m_IsInvincible)
                 return;
@@ -496,7 +496,7 @@ public class PlayerMove : View
             //减速
             HitObstacle();
         }
-        else if (other.gameObject.tag == Tag.bigFence)
+        else if (other.gameObject.tag == Tag.bigFence)//大栅栏
         {
             if (m_IsInvincible)
                 return;
@@ -533,6 +533,14 @@ public class PlayerMove : View
         {
             //可以射球，并且开始倒计时
             SendEvent(Consts.E_HitGoalTrigger);
+        }
+        else if (other.gameObject.tag == Tag.goalKeeper)//撞到守门员
+        {
+            //减速
+            HitObstacle();
+            print("1111");
+            //守门员飞走
+            other.transform.parent.parent.parent.SendMessage("HitGoalKeeper", SendMessageOptions.RequireReceiver);
         }
 
     }

@@ -20,5 +20,7 @@ public static class Tag
     public const string beforeGoalTrigger = "BeforeGoalTrigger";//球门前的触发器
     public const string ball = "Ball";//球
 
+    public const string goalKeeper = "GoalKeeper";//守门员
+
 
 }

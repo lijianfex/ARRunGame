@@ -14,6 +14,7 @@ public class BallDoor : MonoBehaviour {
         if(other.tag==Tag.ball)
         {
             other.gameObject.transform.parent.parent.SendMessage("HitBallDoor", SendMessageOptions.RequireReceiver);
+            gameObject.transform.parent.parent.SendMessage("ShotGoal", SendMessageOptions.RequireReceiver);
         }
     }
 }
