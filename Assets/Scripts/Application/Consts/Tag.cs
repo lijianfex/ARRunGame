@@ -22,5 +22,7 @@ public static class Tag
 
     public const string goalKeeper = "GoalKeeper";//守门员
 
+    public const string ballDoor = "BallDoor";//球门
+
 
 }

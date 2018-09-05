@@ -537,10 +537,24 @@ public class PlayerMove : View
         else if (other.gameObject.tag == Tag.goalKeeper)//撞到守门员
         {
             //减速
-            HitObstacle();
-            print("1111");
+            HitObstacle();           
             //守门员飞走
             other.transform.parent.parent.parent.SendMessage("HitGoalKeeper", SendMessageOptions.RequireReceiver);
+        }
+        else if(other.gameObject.tag==Tag.ballDoor)
+        {
+            if(m_isGoalBall)
+            {
+                m_isGoalBall = false;
+                return;
+            }
+            //减速
+            HitObstacle();
+
+            //球网特效粘在主角
+            Game.Instance.Pool.Spawn("FX_QiuWang", m_ShotTrail.transform.parent);
+
+            other.transform.parent.parent.SendMessage("HitDoor", nowRunWay);
         }
 
     }
