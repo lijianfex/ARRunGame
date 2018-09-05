@@ -936,7 +936,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1000\u7C73"
+  m_Text: "0\u7C73"
 --- !u!222 &212310188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3806,7 +3806,7 @@ GameObject:
   - component: {fileID: 1002833564}
   - component: {fileID: 1002833563}
   m_Layer: 5
-  m_Name: backGame_btn
+  m_Name: Bribery_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3868,7 +3868,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1002833564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1006498867}
+        m_MethodName: OnBriberyBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1002833564
@@ -3986,6 +3997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttentionList: []
+  BriberyCoin_txt: {fileID: 1806666192}
 --- !u!1 &1009726067
 GameObject:
   m_ObjectHideFlags: 0
@@ -10714,7 +10726,7 @@ GameObject:
   - component: {fileID: 1806666192}
   - component: {fileID: 1806666191}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BriberyCoin_txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -22,6 +22,12 @@ public class AppInitCtrl : Controller
 
         RegisterController(Consts.E_FinalShowUI, typeof(FinalShowUICtrl));
 
+        RegisterController(Consts.E_BriberyClick, typeof(BriberyCtrl));
+
+        RegisterController(Consts.E_ContinueGame, typeof(ContinueGameCtrl));
+
+
+
 
 
         //注册model

@@ -16,6 +16,12 @@ public static class Consts
     public const string E_HitItem = "E_HitItem";//更新道具
     //结算事件
     public const string E_FinalShowUI = "E_FinalShowUI";
+    //贿赂
+    public const string E_BriberyClick = "E_BriberyClick";
+
+    //继续游戏
+    public const string E_ContinueGame = "E_ContinueGame";
+
 
     //UI相关事件
     public const string E_UpdateDis = "E_UpdateDis";//更新距离//DistanceArgs

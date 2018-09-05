@@ -49,9 +49,7 @@ public class UIResume : View
         Hide();
 
         //TODO
-        GameModel gameModel = GetModel<GameModel>();
-        gameModel.IsPause = false;
-        gameModel.IsPlay = true;
+        SendEvent(Consts.E_ContinueGame);//---->ContinueGameCtrl
     }
 
     public void Hide()

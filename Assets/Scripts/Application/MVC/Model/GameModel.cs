@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameModel : Model
 {
     #region 常量
+    const int InitCoin = 1000;
     #endregion
 
     #region 事件
@@ -21,6 +22,8 @@ public class GameModel : Model
     int m_Magnet;
     int m_Multiply;
     int m_Invincible;
+
+    int m_Coin;
     #endregion
 
     #region 属性
@@ -143,6 +146,19 @@ public class GameModel : Model
         }
     }
 
+    public int Coin
+    {
+        get
+        {
+            return m_Coin;
+        }
+
+        set
+        {
+            m_Coin = value;
+        }
+    }
+
 
     #endregion
 
@@ -155,8 +171,20 @@ public class GameModel : Model
         m_Invincible = 0;
         skillTime = 5;
         m_Exp = 0;
-        m_Level = 1;        
+        m_Level = 1;
+        m_Coin = InitCoin;
     }
+
+    public bool GetMoney(int count)
+    {
+        if(count<=Coin)
+        {
+            Coin -= count;
+            return true;
+        }
+        return false;
+    }
+        
 
     #endregion
 
