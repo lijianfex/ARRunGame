@@ -101,7 +101,8 @@ public class UIBoard : View
             if (value <= 0)
             {
                 value = 0;
-                SendEvent(Consts.E_EndGame);
+                SendEvent(Consts.E_EndGame);//--->EndGameCtrl,结束游戏
+                Game.Instance.Sound.PlayEffect("Se_UI_End");
             }
             else if (value > StartTime)
             {
@@ -309,6 +310,16 @@ public class UIBoard : View
     {
         SendEvent(Consts.E_FootShotClick);//通知PlayerMove，射球
         Football_slider.value = 0f;
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
     }
 
     #endregion

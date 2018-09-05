@@ -1163,6 +1163,7 @@ GameObject:
   - component: {fileID: 276913027}
   - component: {fileID: 276913029}
   - component: {fileID: 276913028}
+  - component: {fileID: 276913030}
   m_Layer: 5
   m_Name: UIFinalScore
   m_TagString: Untagged
@@ -1222,6 +1223,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 276913026}
+--- !u!114 &276913030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276913026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0746ec211dd686946a1e1d7c9442f46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttentionList: []
 --- !u!1 &284502797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,6 +3878,7 @@ GameObject:
   - component: {fileID: 1006498864}
   - component: {fileID: 1006498866}
   - component: {fileID: 1006498865}
+  - component: {fileID: 1006498867}
   m_Layer: 5
   m_Name: UIDead
   m_TagString: Untagged
@@ -3924,6 +3938,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1006498863}
+--- !u!114 &1006498867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1006498863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b729b4214f7b445a4f7f66965af19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttentionList: []
 --- !u!1 &1009726067
 GameObject:
   m_ObjectHideFlags: 0
@@ -8596,7 +8622,7 @@ GameObject:
   - component: {fileID: 2076860276}
   - component: {fileID: 2076860275}
   m_Layer: 5
-  m_Name: Cancel_btn
+  m_Name: Close_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8658,7 +8684,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2076860276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1006498867}
+        m_MethodName: OnCloseBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2076860276

@@ -20,6 +20,9 @@ public class AppInitCtrl : Controller
 
         RegisterController(Consts.E_HitItem, typeof(HitItemCtrl));
 
+        RegisterController(Consts.E_FinalShowUI, typeof(FinalShowUICtrl));
+
+
 
         //注册model
         RegisterModel(new GameModel());

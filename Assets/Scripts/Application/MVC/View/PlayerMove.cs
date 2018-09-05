@@ -8,7 +8,7 @@ public class PlayerMove : View
     #region 常量
     #endregion
     const float m_SpeedAddDis = 200f;//加速距离
-    const float m_SpeedAddRate = 0.5f;//每次加速值
+    const float m_SpeedAddRate = 2f;//每次加速值
     const float m_MaxRunSpeed = 40f;//最大速度
 
     #region 事件
