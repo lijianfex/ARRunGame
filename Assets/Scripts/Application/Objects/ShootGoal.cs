@@ -36,23 +36,24 @@ public class ShootGoal : ReusableObject
         switch (i)
         {
             case -2:
-                GoalKeeperAnim.Play("left_flutter");//左边守门动画
+                GoalKeeperAnim.Play("right_flutter");//右边边守门动画
                 break;
             case 0:
                 GoalKeeperAnim.Play("flutter");//中间守门动画
                 break;
             case 2:
-                GoalKeeperAnim.Play("right_flutter");//右边守门动画
+                GoalKeeperAnim.Play("left_flutter");//左边守门动画
                 break;
             default:
                 break;
         }
+        GoalKeeperAnim.gameObject.transform.parent.parent.localPosition = Vector3.Lerp(GoalKeeperAnim.gameObject.transform.parent.parent.localPosition, new Vector3(i, 0, 0), 0.5f);
         StartCoroutine(HideGoalKeeper());
     }
 
     IEnumerator HideGoalKeeper()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
         GoalKeeperAnim.gameObject.transform.parent.parent.gameObject.SetActive(false);
     }
 

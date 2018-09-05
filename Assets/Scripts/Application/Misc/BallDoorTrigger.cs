@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 球门检测
 /// </summary>
-public class BallDoor : MonoBehaviour {
+public class BallDoorTrigger : MonoBehaviour {
 
 	
 
