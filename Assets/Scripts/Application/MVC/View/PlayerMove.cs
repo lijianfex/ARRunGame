@@ -536,6 +536,8 @@ public class PlayerMove : View
         {
             //可以射球，并且开始倒计时
             SendEvent(Consts.E_HitGoalTrigger);//——>UIBoard
+            //显示加速特效
+            Game.Instance.Pool.Spawn("FX_JiaSu", m_ShotTrail.transform.parent);
         }
         else if (other.gameObject.tag == Tag.goalKeeper)//撞到守门员
         {
