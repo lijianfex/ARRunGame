@@ -118,7 +118,7 @@ public class PlayerMove : View
         {
             Distance = (int)transform.position.z
         };
-        SendEvent(Consts.E_UpdateDis, args);
+        SendEvent(Consts.E_UpdateDis, args);//通知UIBoard
     }
 
 
@@ -322,7 +322,7 @@ public class PlayerMove : View
             hitCount = 0,
             itemtype = item
         };
-        SendEvent(Consts.E_HitItem, e);
+        SendEvent(Consts.E_HitItem, e);//通知HitItemCtrl
     }
 
     //双倍金币
@@ -411,7 +411,7 @@ public class PlayerMove : View
     {
         //sendEvent 加时间
         print("Add time");
-        SendEvent(Consts.E_HitAddTime);
+        SendEvent(Consts.E_HitAddTime);//通知UIBoard
     }
 
 
@@ -423,7 +423,7 @@ public class PlayerMove : View
         {
             StopCoroutine(GoalCor);
         }
-        SendMessage("MessagePlayShot");//播放射门动画
+        SendMessage("MessagePlayShot");//通知PlayAnim,播放射门动画
         m_ShotTrail.SetActive(true);
         m_Ball.SetActive(false);
         GoalCor = MoveBall();
@@ -459,6 +459,9 @@ public class PlayerMove : View
         //声音
         Game.Instance.Sound.PlayEffect("Se_UI_Goal");
 
+        //发送进球事件--->UIBoard
+        SendEvent(Consts.E_ShotGoal);
+
     }
 
     #endregion
@@ -492,7 +495,7 @@ public class PlayerMove : View
         {
             if (m_IsInvincible)
                 return;
-            other.gameObject.SendMessage("HitPlayer", transform.position);
+            other.gameObject.SendMessage("HitPlayer", transform.position);//----->Obstacles
             //减速
             HitObstacle();
         }
@@ -502,14 +505,14 @@ public class PlayerMove : View
                 return;
             if (m_isSlide)
                 return;
-            other.gameObject.SendMessage("HitPlayer", transform.position);
+            other.gameObject.SendMessage("HitPlayer", transform.position); //---->Obstacles
             //减速
             HitObstacle();
         }
         else if (other.gameObject.tag == Tag.block) //撞到撞到集装箱，结束
         {
 
-            other.gameObject.SendMessage("HitPlayer", transform.position);
+            other.gameObject.SendMessage("HitPlayer", transform.position);//---->Blocks
 
             //结束游戏 sendEvent
             SendEvent(Consts.E_EndGame);
@@ -518,7 +521,7 @@ public class PlayerMove : View
         else if (other.gameObject.tag == Tag.smallBlock) //撞到集装箱前部，结束
         {
 
-            other.gameObject.transform.parent.parent.SendMessage("HitPlayer", transform.position);
+            other.gameObject.transform.parent.parent.SendMessage("HitPlayer", transform.position);//---->Blocks
 
             //结束游戏 sendEvent
             SendEvent(Consts.E_EndGame);
@@ -526,20 +529,20 @@ public class PlayerMove : View
         else if (other.gameObject.tag == Tag.carBeforeTrigger) //撞到车前的触发器，车可以移动
         {
 
-            other.transform.parent.SendMessage("HitTrigger", SendMessageOptions.RequireReceiver);
+            other.transform.parent.SendMessage("HitTrigger", SendMessageOptions.RequireReceiver);//---->Car
 
         }
         else if (other.gameObject.tag == Tag.beforeGoalTrigger)//碰到球门前的触发器
         {
             //可以射球，并且开始倒计时
-            SendEvent(Consts.E_HitGoalTrigger);
+            SendEvent(Consts.E_HitGoalTrigger);//——>UIBoard
         }
         else if (other.gameObject.tag == Tag.goalKeeper)//撞到守门员
         {
             //减速
             HitObstacle();           
             //守门员飞走
-            other.transform.parent.parent.parent.SendMessage("HitGoalKeeper", SendMessageOptions.RequireReceiver);
+            other.transform.parent.parent.parent.SendMessage("HitGoalKeeper", SendMessageOptions.RequireReceiver);//--->ShotGoal
         }
         else if(other.gameObject.tag==Tag.ballDoor)
         {
@@ -554,7 +557,7 @@ public class PlayerMove : View
             //球网特效粘在主角
             Game.Instance.Pool.Spawn("FX_QiuWang", m_ShotTrail.transform.parent);
 
-            other.transform.parent.parent.SendMessage("HitDoor", nowRunWay);
+            other.transform.parent.parent.SendMessage("HitDoor", nowRunWay);//--->ShotGoal
         }
 
     }

@@ -23,6 +23,7 @@ public static class Consts
 
     public const string E_HitGoalTrigger = "E_HitGoalTrigger";//可以射门
     public const string E_FootShotClick = "E_FootShotClick";//点击射门
+    public const string E_ShotGoal = "E_ShotGoal";//进球 GoalCount+1
 
 
 

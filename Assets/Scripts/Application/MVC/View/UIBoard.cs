@@ -137,7 +137,7 @@ public class UIBoard : View
             distance = Distance,
             score = Coin * 3 + Distance + GoalCount * 30
         };
-        SendEvent(Consts.E_PauseGame, e);
+        SendEvent(Consts.E_PauseGame, e);//通知PauseGameCtrl
     }
 
     //更新UI
@@ -258,7 +258,7 @@ public class UIBoard : View
             hitCount = 1,
             itemtype = ItemType.ItemMagnet
         };
-        SendEvent(Consts.E_HitItem, e);
+        SendEvent(Consts.E_HitItem, e);//通知HitItemCtrl
     }
     //按钮点击加倍金币
     public void OnMultiplyBtnClick()
@@ -268,7 +268,7 @@ public class UIBoard : View
             hitCount = 1,
             itemtype = ItemType.ItemMultiply
         };
-        SendEvent(Consts.E_HitItem, e);
+        SendEvent(Consts.E_HitItem, e);//通知HitItemCtrl
     }
     //按钮点击无敌口哨
     public void OnInvincibleBtnClick()
@@ -278,7 +278,7 @@ public class UIBoard : View
             hitCount = 1,
             itemtype = ItemType.ItemInvincible
         };
-        SendEvent(Consts.E_HitItem, e);
+        SendEvent(Consts.E_HitItem, e);//通知HitItemCtrl
     }
 
     //射门
@@ -304,7 +304,7 @@ public class UIBoard : View
 
     public void OnFootBallBtnClick()
     {
-        SendEvent(Consts.E_FootShotClick);
+        SendEvent(Consts.E_FootShotClick);//通知PlayerMove，射球
         Football_slider.value = 0f;
     }
 
@@ -334,9 +334,11 @@ public class UIBoard : View
         AttentionList.Add(Consts.E_UpdateDis);
         AttentionList.Add(Consts.E_UpdateCoin);
         AttentionList.Add(Consts.E_HitAddTime);
-        AttentionList.Add(Consts.E_HitGoalTrigger);        
+        AttentionList.Add(Consts.E_HitGoalTrigger);
+        AttentionList.Add(Consts.E_ShotGoal);
     }
 
+    //处理消息
     public override void HandleEvent(string name, object data = null)
     {
         switch (name)
@@ -354,6 +356,10 @@ public class UIBoard : View
                 break;
             case Consts.E_HitGoalTrigger:
                 ShowGoalClick();
+                break;
+            case Consts.E_ShotGoal:
+                GoalCount += 1;
+                print("进了：" + GoalCount);
                 break;
             default:
                 break;

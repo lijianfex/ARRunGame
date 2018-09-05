@@ -25,13 +25,34 @@ public class ShootGoal : ReusableObject
         DoorAnim.Play("QiuMen_St");
         net.SetActive(true);
         GoalKeeperAnim.gameObject.transform.parent.parent.gameObject.SetActive(true);
-        GoalKeeperAnim.gameObject.transform.parent.parent.localPosition = Vector3.zero;
+        GoalKeeperAnim.gameObject.transform.parent.parent.localPosition = Vector3.zero;//将守门员归位
         m_isFly = false;
+        StopAllCoroutines();
     }
 
     //进球了,子物体发消息
-    public void ShotGoal()
+    public void ShotGoal(int i)
     {
+        switch (i)
+        {
+            case -2:
+                GoalKeeperAnim.Play("left_flutter");//左边守门动画
+                break;
+            case 0:
+                GoalKeeperAnim.Play("flutter");//中间守门动画
+                break;
+            case 2:
+                GoalKeeperAnim.Play("right_flutter");//右边守门动画
+                break;
+            default:
+                break;
+        }
+        StartCoroutine(HideGoalKeeper());
+    }
+
+    IEnumerator HideGoalKeeper()
+    {
+        yield return new WaitForSeconds(1f);
         GoalKeeperAnim.gameObject.transform.parent.parent.gameObject.SetActive(false);
     }
 
