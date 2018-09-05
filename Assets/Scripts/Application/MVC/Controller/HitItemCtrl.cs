@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 碰到奖励品
+/// </summary>
 public class HitItemCtrl : Controller
 {
     public override void Execute(object data = null)

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 贿赂控制
+/// </summary>
 public class BriberyCtrl : Controller
 {
     public override void Execute(object data = null)

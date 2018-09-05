@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 结算界面
+/// </summary>
 public class UIFinalScore : View
 {
     public Text Score_txt;

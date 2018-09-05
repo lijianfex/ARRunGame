@@ -39,6 +39,7 @@ public class UIPause : View
        
     }
 
+    //点击继续
     public void OnResumeBtnClick()
     {
         Hide();

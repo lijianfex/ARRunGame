@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+/// <summary>
+/// 死亡界面
+/// </summary>
 public class UIDead : View
 {
     public Text BriberyCoin_txt;
-    int m_BriberyTime=1;
+    int m_BriberyTime=1;//贿赂次数
 
     public override string Name
     {
