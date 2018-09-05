@@ -291,7 +291,7 @@ public class PlayerMove : View
         Runspeed = 0f;
         StartCoroutine(DescreaseSpeed());
     }
-
+    //恢复速度
     IEnumerator DescreaseSpeed()
     {
         while (Runspeed < m_MaskSpeed)
@@ -299,7 +299,7 @@ public class PlayerMove : View
             Runspeed += Time.deltaTime * m_AddSpeedRate;
             yield return 0;
         }
-        m_IsHit = true;
+        m_IsHit = false;
     }
 
     //吃金币

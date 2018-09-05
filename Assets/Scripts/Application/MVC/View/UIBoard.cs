@@ -44,7 +44,7 @@ public class UIBoard : View
     public Button Football_btn;
 
     IEnumerator MutiplyCor; //双倍金币协程
-    
+
     IEnumerator MagnetCor;//吸铁石协程
 
     IEnumerator InvincibleCor;//无敌协程
@@ -148,9 +148,9 @@ public class UIBoard : View
         ShowOrHide(m_GM.Invincible, Invincible_btn);
     }
 
-    void ShowOrHide(int i,Button btn)
+    void ShowOrHide(int i, Button btn)
     {
-        if(i>0)
+        if (i > 0)
         {
             btn.interactable = true;
             btn.transform.Find("Mask").gameObject.SetActive(false);
@@ -176,7 +176,7 @@ public class UIBoard : View
 
     IEnumerator MutiplyCoroTime()
     {
-        
+
         float timer = m_SkillTime;
         MultiplyTime_txt.transform.parent.gameObject.SetActive(true);
         while (timer > 0)
@@ -292,10 +292,13 @@ public class UIBoard : View
         Football_btn.interactable = true;
         Football_slider.value = 1f;
         float timer = 1f;
-        while(timer>0)
+        while (timer > 0 )
         {
-            timer -= Time.deltaTime;
-            Football_slider.value = timer / 1f;
+            if(m_GM.IsPlay && !m_GM.IsPause)//处理在射球时暂停
+            {
+                timer -= Time.deltaTime;
+                Football_slider.value = timer / 1f;
+            }            
             yield return 0;
         }
         Football_btn.interactable = false;
@@ -323,7 +326,7 @@ public class UIBoard : View
     {
         if (m_GM.IsPlay && !m_GM.IsPause)
         {
-            Curtime -= Time.deltaTime;            
+            Curtime -= Time.deltaTime;
         }
     }
     #endregion
@@ -373,10 +376,10 @@ public class UIBoard : View
     //将时间转为string
     string GetTime(float time)
     {
-        return ((int)time+1).ToString();
+        return ((int)time + 1).ToString();
     }
 
-   
+
 
     #endregion
 }
