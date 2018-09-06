@@ -4493,6 +4493,7 @@ GameObject:
   - component: {fileID: 4814692107192336}
   - component: {fileID: 65915088306539082}
   - component: {fileID: 65128521613080504}
+  - component: {fileID: 114582923506305910}
   m_Layer: 0
   m_Name: Pattern_3
   m_TagString: Road
@@ -32291,3 +32292,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114582923506305910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1567007592659490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b903aab90e2b04d9de81047e70084d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

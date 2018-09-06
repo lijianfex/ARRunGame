@@ -31,8 +31,8 @@ public class Blocks : ReusableObject {
         Game.Instance.Sound.PlayEffect("Se_UI_End");
 
         //3.回收
-        //Game.Instance.Pool.UnSpawn(gameObject);
-        Destroy(gameObject);
+        Game.Instance.Pool.UnSpawn(gameObject);
+        //Destroy(gameObject);
 
     }
 

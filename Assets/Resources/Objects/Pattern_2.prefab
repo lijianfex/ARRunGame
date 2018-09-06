@@ -14042,6 +14042,7 @@ GameObject:
   - component: {fileID: 4378263232844224}
   - component: {fileID: 65346784853551530}
   - component: {fileID: 65295768265426548}
+  - component: {fileID: 114031372928502502}
   m_Layer: 0
   m_Name: Pattern_2
   m_TagString: Road
@@ -62419,6 +62420,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &114031372928502502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997661217664508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b903aab90e2b04d9de81047e70084d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137337470033710664
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

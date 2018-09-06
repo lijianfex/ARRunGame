@@ -22,8 +22,8 @@ public class AddTime : Item
         //声音
         Game.Instance.Sound.PlayEffect("Se_UI_Time");
 
-        //Game.Instance.Pool.UnSpawn(gameObject);
-        Destroy(gameObject);
+        Game.Instance.Pool.UnSpawn(gameObject);
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
