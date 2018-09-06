@@ -135,10 +135,10 @@ public class GameModel : Model
 
         set
         {
-            while(value > 10 + (Level * 3))
+            while(value > 500 + (Level * 100))
             {
                 //消耗经验
-                value -= 10 + (Level * 3);
+                value -= 500 + (Level * 100);
                 //升级
                 Level++;
             }

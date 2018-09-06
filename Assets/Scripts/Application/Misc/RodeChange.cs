@@ -49,8 +49,7 @@ public class RodeChange : MonoBehaviour {
 
         roadNow = roadNext;
         roadNext = Game.Instance.Pool.Spawn("Pattern_"+i.ToString(),parent.transform);
-        roadNext.transform.position = roadNow.transform.position + new Vector3(0, 0, 160);
-        AddItem(roadNow);
+        roadNext.transform.position = roadNow.transform.position + new Vector3(0, 0, 160);        
         AddItem(roadNext);
     }
 
@@ -70,8 +69,8 @@ public class RodeChange : MonoBehaviour {
                 {
                     foreach(var item in pattern.PatterItems)
                     {
-                        GameObject go = Game.Instance.Pool.Spawn(item.perfabName, ItemChild);
-                        go.transform.SetParent(ItemChild);
+                        GameObject go = Game.Instance.Pool.Spawn(item.perfabName, ItemChild as Transform);
+                        go.transform.SetParent(ItemChild as Transform);
                         go.transform.localPosition = item.pos;//设置其相对位置
                     }
                 }

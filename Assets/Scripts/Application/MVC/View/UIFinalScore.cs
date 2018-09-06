@@ -51,9 +51,9 @@ public class UIFinalScore : View
         Score_txt.text = (coin  + dis * (goal+1)).ToString();
 
         //slider文字
-        Exp_txt.text = exp.ToString() + "/" + (10 + level * 3).ToString();
+        Exp_txt.text = exp.ToString() + "/" + (500 + level * 100).ToString();
 
-        Exp_slider.value = exp / (float)(10 + level * 3);
+        Exp_slider.value = exp / (float)(500 + level * 100);
 
         //等级
         Leve_txt.text = level.ToString() + "级";
