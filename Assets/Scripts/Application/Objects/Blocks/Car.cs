@@ -9,7 +9,7 @@ public class Car : Blocks {
 
     public bool canMove = false;
     bool isBlock = false;
-    public float moveSpeed = 10f;
+    public float moveSpeed = 20f;
 
     protected override void Awake()
     {

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PatternManager : MonoBehaviour {
+/// <summary>
+/// 道路物体生成管理器
+/// </summary>
+public class PatternManager : MonoSingleton<PatternManager> {
 
     public List<Pattern> Patterns = new List<Pattern>();
-	// Use this for initialization
+	
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
 		
 	}

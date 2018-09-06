@@ -20,6 +20,9 @@ public class RodeChange : MonoBehaviour {
         roadNow = Game.Instance.Pool.Spawn("Pattern_1", parent.transform);
         roadNext = Game.Instance.Pool.Spawn("Pattern_2", parent.transform);
         roadNext.transform.position += new Vector3(0, 0, 160);
+        AddItem(roadNow);
+        AddItem(roadNext);
+
     }
 	
 	
@@ -39,6 +42,7 @@ public class RodeChange : MonoBehaviour {
         }
     }
 
+    //生成跑道
     void SpawnNewRoad()
     {
         int i = Random.Range(1, 5);//随机生成跑道
@@ -46,5 +50,32 @@ public class RodeChange : MonoBehaviour {
         roadNow = roadNext;
         roadNext = Game.Instance.Pool.Spawn("Pattern_"+i.ToString(),parent.transform);
         roadNext.transform.position = roadNow.transform.position + new Vector3(0, 0, 160);
+        AddItem(roadNow);
+        AddItem(roadNext);
+    }
+
+
+    //生成道路上的障碍物
+    public void AddItem(GameObject obj)
+    {
+        var ItemChild = obj.transform.Find("Item");//放置物体的Item
+        if(ItemChild!=null)
+        {
+            //取出一套方案生成物体到Item下
+            var patternManager = PatternManager.Instance;
+            if(patternManager!=null&&patternManager.Patterns!=null&&patternManager.Patterns.Count>0)
+            {
+                var pattern = patternManager.Patterns[Random.Range(0, patternManager.Patterns.Count)];
+                if(pattern!=null&&pattern.PatterItems!=null&&pattern.PatterItems.Count>0)
+                {
+                    foreach(var item in pattern.PatterItems)
+                    {
+                        GameObject go = Game.Instance.Pool.Spawn(item.perfabName, ItemChild);
+                        go.transform.SetParent(ItemChild);
+                        go.transform.localPosition = item.pos;//设置其相对位置
+                    }
+                }
+            }
+        }
     }
 }
