@@ -21,8 +21,10 @@ public static class Consts
 
     //继续游戏
     public const string E_ContinueGame = "E_ContinueGame";
+    //购买道具
+    public const string E_BuyTools = "E_BuyTools";
 
-
+    //-----------------------------------------------------------
     //UI相关事件
     public const string E_UpdateDis = "E_UpdateDis";//更新距离//DistanceArgs
     public const string E_UpdateCoin = "E_UpdateCoin";//更新金币//CoinArgs
@@ -51,6 +53,7 @@ public static class Consts
     public const string V_UIResume = "V_UIResume";
     public const string V_UIDead = "V_UIDead";
     public const string V_UIFinalScore = "V_UIFinalScore";
+    public const string V_UIBuyTools = "V_UIBuyTools";
 }
 
 //输入枚举

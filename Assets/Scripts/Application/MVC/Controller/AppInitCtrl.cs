@@ -26,6 +26,8 @@ public class AppInitCtrl : Controller
 
         RegisterController(Consts.E_ContinueGame, typeof(ContinueGameCtrl));
 
+        RegisterController(Consts.E_BuyTools, typeof(BuyToolsCtrl));
+
 
 
 

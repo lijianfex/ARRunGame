@@ -36,7 +36,7 @@ public class Game : MonoSingleton<Game>
         SendEvent(Consts.E_AppInit);
        
         //切换场景
-        Game.Instance.Level.LoadLevel(4);
+        Game.Instance.Level.LoadLevel(3);
     }
 
     //注册controller

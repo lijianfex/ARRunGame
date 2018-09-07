@@ -22,6 +22,7 @@ public class EnterScenesCtrl : Controller
             case 2:
                 break;
             case 3:
+                RegisterView(GameObject.Find("Canvas").transform.Find("UIBuyTools").GetComponent<UIBuyTools>());
                 break;
             case 4:
                 RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerMove>());

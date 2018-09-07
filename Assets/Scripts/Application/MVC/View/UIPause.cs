@@ -26,9 +26,15 @@ public class UIPause : View
         gameObject.SetActive(false);
     }
 
-    public void Show(PauseArgs args)
+    public void Show()
     {
         gameObject.SetActive(true);
+        
+    }
+
+    //更新UI
+    public void UpdateUI(PauseArgs args)
+    {
         Dis_txt.text = args.distance.ToString();
         Coin_txt.text = args.coinCount.ToString();
         Socre_txt.text = args.score.ToString();
