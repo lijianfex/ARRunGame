@@ -22,7 +22,7 @@ public class UIBuyTools : View
 
     public override void HandleEvent(string name, object data = null)
     {
-        
+
     }
 
     private void Awake()
@@ -58,15 +58,32 @@ public class UIBuyTools : View
 
     public void OnRandomBuyClick()
     {
-
+        int i = Random.Range(0, 3);
+        BuyToolsArgs e = new BuyToolsArgs();
+        e.CoinCount = 300;
+        switch (i)
+        {
+            case 0:
+                e.itemType = ItemType.ItemInvincible;
+                break;
+            case 1:
+                e.itemType = ItemType.ItemMultiply;
+                break;
+            case 2:
+                e.itemType = ItemType.ItemMagnet;
+                break;
+            default:
+                break;
+        }
+        SendEvent(Consts.E_BuyTools, e);
     }
-    
+
     public void OnMagnetBuyClick()
     {
         BuyToolsArgs e = new BuyToolsArgs
         {
             itemType = ItemType.ItemMagnet,
-            CoinCount = 100            
+            CoinCount = 100
         };
         SendEvent(Consts.E_BuyTools, e);
     }
