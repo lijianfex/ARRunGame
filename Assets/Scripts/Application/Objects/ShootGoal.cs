@@ -26,6 +26,7 @@ public class ShootGoal : ReusableObject
         net.SetActive(true);
         GoalKeeperAnim.gameObject.transform.parent.parent.gameObject.SetActive(true);
         GoalKeeperAnim.gameObject.transform.parent.parent.localPosition = Vector3.zero;//将守门员归位
+        GoalKeeperAnim.gameObject.transform.parent.parent.localEulerAngles = Vector3.zero;
         m_isFly = false;
         StopAllCoroutines();
     }
