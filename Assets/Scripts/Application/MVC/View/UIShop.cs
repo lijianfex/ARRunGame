@@ -19,4 +19,9 @@ public class UIShop : View
     {
         
     }
+
+    public void OnReturnClick()
+    {
+        Game.Instance.Level.LoadLevel(3);
+    }
 }

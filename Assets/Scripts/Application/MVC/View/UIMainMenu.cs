@@ -9,6 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class UIMainMenu : View
 {
+
     public override string Name
     {
         get
@@ -20,5 +21,10 @@ public class UIMainMenu : View
     public override void HandleEvent(string name, object data = null)
     {
         
+    }
+
+    public void OnShopBtnClick()
+    {
+        Game.Instance.Level.LoadLevel(2);
     }
 }
