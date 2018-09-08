@@ -55,6 +55,7 @@ public static class Consts
     public const string V_UIFinalScore = "V_UIFinalScore";
     public const string V_UIBuyTools = "V_UIBuyTools";
     public const string V_UIMainMenu = "V_UIMainMenu";
+    public const string V_UIShop = "V_UIShop";
 }
 
 //输入枚举
