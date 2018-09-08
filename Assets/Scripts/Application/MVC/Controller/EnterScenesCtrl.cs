@@ -18,6 +18,7 @@ public class EnterScenesCtrl : Controller
         switch (args.scenesIndex)
         {
             case 1:
+                RegisterView(GameObject.Find("Canvas").transform.Find("UIMainMenu").GetComponent<UIMainMenu>());
                 break;
             case 2:
                 break;

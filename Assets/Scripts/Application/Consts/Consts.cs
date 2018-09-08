@@ -54,6 +54,7 @@ public static class Consts
     public const string V_UIDead = "V_UIDead";
     public const string V_UIFinalScore = "V_UIFinalScore";
     public const string V_UIBuyTools = "V_UIBuyTools";
+    public const string V_UIMainMenu = "V_UIMainMenu";
 }
 
 //输入枚举
