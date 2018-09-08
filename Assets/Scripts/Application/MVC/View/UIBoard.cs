@@ -39,6 +39,9 @@ public class UIBoard : View
     public Button Multiply_btn;
     public Button Invincible_btn;
 
+    public Text Magnetcount_txt;
+    public Text Multiplycount_txt;
+    public Text Invinciblecount_txt;
     //射门
     public Slider Football_slider;
     public Button Football_btn;
@@ -144,21 +147,24 @@ public class UIBoard : View
     //更新UI
     public void UpdateUI()
     {
-        ShowOrHide(m_GM.Magnet, Magnet_btn);
-        ShowOrHide(m_GM.Multiply, Multiply_btn);
-        ShowOrHide(m_GM.Invincible, Invincible_btn);
+        ShowOrHide(m_GM.Magnet, Magnet_btn,Magnetcount_txt);
+        ShowOrHide(m_GM.Multiply, Multiply_btn,Multiplycount_txt);
+        ShowOrHide(m_GM.Invincible, Invincible_btn,Invinciblecount_txt);
     }
 
-    void ShowOrHide(int i, Button btn)
+    void ShowOrHide(int i, Button btn, Text count)
     {
         if (i > 0)
         {
             btn.interactable = true;
+            count.transform.parent.gameObject.SetActive(true);
+            count.text = i.ToString();
             btn.transform.Find("Mask").gameObject.SetActive(false);
         }
         else
         {
             btn.interactable = false;
+            count.transform.parent.gameObject.SetActive(false);
             btn.transform.Find("Mask").gameObject.SetActive(true);
         }
     }
@@ -292,13 +298,13 @@ public class UIBoard : View
         Football_btn.interactable = true;
         Football_slider.value = 1f;
         float timer = 1f;
-        while (timer > 0 )
+        while (timer > 0)
         {
-            if(m_GM.IsPlay && !m_GM.IsPause)//处理在射球时暂停
+            if (m_GM.IsPlay && !m_GM.IsPause)//处理在射球时暂停
             {
                 timer -= Time.deltaTime;
                 Football_slider.value = timer / 1f;
-            }            
+            }
             yield return 0;
         }
         Football_btn.interactable = false;

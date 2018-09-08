@@ -60,5 +60,11 @@ public class UIFinalScore : View
 
     }
 
+    //重新游戏
+    public void OnReplayGameClick()
+    {
+        Game.Instance.Level.LoadLevel(4);
+    }
+
    
 }

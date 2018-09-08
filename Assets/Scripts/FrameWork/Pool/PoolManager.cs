@@ -50,6 +50,11 @@ public class PoolManager : MonoSingleton<PoolManager> {
         }
     }
 
+    public void ClearDis()
+    {
+        m_pools.Clear();
+    }
+
     //新建池子
     void RegisterNew(string name,Transform trans)
     {

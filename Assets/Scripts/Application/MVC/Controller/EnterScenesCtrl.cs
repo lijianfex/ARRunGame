@@ -32,6 +32,9 @@ public class EnterScenesCtrl : Controller
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIResume").GetComponent<UIResume>());
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIDead").GetComponent<UIDead>());
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIFinalScore").GetComponent<UIFinalScore>());
+                GameModel gm = GetModel<GameModel>();               
+                gm.IsPause = false;
+                gm.IsPlay = true;
                 break;
             default:
                 break;

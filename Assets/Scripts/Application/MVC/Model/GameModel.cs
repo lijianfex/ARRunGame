@@ -45,6 +45,7 @@ public class GameModel : Model
         set
         {
             isPlay = value;
+            
         }
     }
 
@@ -57,7 +58,7 @@ public class GameModel : Model
 
         set
         {
-            isPause = value;
+            isPause = value;            
         }
     }
 
