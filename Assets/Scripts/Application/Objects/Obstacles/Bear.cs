@@ -14,10 +14,13 @@ public class Bear : Obstacles
 
     Animation anim;
 
+    GameModel gm;
+
     protected override void Awake()
     {
         base.Awake();
-        anim=GetComponentInChildren<Animation>();
+        anim = GetComponentInChildren<Animation>();
+        gm = MVC.GetModle<GameModel>();
     }
 
     public override void OnSpawn()
@@ -56,11 +59,11 @@ public class Bear : Obstacles
 
     private void Update()
     {
-        if (isHit)
+        if (isHit && gm.IsPlay && !gm.IsPause)
         {
             transform.position += new Vector3(-RunSpeed, 0, 0) * Time.deltaTime;
         }
-        if (isFly)
+        if (isFly && gm.IsPlay && !gm.IsPause)
         {
             transform.position += new Vector3(0, RunSpeed, RunSpeed) * Time.deltaTime;
         }
