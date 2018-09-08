@@ -6,14 +6,11 @@ using System;
 public class LevelManager : MonoSingleton<LevelManager>
 {
 
-    private void Start()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+    
 
     public void LoadLevel(int level)
     {
-
+        SceneManager.sceneLoaded += OnSceneLoaded;
         ScenesArgs args = new ScenesArgs
         {
             scenesIndex = SceneManager.GetActiveScene().buildIndex
@@ -37,6 +34,7 @@ public class LevelManager : MonoSingleton<LevelManager>
         SendEvent(Consts.E_EnterScene, args);
 
         SceneManager.sceneLoaded -= OnSceneLoaded;
+
     }
     
 

@@ -121,7 +121,6 @@ public class PlayerMove : View
         SendEvent(Consts.E_UpdateDis, args);//通知UIBoard
     }
 
-
     void UpdatePostion()
     {
         GetInputDirection();

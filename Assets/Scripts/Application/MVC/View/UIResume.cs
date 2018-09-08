@@ -47,8 +47,7 @@ public class UIResume : View
             }
         }
         Hide();
-
-        //TODO
+        
         SendEvent(Consts.E_ContinueGame);//---->ContinueGameCtrl
     }
 

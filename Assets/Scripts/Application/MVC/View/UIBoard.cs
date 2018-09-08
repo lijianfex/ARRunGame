@@ -163,7 +163,6 @@ public class UIBoard : View
         }
     }
 
-
     //双倍金币
     public void HitMutiply()
     {

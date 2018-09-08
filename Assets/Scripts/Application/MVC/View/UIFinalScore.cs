@@ -58,7 +58,6 @@ public class UIFinalScore : View
         //等级
         Leve_txt.text = level.ToString() + "级";
 
-
     }
 
    

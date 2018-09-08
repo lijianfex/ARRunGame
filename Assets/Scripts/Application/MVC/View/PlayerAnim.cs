@@ -95,8 +95,7 @@ public class PlayerAnim : View
     {
         PlayAnim = PlayShot;
     }
-
-
+    
     public void AnimManager(InputDirection dir)
     {
         switch (dir)

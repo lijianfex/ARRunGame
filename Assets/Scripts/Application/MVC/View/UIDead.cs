@@ -63,6 +63,5 @@ public class UIDead : View
         };
         SendEvent(Consts.E_BriberyClick,e);//----->BriberyCtrl
     }
-
-    
+        
 }

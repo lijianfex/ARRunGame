@@ -54,8 +54,7 @@ public class UIBuyTools : View
         }
     }
 
-
-
+    //点击随机购买
     public void OnRandomBuyClick()
     {
         int i = Random.Range(0, 3);
@@ -78,6 +77,7 @@ public class UIBuyTools : View
         SendEvent(Consts.E_BuyTools, e);
     }
 
+    //点击吸铁石购买
     public void OnMagnetBuyClick()
     {
         BuyToolsArgs e = new BuyToolsArgs
@@ -88,6 +88,7 @@ public class UIBuyTools : View
         SendEvent(Consts.E_BuyTools, e);
     }
 
+    //点击双倍金币购买
     public void OnMutiplyBuyClick()
     {
         BuyToolsArgs e = new BuyToolsArgs
@@ -97,7 +98,7 @@ public class UIBuyTools : View
         };
         SendEvent(Consts.E_BuyTools, e);
     }
-
+    //点击无敌状态购买
     public void OnInvincibleBuyClick()
     {
         BuyToolsArgs e = new BuyToolsArgs
@@ -106,6 +107,12 @@ public class UIBuyTools : View
             CoinCount = 300
         };
         SendEvent(Consts.E_BuyTools, e);
+    }
+
+    //点击开始游戏按钮
+    public void OnStartGameClicK()
+    {
+        Game.Instance.Level.LoadLevel(4);
     }
 
 }

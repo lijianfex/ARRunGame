@@ -9,10 +9,12 @@ public class HitItemCtrl : Controller
 {
     public override void Execute(object data = null)
     {
-        ItemArgs e = data as ItemArgs;
-        PlayerMove player = GetView<PlayerMove>();
+        ItemArgs e = data as ItemArgs;          
         GameModel gm = GetModel<GameModel>();
-        UIBoard uiBoard = GetView<UIBoard>();
+
+        PlayerMove player = GetView<PlayerMove>();
+        UIBoard uiBoard = GetView<UIBoard>();        
+        
         switch (e.itemtype)
         {
             case ItemType.ItemInvincible:
