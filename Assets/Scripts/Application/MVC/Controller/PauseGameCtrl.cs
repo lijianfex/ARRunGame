@@ -15,6 +15,7 @@ public class PauseGameCtrl : Controller
 
         //显示暂停UI
         UIPause pause = GetView<UIPause>();
+        pause.Show();
         PauseArgs e = data as PauseArgs;
 
         //更新UI
