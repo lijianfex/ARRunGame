@@ -433,7 +433,10 @@ public class PlayerMove : View
     {
         while (true)
         {
-            m_ShotTrail.transform.Translate(transform.forward * 40 * Time.deltaTime);
+            if(m_GM.IsPlay&&!m_GM.IsPause)
+            {
+                m_ShotTrail.transform.Translate(transform.forward * 40 * Time.deltaTime);
+            }            
             yield return 0;
         }
     }
