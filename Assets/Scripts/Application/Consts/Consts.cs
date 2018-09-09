@@ -24,6 +24,11 @@ public static class Consts
     //购买道具
     public const string E_BuyTools = "E_BuyTools";
 
+    //购买足球
+    public const string E_BuyFootBall = "E_BuyFootBall";
+    //装备足球
+    public const string E_EquipeFootBall = "E_EquipeFootBall";
+
     //-----------------------------------------------------------
     //UI相关事件
     public const string E_UpdateDis = "E_UpdateDis";//更新距离//DistanceArgs
@@ -82,4 +87,12 @@ public enum ItemType
     ItemMultiply,
     ItemMagnet,
     ItemAddTime
+}
+
+//道具状态
+public enum ItemState
+{
+    UnBuy,
+    Buy,
+    Equiep
 }

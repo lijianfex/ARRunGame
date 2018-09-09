@@ -25,8 +25,7 @@ public class GameModel : Model
 
     int m_Coin;
 
-    int m_FootballIndex = 0;//当前装备的足球
-    List<int> m_BuyBallIndex = new List<int>();//已购买的
+    List<FootballInfo> footballInfoList;
 
    
 
@@ -166,29 +165,17 @@ public class GameModel : Model
         }
     }
 
-    public int FootballIndex
+
+    public List<FootballInfo> FootballInfoList
     {
         get
         {
-            return m_FootballIndex;
+            return footballInfoList;
         }
 
         set
         {
-            m_FootballIndex = value;
-        }
-    }
-
-    public List<int> BuyBallIndex
-    {
-        get
-        {
-            return m_BuyBallIndex;
-        }
-
-        set
-        {
-            m_BuyBallIndex = value;
+            footballInfoList = value;
         }
     }
 
@@ -213,7 +200,16 @@ public class GameModel : Model
     //初始化商城
     public void InitShop()
     {
-        BuyBallIndex.Add(m_FootballIndex);
+        InitFootInfo();
+    }
+
+    //初始化足球
+    public void InitFootInfo()
+    {
+        FootballInfoList = new List<FootballInfo>();
+        FootballInfoList.Add(new FootballInfo(0, ItemState.Equiep));
+        FootballInfoList.Add(new FootballInfo(1, ItemState.Buy));
+        FootballInfoList.Add(new FootballInfo(2, ItemState.UnBuy));
     }
 
     //花钱

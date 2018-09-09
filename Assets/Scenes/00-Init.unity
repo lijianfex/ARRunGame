@@ -200,6 +200,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0e5bced37bc1baf479be9343f4b00881, type: 2}
   - {fileID: 2100000, guid: 1b43aee340bff3642ab0ced6f7c8184d, type: 2}
   - {fileID: 2100000, guid: 184362e0ecc7bf348900efdce1903c86, type: 2}
+  FootBallSprites:
+  - {fileID: 21300024, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  - {fileID: 21300052, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  - {fileID: 21300014, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
 --- !u!114 &1445921306
 MonoBehaviour:
   m_ObjectHideFlags: 0

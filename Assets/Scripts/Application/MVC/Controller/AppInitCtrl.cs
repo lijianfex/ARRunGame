@@ -30,6 +30,11 @@ public class AppInitCtrl : Controller
 
         RegisterController(Consts.E_BuyTools, typeof(BuyToolsCtrl));
 
+        RegisterController(Consts.E_BuyFootBall, typeof(FootBallBuyCtrl));
+
+        RegisterController(Consts.E_EquipeFootBall, typeof(EquipeFootBallCtrl));
+
+
 
 
 
@@ -39,6 +44,7 @@ public class AppInitCtrl : Controller
         //初始化
         GameModel gm = GetModel<GameModel>();
         gm.Init();
+        gm.InitShop();
 
 
     }
