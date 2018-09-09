@@ -196,6 +196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9f67f03a44968449cad3dd8a1c5abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FootballMaterialList:
+  - {fileID: 2100000, guid: 0e5bced37bc1baf479be9343f4b00881, type: 2}
+  - {fileID: 2100000, guid: 1b43aee340bff3642ab0ced6f7c8184d, type: 2}
+  - {fileID: 2100000, guid: 184362e0ecc7bf348900efdce1903c86, type: 2}
 --- !u!114 &1445921306
 MonoBehaviour:
   m_ObjectHideFlags: 0

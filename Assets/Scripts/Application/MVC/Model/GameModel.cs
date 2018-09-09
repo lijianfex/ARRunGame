@@ -24,6 +24,12 @@ public class GameModel : Model
     int m_Invincible;
 
     int m_Coin;
+
+    int m_FootballIndex = 0;//当前装备的足球
+    List<int> m_BuyBallIndex = new List<int>();//已购买的
+
+   
+
     #endregion
 
     #region 属性
@@ -160,6 +166,34 @@ public class GameModel : Model
         }
     }
 
+    public int FootballIndex
+    {
+        get
+        {
+            return m_FootballIndex;
+        }
+
+        set
+        {
+            m_FootballIndex = value;
+        }
+    }
+
+    public List<int> BuyBallIndex
+    {
+        get
+        {
+            return m_BuyBallIndex;
+        }
+
+        set
+        {
+            m_BuyBallIndex = value;
+        }
+    }
+
+
+
 
     #endregion
 
@@ -176,6 +210,13 @@ public class GameModel : Model
         m_Coin = InitCoin;
     }
 
+    //初始化商城
+    public void InitShop()
+    {
+        BuyBallIndex.Add(m_FootballIndex);
+    }
+
+    //花钱
     public bool GetMoney(int count)
     {
         if(count<=Coin)
