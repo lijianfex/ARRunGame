@@ -6,7 +6,7 @@ public class EquipeFootBallCtrl : Controller
 {
     public override void Execute(object data = null)
     {
-        FootBallArgs e = data as FootBallArgs;
+        ShopArgs e = data as ShopArgs;
         GameModel gm = GetModel<GameModel>();
         UIShop shop = GetView<UIShop>();
 
@@ -14,11 +14,12 @@ public class EquipeFootBallCtrl : Controller
         {
             if(info.State==ItemState.Equiep)
             {
-                gm.FootballInfoList[info.Index].State = ItemState.Buy;
+                gm.FootballInfoList[info.Index].State = ItemState.Buy;                
             }
         }
 
         gm.FootballInfoList[e.index].State = e.state;
+        gm.ShotQulity = Game.Instance.Data.GetFootballData(e.index).skillAdd;
 
         shop.UpdateUI();
     }

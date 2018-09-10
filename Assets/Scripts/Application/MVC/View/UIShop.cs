@@ -18,7 +18,8 @@ public class UIShop : View
     //-----金币----
     public Text Coin_txt;//金币
 
-    //---------------------------------------------
+    //---------------------足球------------------------
+    [Header("------足球-----")]
     public Image FootballEquipImg;//足球已装备图
 
     public MeshRenderer FootballMesh;//足球
@@ -30,6 +31,27 @@ public class UIShop : View
     public List<Text> FootballCoinTextList;
 
     public Button FootBallBuyBtn;
+
+    public Slider ShotQulitySlider;
+    public Text ShotQulityText;
+
+    [Header("------衣服-----")]
+    public Image ColseEquipImg;//衣服已装备
+
+    public SkinnedMeshRenderer CloseMesh;
+
+    public List<Toggle> CloseTogList;
+
+    public List<Image> CloseStateList;
+
+    public List<Text> CloseCoinTextList;
+
+    public Button CloseBuyBtn;
+
+    public Slider ShotSlider;
+    public Text ShotText;
+
+    
     
 
 
@@ -65,6 +87,7 @@ public class UIShop : View
     {
         Coin_txt.text = gm.Coin.ToString();
         UpdateFootballUI();
+        UpdateCloseUI();
     }
 
     //足球相关更新
@@ -80,6 +103,7 @@ public class UIShop : View
                 FootballTogList[info.Index].isOn = true;
                 FootBallBuyBtnUpdate(info.Index);//购买按钮
                 FootballMesh.material= Game.Instance.Data.GetFootballData(info.Index).material;
+                gm.ShotQulity=Game.Instance.Data.GetFootballData(info.Index).skillAdd;
             }
             switch (info.State)
             {
@@ -94,8 +118,9 @@ public class UIShop : View
                     break;
             }
             FootballCoinTextList[info.Index].text = Game.Instance.Data.GetFootballData(info.Index).coin.ToString();
-
         }
+
+        UpdateShotQulityUI(gm.ShotQulity);
     }
 
 
@@ -148,7 +173,7 @@ public class UIShop : View
             case ItemState.UnBuy:
                 //TODO发消息购买
                 Debug.Log("购买");
-                FootBallArgs e = new FootBallArgs
+                ShopArgs e = new ShopArgs
                 {
                     index = selectIndex,
                     coin = Game.Instance.Data.GetFootballData(selectIndex).coin,
@@ -159,7 +184,7 @@ public class UIShop : View
             case ItemState.Buy:
                 //TODO发消息装备
                 Debug.Log("装备");
-                FootBallArgs ee = new FootBallArgs
+                ShopArgs ee = new ShopArgs
                 {
                     index = selectIndex,
                     coin = 0,
@@ -171,5 +196,116 @@ public class UIShop : View
                 break;
         }
     }
+
+    //更新足球技能加成
+    private void UpdateShotQulityUI(int skill)
+    {
+        ShotQulitySlider.value = (float)skill;
+        ShotQulityText.text = skill.ToString();
+    }
     
+
+    //---------------------衣服---------------------
+    public void UpdateCloseUI()
+    {
+        foreach (CloseInfo info in gm.CloseInfoList)
+        {
+            //更新衣服已装备图,与选中Toggle
+            if (info.State == ItemState.Equiep)
+            {
+                ColseEquipImg.overrideSprite = Game.Instance.Data.GetCloseData(info.Index).sprite;
+                CloseTogList[info.Index].isOn = true;
+                CloseBuyBtnUpdate(info.Index);//购买按钮
+                CloseMesh.material.mainTexture = Game.Instance.Data.GetCloseData(info.Index).texture;
+                gm.Shot = Game.Instance.Data.GetCloseData(info.Index).skillAdd;
+            }
+            switch (info.State)
+            {
+                case ItemState.UnBuy:
+                    CloseStateList[info.Index].overrideSprite = SpUnBuy;
+                    break;
+                case ItemState.Buy:
+                    CloseStateList[info.Index].overrideSprite = SpBuy;
+                    break;
+                case ItemState.Equiep:
+                    CloseStateList[info.Index].overrideSprite = SpEquipe;
+                    break;
+            }
+            CloseCoinTextList[info.Index].text = Game.Instance.Data.GetCloseData(info.Index).coin.ToString();
+        }
+
+        UpdateShotUI(gm.Shot);
+    }
+
+    public void OnClose1Click()
+    {
+        CloseBuyBtnUpdate(0);
+        selectIndex = 0;
+    }
+    public void OnClose2Click()
+    {
+        CloseBuyBtnUpdate(1);
+        selectIndex = 1;
+    }
+    public void OnClose3Click()
+    {
+        CloseBuyBtnUpdate(2);
+        selectIndex = 2;
+    }
+
+    private void CloseBuyBtnUpdate(int index)
+    {
+        switch (gm.CloseInfoList[index].State)
+        {
+            case ItemState.UnBuy:
+                CloseBuyBtn.gameObject.SetActive(true);
+                CloseBuyBtn.GetComponent<Image>().overrideSprite = spBuyBtn;
+                break;
+            case ItemState.Buy:
+                CloseBuyBtn.gameObject.SetActive(true);
+                CloseBuyBtn.GetComponent<Image>().overrideSprite = spEquiepeBtn;
+                break;
+            case ItemState.Equiep:
+                CloseBuyBtn.gameObject.SetActive(false);
+                break;
+        }
+    }
+
+    public void OnCloseBuyBtnClick()
+    {
+        switch (gm.FootballInfoList[selectIndex].State)
+        {
+            case ItemState.UnBuy:
+                //TODO发消息购买
+                Debug.Log("购买");
+                ShopArgs e = new ShopArgs
+                {
+                    index = selectIndex,
+                    coin = Game.Instance.Data.GetCloseData(selectIndex).coin,
+                    state = ItemState.Buy
+                };
+                //SendEvent(Consts.E_BuyFootBall, e);
+                break;
+            case ItemState.Buy:
+                //TODO发消息装备
+                Debug.Log("装备");
+                ShopArgs ee = new ShopArgs
+                {
+                    index = selectIndex,
+                    coin = 0,
+                    state = ItemState.Equiep
+                };
+                //SendEvent(Consts.E_EquipeFootBall, ee);
+                break;
+            case ItemState.Equiep:
+                break;
+        }
+    }
+
+    private void UpdateShotUI(int skill)
+    {
+        ShotSlider.value = (float)skill;
+        ShotText.text = skill.ToString();
+    }
+
 }

@@ -26,6 +26,11 @@ public class GameModel : Model
     int m_Coin;
 
     List<FootballInfo> footballInfoList;
+    List<CloseInfo> closeInfoList;
+
+    int m_ShotQulity;//射门精度
+    int m_Shot;//射门力量
+    int m_SpeedAdd;//加速能力
 
    
 
@@ -179,6 +184,60 @@ public class GameModel : Model
         }
     }
 
+    public int ShotQulity
+    {
+        get
+        {
+            return m_ShotQulity;
+        }
+
+        set
+        {
+            m_ShotQulity = value;
+        }
+    }
+
+    public int Shot
+    {
+        get
+        {
+            return m_Shot;
+        }
+
+        set
+        {
+            m_Shot = value;
+        }
+    }
+
+    public int SpeedAdd
+    {
+        get
+        {
+            return m_SpeedAdd;
+        }
+
+        set
+        {
+            m_SpeedAdd = value;
+        }
+    }
+
+    public List<CloseInfo> CloseInfoList
+    {
+        get
+        {
+            return closeInfoList;
+        }
+
+        set
+        {
+            closeInfoList = value;
+        }
+    }
+
+
+
 
 
 
@@ -201,6 +260,7 @@ public class GameModel : Model
     public void InitShop()
     {
         InitFootInfo();
+        InitCloseInfo();
     }
 
     //初始化足球
@@ -210,6 +270,15 @@ public class GameModel : Model
         FootballInfoList.Add(new FootballInfo(0, ItemState.Equiep));
         FootballInfoList.Add(new FootballInfo(1, ItemState.Buy));
         FootballInfoList.Add(new FootballInfo(2, ItemState.UnBuy));
+    }
+
+
+    public void InitCloseInfo()
+    {
+        CloseInfoList = new List<CloseInfo>();
+        CloseInfoList.Add(new CloseInfo(0, ItemState.Buy));
+        CloseInfoList.Add(new CloseInfo(1, ItemState.Equiep));
+        CloseInfoList.Add(new CloseInfo(2, ItemState.UnBuy));
     }
 
     //花钱

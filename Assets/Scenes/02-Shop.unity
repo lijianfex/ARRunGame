@@ -1873,7 +1873,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &167371750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,11 +2959,11 @@ RectTransform:
   - {fileID: 1274030199}
   - {fileID: 158972141}
   m_Father: {fileID: 1333177511}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 326.854, y: 101}
+  m_AnchoredPosition: {x: 163, y: 101}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299796319
@@ -4612,7 +4612,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 466032639}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1446991196}
+        m_MethodName: OnCloseBuyBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &466032639
@@ -5039,7 +5050,18 @@ MonoBehaviour:
   m_Group: {fileID: 1516963712}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1446991196}
+        m_MethodName: OnClose2Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -7314,7 +7336,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &928080466
 GameObject:
   m_ObjectHideFlags: 0
@@ -7430,7 +7452,18 @@ MonoBehaviour:
   m_Group: {fileID: 1516963712}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1446991196}
+        m_MethodName: OnClose3Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -9956,8 +9989,8 @@ RectTransform:
   m_Children:
   - {fileID: 1830720402}
   - {fileID: 349099208}
-  - {fileID: 2115274005}
   - {fileID: 299796318}
+  - {fileID: 2115274005}
   m_Father: {fileID: 1446991195}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10592,6 +10625,25 @@ MonoBehaviour:
   - {fileID: 16239037}
   - {fileID: 1434498445}
   FootBallBuyBtn: {fileID: 903092957}
+  ShotQulitySlider: {fileID: 71681498}
+  ShotQulityText: {fileID: 2037260435}
+  ColseEquipImg: {fileID: 1319687205}
+  CloseMesh: {fileID: 2090626367}
+  CloseTogList:
+  - {fileID: 1622446524}
+  - {fileID: 525269195}
+  - {fileID: 928080470}
+  CloseStateList:
+  - {fileID: 1692355512}
+  - {fileID: 1061998822}
+  - {fileID: 1742195236}
+  CloseCoinTextList:
+  - {fileID: 110297438}
+  - {fileID: 1406978815}
+  - {fileID: 1906285212}
+  CloseBuyBtn: {fileID: 466032638}
+  ShotSlider: {fileID: 46698541}
+  ShotText: {fileID: 127976024}
 --- !u!114 &1446991197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11700,7 +11752,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1618464754
 GameObject:
   m_ObjectHideFlags: 0
@@ -11953,10 +12005,21 @@ MonoBehaviour:
   m_Group: {fileID: 1516963712}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1446991196}
+        m_MethodName: OnClose1Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1622492321
 GameObject:
   m_ObjectHideFlags: 0
@@ -13631,7 +13694,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300034, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  m_Sprite: {fileID: 21300024, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15380,6 +15443,11 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 23840554110904310, guid: db8a91104bc63de49a3a07b3dd250d5d,
     type: 2}
   m_PrefabInternal: {fileID: 2090626364}
+--- !u!137 &2090626367 stripped
+SkinnedMeshRenderer:
+  m_PrefabParentObject: {fileID: 137214458637067912, guid: db8a91104bc63de49a3a07b3dd250d5d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2090626364}
 --- !u!1 &2104136993
 GameObject:
   m_ObjectHideFlags: 0
@@ -15514,11 +15582,11 @@ RectTransform:
   - {fileID: 526238233}
   - {fileID: 1428484947}
   m_Father: {fileID: 1333177511}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 163, y: 101}
+  m_AnchoredPosition: {x: 330.5183, y: 101}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115274006

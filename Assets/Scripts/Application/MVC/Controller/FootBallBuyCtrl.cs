@@ -6,7 +6,7 @@ public class FootBallBuyCtrl : Controller
 {
     public override void Execute(object data = null)
     {
-        FootBallArgs e = data as FootBallArgs;
+        ShopArgs e = data as ShopArgs;
         UIShop shop = GetView<UIShop>();
         GameModel gm = GetModel<GameModel>();
 
