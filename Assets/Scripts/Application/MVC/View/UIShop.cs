@@ -8,7 +8,8 @@ using UnityEngine.UI;
 /// </summary>
 public class UIShop : View
 {
-    //--资源图
+    
+    [Header("------资源图-----")]
     public Sprite SpUnBuy;
     public Sprite SpBuy;
     public Sprite SpEquipe;
@@ -90,7 +91,7 @@ public class UIShop : View
         UpdateCloseUI();
     }
 
-    //足球相关更新
+    //-----------------------足球---------------------
     public void UpdateFootballUI()
     {
         
@@ -273,7 +274,7 @@ public class UIShop : View
 
     public void OnCloseBuyBtnClick()
     {
-        switch (gm.FootballInfoList[selectIndex].State)
+        switch (gm.CloseInfoList[selectIndex].State)
         {
             case ItemState.UnBuy:
                 //TODO发消息购买
@@ -284,7 +285,7 @@ public class UIShop : View
                     coin = Game.Instance.Data.GetCloseData(selectIndex).coin,
                     state = ItemState.Buy
                 };
-                //SendEvent(Consts.E_BuyFootBall, e);
+                SendEvent(Consts.E_CloseBuy, e);
                 break;
             case ItemState.Buy:
                 //TODO发消息装备
@@ -295,7 +296,7 @@ public class UIShop : View
                     coin = 0,
                     state = ItemState.Equiep
                 };
-                //SendEvent(Consts.E_EquipeFootBall, ee);
+                SendEvent(Consts.E_CloseEquipe, ee);
                 break;
             case ItemState.Equiep:
                 break;
@@ -307,5 +308,6 @@ public class UIShop : View
         ShotSlider.value = (float)skill;
         ShotText.text = skill.ToString();
     }
+    
 
 }

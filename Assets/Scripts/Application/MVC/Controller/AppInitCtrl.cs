@@ -30,9 +30,13 @@ public class AppInitCtrl : Controller
 
         RegisterController(Consts.E_BuyTools, typeof(BuyToolsCtrl));
 
+        //shop
         RegisterController(Consts.E_BuyFootBall, typeof(FootBallBuyCtrl));
-
         RegisterController(Consts.E_EquipeFootBall, typeof(EquipeFootBallCtrl));
+        RegisterController(Consts.E_CloseBuy, typeof(CloseBuyCtrl));
+        RegisterController(Consts.E_CloseEquipe, typeof(CloseEquipeCtrl));
+
+
 
 
 

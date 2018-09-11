@@ -24,10 +24,13 @@ public static class Consts
     //购买道具
     public const string E_BuyTools = "E_BuyTools";
 
-    //购买足球
-    public const string E_BuyFootBall = "E_BuyFootBall";
-    //装备足球
-    public const string E_EquipeFootBall = "E_EquipeFootBall";
+    //-------shop-------
+    
+    public const string E_BuyFootBall = "E_BuyFootBall";//购买足球    
+    public const string E_EquipeFootBall = "E_EquipeFootBall";//装备足球
+    public const string E_CloseBuy = "E_CloseBuy";
+    public const string E_CloseEquipe = "E_CloseEquipe";
+
 
     //-----------------------------------------------------------
     //UI相关事件
