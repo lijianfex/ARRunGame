@@ -18,7 +18,7 @@ public class BriberyCtrl : Controller
             dead.Hide();
             dead.BriberyTime++;
             UIResume resume = GetView<UIResume>();
-            resume.StartCount();
+            resume.StartCount();//继续游戏
         }
         else
         {
@@ -26,7 +26,7 @@ public class BriberyCtrl : Controller
             Debug.Log("金币不足");
         }
 
-        //继续游戏
+        
        
        
 

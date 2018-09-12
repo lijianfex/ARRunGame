@@ -44,8 +44,12 @@ public class UIDead : View
 
     public void Show()
     {
-        BriberyCoin_txt.text = (500 * BriberyTime).ToString();
         gameObject.SetActive(true);
+    }
+
+    public void UpdateUI()
+    {
+        BriberyCoin_txt.text = (500 * BriberyTime).ToString();
     }
 
     //鼠标点击关闭

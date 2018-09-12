@@ -15,5 +15,7 @@ public class EndGameCtrl : Controller
         // 显示结束UI
         UIDead uiDead = GetView<UIDead>();
         uiDead.Show();
+
+        uiDead.UpdateUI();
     }
 }
