@@ -30,6 +30,10 @@ public static class Consts
     public const string E_EquipeFootBall = "E_EquipeFootBall";//装备足球
     public const string E_CloseBuy = "E_CloseBuy";
     public const string E_CloseEquipe = "E_CloseEquipe";
+    public const string E_HeadBuy = "E_HeadBuy";
+    public const string E_HeadEquipe = "E_HeadEquipe";
+    public const string E_ShoseBuy = "E_ShoseBuy";
+    public const string E_ShoseEquipe = "E_ShoseEquipe";
 
 
     //-----------------------------------------------------------

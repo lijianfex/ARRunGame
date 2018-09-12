@@ -10,13 +10,9 @@ public class CloseEquipeCtrl : Controller
         GameModel gm = GetModel<GameModel>();
         UIShop shop = GetView<UIShop>();
 
-        foreach (CloseInfo info in gm.CloseInfoList)
-        {
-            if (info.State == ItemState.Equiep)
-            {
-                gm.CloseInfoList[info.Index].State = ItemState.Buy;
-            }
-        }
+
+        gm.CloseInfoList[gm.EquipeClothIndex].State = ItemState.Buy;
+
 
         gm.CloseInfoList[e.index].State = e.state;
         gm.Shot = Game.Instance.Data.GetCloseData(e.index).skillAdd;

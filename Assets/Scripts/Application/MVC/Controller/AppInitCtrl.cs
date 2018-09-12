@@ -35,7 +35,10 @@ public class AppInitCtrl : Controller
         RegisterController(Consts.E_EquipeFootBall, typeof(EquipeFootBallCtrl));
         RegisterController(Consts.E_CloseBuy, typeof(CloseBuyCtrl));
         RegisterController(Consts.E_CloseEquipe, typeof(CloseEquipeCtrl));
-
+        RegisterController(Consts.E_HeadBuy, typeof(HeadBuyCtrl));
+        RegisterController(Consts.E_HeadEquipe, typeof(HeadEquipeCtrl));
+        RegisterController(Consts.E_ShoseBuy, typeof(ShoseBuyCtrl));
+        RegisterController(Consts.E_ShoseEquipe, typeof(ShoseEquipeCtrl));
 
 
 
@@ -48,7 +51,7 @@ public class AppInitCtrl : Controller
         //初始化
         GameModel gm = GetModel<GameModel>();
         gm.Init();
-        gm.InitShop();
+        
 
 
     }

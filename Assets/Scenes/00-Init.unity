@@ -212,6 +212,14 @@ MonoBehaviour:
   - {fileID: 21300008, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
   - {fileID: 21300020, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
   - {fileID: 21300030, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  HeadSprites:
+  - {fileID: 21300046, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  - {fileID: 21300050, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  - {fileID: 21300012, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  ShoseSprites:
+  - {fileID: 21300042, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  - {fileID: 21300016, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
+  - {fileID: 21300018, guid: 4a6e006c3cd09984eb3ff2bacbac6e52, type: 3}
 --- !u!114 &1445921306
 MonoBehaviour:
   m_ObjectHideFlags: 0

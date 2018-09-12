@@ -5,15 +5,15 @@ using UnityEngine;
 public class GameModel : Model
 {
     #region 常量
-    const int InitCoin = 1000;
+    const int InitCoin = 2000;
     #endregion
 
     #region 事件
     #endregion
 
     #region 字段
-    bool isPlay=true;//游戏是否进行
-    bool isPause=false;//是否暂停
+    bool isPlay = true;//游戏是否进行
+    bool isPause = false;//是否暂停
     int skillTime = 5;//技能时间
 
     int m_Level;
@@ -27,12 +27,20 @@ public class GameModel : Model
 
     List<FootballInfo> footballInfoList;
     List<CloseInfo> closeInfoList;
+    List<HeadInfo> headInfoList;
+    List<ShoseInfo> shoseInfoList;
+
+    int m_EquipeBallIndex;
+    int m_EquipeClothIndex;
+    int m_EquipeHeadIndex;
+    int m_EquipeShoseIndex;
 
     int m_ShotQulity;//射门精度
     int m_Shot;//射门力量
     int m_SpeedAdd;//加速能力
 
-   
+
+
 
     #endregion
 
@@ -55,7 +63,7 @@ public class GameModel : Model
         set
         {
             isPlay = value;
-            
+
         }
     }
 
@@ -68,7 +76,7 @@ public class GameModel : Model
 
         set
         {
-            isPause = value;            
+            isPause = value;
         }
     }
 
@@ -146,7 +154,7 @@ public class GameModel : Model
 
         set
         {
-            while(value > 500 + (Level * 100))
+            while (value > 500 + (Level * 100))
             {
                 //消耗经验
                 value -= 500 + (Level * 100);
@@ -236,6 +244,70 @@ public class GameModel : Model
         }
     }
 
+    public int EquipeBallIndex
+    {
+        get
+        {
+            return GetEquipeBallIndex();
+        }
+
+    }
+
+    public int EquipeClothIndex
+    {
+        get
+        {
+            return GetEquipeClothIndex();
+        }
+
+    }
+
+    public List<HeadInfo> HeadInfoList
+    {
+        get
+        {
+            return headInfoList;
+        }
+
+        set
+        {
+            headInfoList = value;
+        }
+    }
+
+    public int EquipeHeadIndex
+    {
+        get
+        {
+            return GetEquipeHeadIndex();
+        }
+
+
+    }
+
+    public List<ShoseInfo> ShoseInfoList
+    {
+        get
+        {
+            return shoseInfoList;
+        }
+
+        set
+        {
+            shoseInfoList = value;
+        }
+    }
+
+    public int EquipeShoseIndex
+    {
+        get
+        {
+            return GetEquipeShoseIndex();
+        }
+
+        
+    }
+
 
 
 
@@ -254,6 +326,8 @@ public class GameModel : Model
         m_Exp = 0;
         m_Level = 1;
         m_Coin = InitCoin;
+       
+        InitShop();
     }
 
     //初始化商城
@@ -261,37 +335,21 @@ public class GameModel : Model
     {
         InitFootInfo();
         InitCloseInfo();
-    }
-
-    //初始化足球
-    public void InitFootInfo()
-    {
-        FootballInfoList = new List<FootballInfo>();
-        FootballInfoList.Add(new FootballInfo(0, ItemState.Equiep));
-        FootballInfoList.Add(new FootballInfo(1, ItemState.Buy));
-        FootballInfoList.Add(new FootballInfo(2, ItemState.UnBuy));
-    }
-
-
-    public void InitCloseInfo()
-    {
-        CloseInfoList = new List<CloseInfo>();
-        CloseInfoList.Add(new CloseInfo(0, ItemState.Buy));
-        CloseInfoList.Add(new CloseInfo(1, ItemState.Equiep));
-        CloseInfoList.Add(new CloseInfo(2, ItemState.UnBuy));
+        InitHeadInfo();
+        InitShoseInfo();
     }
 
     //花钱
     public bool GetMoney(int count)
     {
-        if(count<=Coin)
+        if (count <= Coin)
         {
             Coin -= count;
             return true;
         }
         return false;
     }
-        
+
 
     #endregion
 
@@ -302,6 +360,98 @@ public class GameModel : Model
     #endregion
 
     #region 帮助方法
+
+
+    //获得已装备的足球index
+    int GetEquipeBallIndex()
+    {
+        int i = 0;
+        foreach (FootballInfo info in FootballInfoList)
+        {
+            if (info.State == ItemState.Equiep)
+            {
+                i = info.Index;
+            }
+        }
+        return i;
+    }
+
+    //获得已装备的衣服index
+    int GetEquipeClothIndex()
+    {
+        int i = 0;
+        foreach (CloseInfo info in CloseInfoList)
+        {
+            if (info.State == ItemState.Equiep)
+            {
+                i = info.Index;
+            }
+        }
+        return i;
+    }
+
+    //获得已装备的头像
+    int GetEquipeHeadIndex()
+    {
+        int i = 0;
+        foreach (HeadInfo info in HeadInfoList)
+        {
+            if (info.State == ItemState.Equiep)
+            {
+                i = info.Index;
+            }
+        }
+        return i;
+    }
+
+    //获得已装备的鞋子
+    int GetEquipeShoseIndex()
+    {
+        int i = 0;
+        foreach (ShoseInfo info in ShoseInfoList)
+        {
+            if (info.State == ItemState.Equiep)
+            {
+                i = info.Index;
+            }
+        }
+        return i;
+    }
+
+
+
+    //初始化足球
+    void InitFootInfo()
+    {
+        FootballInfoList = new List<FootballInfo>();
+        FootballInfoList.Add(new FootballInfo(0, ItemState.Equiep));
+        FootballInfoList.Add(new FootballInfo(1, ItemState.Buy));
+        FootballInfoList.Add(new FootballInfo(2, ItemState.UnBuy));
+    }
+    //初始化衣服
+    void InitCloseInfo()
+    {
+        CloseInfoList = new List<CloseInfo>();
+        CloseInfoList.Add(new CloseInfo(0, ItemState.Equiep));
+        CloseInfoList.Add(new CloseInfo(1, ItemState.Buy));
+        CloseInfoList.Add(new CloseInfo(2, ItemState.UnBuy));
+    }
+    //初始化头像
+    void InitHeadInfo()
+    {
+        HeadInfoList = new List<HeadInfo>();
+        HeadInfoList.Add(new HeadInfo(0, ItemState.Equiep));
+        HeadInfoList.Add(new HeadInfo(1, ItemState.Buy));
+        HeadInfoList.Add(new HeadInfo(2, ItemState.UnBuy));
+    }
+    //初始化鞋子
+    void InitShoseInfo()
+    {
+        ShoseInfoList = new List<ShoseInfo>();
+        ShoseInfoList.Add(new ShoseInfo(0, ItemState.Equiep));
+        ShoseInfoList.Add(new ShoseInfo(1, ItemState.Buy));
+        ShoseInfoList.Add(new ShoseInfo(2, ItemState.UnBuy));
+    }
     #endregion
 
 

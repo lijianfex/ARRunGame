@@ -19,11 +19,23 @@ public class StaticData : MonoSingleton<StaticData>
     public List<Texture> CloseTextureList;
     public List<Sprite> CloseSprites;
 
+    //---头像相关------
+    Dictionary<int, HeadData> m_HeadDataDis = new Dictionary<int, HeadData>();
+    [Header("----头像资源-----")]   
+    public List<Sprite> HeadSprites;
+
+    //---鞋子相关------
+    Dictionary<int, ShoseData> m_ShoseDataDis = new Dictionary<int, ShoseData>();
+    [Header("----鞋子资源-----")]
+    public List<Sprite> ShoseSprites;
+
     protected override void Awake()
     {
         base.Awake();
         InitFootballData();
         InitCloseData();
+        InitHeadData();
+        InitShoseData();
     }
 
     //初始化足球信息
@@ -54,6 +66,34 @@ public class StaticData : MonoSingleton<StaticData>
     {
         return m_CloseDataDis[index];
     }
-    
+
+    //初始化头像
+    void InitHeadData()
+    {
+        m_HeadDataDis.Add(0, new HeadData(0, HeadSprites[0], 3,"MOMO"));
+        m_HeadDataDis.Add(1, new HeadData(300, HeadSprites[1], 5,"AIAI"));
+        m_HeadDataDis.Add(2, new HeadData(500, HeadSprites[2], 7,"QIQI"));
+    }
+
+    //获取头像信息
+    public HeadData GetHeadData(int index)
+    {
+        return m_HeadDataDis[index];
+    }
+
+    //初始化鞋子
+    void InitShoseData()
+    {
+        m_ShoseDataDis.Add(0, new ShoseData(0, ShoseSprites[0], 100));
+        m_ShoseDataDis.Add(1, new ShoseData(40, ShoseSprites[1], 300));
+        m_ShoseDataDis.Add(2, new ShoseData(50, ShoseSprites[2], 500));
+    }
+
+    //获取鞋子信息
+    public ShoseData GetShoseData(int index)
+    {
+        return m_ShoseDataDis[index];
+    }
+
 
 }

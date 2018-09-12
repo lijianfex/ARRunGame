@@ -10,9 +10,18 @@ public class CloseBuyCtrl : Controller
         UIShop shop = GetView<UIShop>();
         GameModel gm = GetModel<GameModel>();
 
-        gm.CloseInfoList[e.index].State = e.state;
-        gm.Coin -= e.coin;
+       
+        if (gm.GetMoney(e.coin))
+        {
+            gm.CloseInfoList[e.index].State = e.state;
+            shop.UpdateUI();
+        }
+        else
+        {
+            //TODO
+            Debug.Log("金币不足！");
+        }
 
-        shop.UpdateUI();
+        
     }
 }

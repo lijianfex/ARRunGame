@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EquipeFootBallCtrl : Controller
+public class HeadEquipeCtrl : Controller
 {
     public override void Execute(object data = null)
     {
@@ -10,12 +10,12 @@ public class EquipeFootBallCtrl : Controller
         GameModel gm = GetModel<GameModel>();
         UIShop shop = GetView<UIShop>();
 
-       
-        gm.FootballInfoList[gm.EquipeBallIndex].State = ItemState.Buy;              
-       
 
-        gm.FootballInfoList[e.index].State = e.state;
-        gm.ShotQulity = Game.Instance.Data.GetFootballData(e.index).skillAdd;
+        gm.HeadInfoList[gm.EquipeHeadIndex].State = ItemState.Buy;
+
+
+        gm.HeadInfoList[e.index].State = e.state;
+        gm.SkillTime = Game.Instance.Data.GetHeadData(e.index).skillAdd;
 
         shop.UpdateUI();
     }

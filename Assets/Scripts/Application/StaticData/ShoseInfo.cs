@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 衣服信息
-/// </summary>
-public class CloseInfo
+public class ShoseInfo
 {
 
     private int index;
@@ -34,10 +31,9 @@ public class CloseInfo
         }
     }
 
-    public CloseInfo(int _index, ItemState _state = ItemState.UnBuy)
+    public ShoseInfo(int _index, ItemState _state = ItemState.UnBuy)
     {
         index = _index;
         state = _state;
     }
-
 }
