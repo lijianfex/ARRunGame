@@ -23,6 +23,8 @@ public class FinalShowUICtrl : Controller
         gm.Exp += board.Coin + board.Distance * (board.GoalCount + 1);
         //2.更新UI
         finalScore.UpdateUI(board.Distance, board.Coin, board.GoalCount,gm.Exp,gm.Level);
+        //3.更新金币
+        gm.Coin += board.Coin;
 
     }
 }
