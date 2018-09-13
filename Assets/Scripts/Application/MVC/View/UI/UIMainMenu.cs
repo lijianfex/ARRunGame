@@ -9,6 +9,18 @@ using UnityEngine.UI;
 /// </summary>
 public class UIMainMenu : View
 {
+    public SkinnedMeshRenderer ClothRender;
+    public MeshRenderer BallRender;
+
+
+    GameModel gm;
+
+    private void Awake()
+    {
+        gm = GetModel<GameModel>();
+        ClothRender.material.mainTexture = Game.Instance.Data.GetCloseData(gm.EquipeClothIndex).texture;
+        BallRender.material = Game.Instance.Data.GetFootballData(gm.EquipeBallIndex).material;
+    }
 
     public override string Name
     {
@@ -26,5 +38,10 @@ public class UIMainMenu : View
     public void OnShopBtnClick()
     {
         Game.Instance.Level.LoadLevel(2);
+    }
+
+    public void OnPlayBtnClick()
+    {
+        Game.Instance.Level.LoadLevel(3);
     }
 }

@@ -410,6 +410,8 @@ MonoBehaviour:
   Dis_txt: {fileID: 562589249}
   Coin_txt: {fileID: 1071883327}
   Socre_txt: {fileID: 779903466}
+  ClothRender: {fileID: 291094862}
+  BallRender: {fileID: 291094863}
 --- !u!1 &71982580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1848,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
   m_IsPrefabParent: 0
+--- !u!137 &291094862 stripped
+SkinnedMeshRenderer:
+  m_PrefabParentObject: {fileID: 137214458637067912, guid: db8a91104bc63de49a3a07b3dd250d5d,
+    type: 2}
+  m_PrefabInternal: {fileID: 291094861}
+--- !u!23 &291094863 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23840554110904310, guid: db8a91104bc63de49a3a07b3dd250d5d,
+    type: 2}
+  m_PrefabInternal: {fileID: 291094861}
 --- !u!1001 &312105343
 Prefab:
   m_ObjectHideFlags: 0
@@ -4805,9 +4817,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114843774371292608, guid: e99620d6176ad4d8d955c9fea5b84170,
+        type: 2}
+      propertyPath: ClothRenderer
+      value: 
+      objectReference: {fileID: 1035940160}
+    - target: {fileID: 114843774371292608, guid: e99620d6176ad4d8d955c9fea5b84170,
+        type: 2}
+      propertyPath: BallRenderer
+      value: 
+      objectReference: {fileID: 1035940159}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e99620d6176ad4d8d955c9fea5b84170, type: 2}
   m_IsPrefabParent: 0
+--- !u!23 &1035940159 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23722160335643110, guid: e99620d6176ad4d8d955c9fea5b84170,
+    type: 2}
+  m_PrefabInternal: {fileID: 1035940158}
+--- !u!137 &1035940160 stripped
+SkinnedMeshRenderer:
+  m_PrefabParentObject: {fileID: 137240679904185410, guid: e99620d6176ad4d8d955c9fea5b84170,
+    type: 2}
+  m_PrefabInternal: {fileID: 1035940158}
 --- !u!1 &1070325034
 GameObject:
   m_ObjectHideFlags: 0

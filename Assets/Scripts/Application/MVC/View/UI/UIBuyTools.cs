@@ -10,6 +10,9 @@ public class UIBuyTools : View
     public Text InvicinbleCount_txt;
     public Text CoinCount_txt;
 
+    public SkinnedMeshRenderer ClothRender;
+    public MeshRenderer BallRender;
+
     GameModel gm;
 
     public override string Name
@@ -28,6 +31,12 @@ public class UIBuyTools : View
     private void Awake()
     {
         gm = GetModel<GameModel>();
+
+        //更新皮肤与球
+        ClothRender.material.mainTexture = Game.Instance.Data.GetCloseData(gm.EquipeClothIndex).texture;
+        BallRender.material = Game.Instance.Data.GetFootballData(gm.EquipeBallIndex).material;
+
+        //更新ui
         UpdateUI();
     }
 
@@ -113,6 +122,12 @@ public class UIBuyTools : View
     public void OnStartGameClicK()
     {
         Game.Instance.Level.LoadLevel(4);
+    }
+
+    //返回上一场景
+    public void OnReturnBtnClick()
+    {
+        Game.Instance.Level.LoadLevel(2);
     }
 
 }

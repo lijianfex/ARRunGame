@@ -6,7 +6,7 @@ using System;
 public class LevelManager : MonoSingleton<LevelManager>
 {
 
-    
+
 
     public void LoadLevel(int level)
     {
@@ -17,9 +17,9 @@ public class LevelManager : MonoSingleton<LevelManager>
         };
 
         //发送退出场景事件
-        SendEvent(Consts.E_ExitScene,args);
+        SendEvent(Consts.E_ExitScene, args);
 
-        SceneManager.LoadScene(level, LoadSceneMode.Single);        
+        SceneManager.LoadScene(level, LoadSceneMode.Single);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -36,7 +36,7 @@ public class LevelManager : MonoSingleton<LevelManager>
         SceneManager.sceneLoaded -= OnSceneLoaded;
 
     }
-    
+
 
     //发送事件
     void SendEvent(string eventName, object data = null)

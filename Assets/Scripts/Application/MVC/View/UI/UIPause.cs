@@ -13,6 +13,20 @@ public class UIPause : View
     public Text Coin_txt;
     public Text Socre_txt;
 
+    public SkinnedMeshRenderer ClothRender;
+    public MeshRenderer BallRender;
+    GameModel gm;
+
+    private void Awake()
+    {
+
+        gm = GetModel<GameModel>();
+
+        //更新皮肤与球
+        ClothRender.material.mainTexture = Game.Instance.Data.GetCloseData(gm.EquipeClothIndex).texture;
+        BallRender.material = Game.Instance.Data.GetFootballData(gm.EquipeBallIndex).material;
+    }
+
     public override string Name
     {
         get

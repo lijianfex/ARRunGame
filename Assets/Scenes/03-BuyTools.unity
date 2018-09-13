@@ -748,6 +748,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
     type: 2}
   m_PrefabInternal: {fileID: 435998819}
+--- !u!137 &435998821 stripped
+SkinnedMeshRenderer:
+  m_PrefabParentObject: {fileID: 137214458637067912, guid: db8a91104bc63de49a3a07b3dd250d5d,
+    type: 2}
+  m_PrefabInternal: {fileID: 435998819}
+--- !u!23 &435998822 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23840554110904310, guid: db8a91104bc63de49a3a07b3dd250d5d,
+    type: 2}
+  m_PrefabInternal: {fileID: 435998819}
 --- !u!1 &436459941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000019015779}
+  m_AnchoredPosition: {x: 0, y: -0.000013371822}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &561124885
@@ -2620,7 +2630,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1321057710}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1966351886}
+        m_MethodName: OnReturnBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1321057710
@@ -4352,6 +4373,8 @@ MonoBehaviour:
   MultiplyCount_txt: {fileID: 2124889033}
   InvicinbleCount_txt: {fileID: 831350297}
   CoinCount_txt: {fileID: 465471021}
+  ClothRender: {fileID: 435998821}
+  BallRender: {fileID: 435998822}
 --- !u!1 &1987122445
 GameObject:
   m_ObjectHideFlags: 0

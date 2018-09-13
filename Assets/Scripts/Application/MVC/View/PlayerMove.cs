@@ -15,6 +15,8 @@ public class PlayerMove : View
     #endregion
 
     #region 字段
+    GameModel gm;
+
     [SerializeField]
     private float runspeed = 20f;//前向移动速度
 
@@ -22,35 +24,42 @@ public class PlayerMove : View
     public float JumpValue = 5f;//跳跃高度
     public float Grivaty = 9.8f;//重力值
 
+    public SkinnedMeshRenderer ClothRenderer;//衣服
+    public MeshRenderer BallRenderer;//球
+
     private CharacterController m_cc;//角色控制器
 
-    InputDirection m_InputDir = InputDirection.NULL;//输入
-    bool activeInput = false;
-    Vector3 m_mousePos;
+    //输入
+    InputDirection m_InputDir = InputDirection.NULL;
+    bool activeInput = false;//是否激活手势输入
+    Vector3 m_mousePos;//鼠标位置
 
-    RunWay nowRunWay = RunWay.Middle;//跑道切换
+    //跑道切换
+    RunWay nowRunWay = RunWay.Middle;
     RunWay targetRunWay = RunWay.Middle;
     float m_xDistance = 0;
 
-    float m_yDistance = 0;   //跳跃
+    //跳跃
+    float m_yDistance = 0;//y轴移动距离   
 
-    bool m_isSlide = false;//防止一直滚动
+    //防止一直滚动
+    bool m_isSlide = false;
     float m_slideTime;
 
-    float m_SpeedAddCount;//更新加速
+    //更新加速
+    float m_SpeedAddCount;
 
-    GameModel m_GM;
+    
 
-    //是否撞击
-    bool m_IsHit = false;
-    //记录减速前速度
-    float m_MaskSpeed;
-    //增加速度的速率
-    float m_AddSpeedRate = 10f;
+    //撞击
+    bool m_IsHit = false;    
+    float m_MaskSpeed;//记录减速前速度    
+    float m_AddSpeedRate = 10f;//恢复速度的速率
 
     //Item
-    public int m_isDoubleTime = 1;
-    int m_SkillTime;//双倍时长
+    int m_SkillTime;//技能时长
+
+    public int m_isDoubleTime = 1;//倍数    
 
     IEnumerator MutiplyCor; //双倍金币协程
 
@@ -97,7 +106,7 @@ public class PlayerMove : View
     {
         while (true)
         {
-            if (m_GM.IsPlay && !m_GM.IsPause)
+            if (gm.IsPlay && !gm.IsPause)
             {
                 //更新UI
                 UpdateDis();//更新距离
@@ -305,7 +314,7 @@ public class PlayerMove : View
     public void HitCoin()
     {
         //sendEvent 加金币数
-        print("Eat coin");
+        //print("Eat coin");
         CoinArgs args = new CoinArgs
         {
             CoinCount = m_isDoubleTime
@@ -341,7 +350,7 @@ public class PlayerMove : View
         float timer = m_SkillTime;
         while (timer > 0)
         {
-            if (m_GM.IsPlay && !m_GM.IsPause)
+            if (gm.IsPlay && !gm.IsPause)
             {
                 timer -= Time.deltaTime;
             }
@@ -368,7 +377,7 @@ public class PlayerMove : View
         float timer = m_SkillTime;
         while (timer > 0)
         {
-            if (m_GM.IsPlay && !m_GM.IsPause)
+            if (gm.IsPlay && !gm.IsPause)
             {
                 timer -= Time.deltaTime;
             }
@@ -395,7 +404,7 @@ public class PlayerMove : View
         float timer = m_SkillTime;
         while (timer > 0)
         {
-            if (m_GM.IsPlay && !m_GM.IsPause)
+            if (gm.IsPlay && !gm.IsPause)
             {
                 timer -= Time.deltaTime;
             }
@@ -433,7 +442,7 @@ public class PlayerMove : View
     {
         while (true)
         {
-            if(m_GM.IsPlay&&!m_GM.IsPause)
+            if(gm.IsPlay&&!gm.IsPause)
             {
                 m_ShotTrail.transform.Translate(transform.forward * 40 * Time.deltaTime);
             }            
@@ -472,8 +481,8 @@ public class PlayerMove : View
     private void Awake()
     {
         m_cc = GetComponent<CharacterController>();
-        m_GM = GetModel<GameModel>();
-        m_SkillTime = m_GM.SkillTime;
+        gm = GetModel<GameModel>();
+        m_SkillTime = gm.SkillTime;
 
         //获取吸铁石检测器
         MagnetCollider = GetComponentInChildren<SphereCollider>();
@@ -484,6 +493,11 @@ public class PlayerMove : View
         m_ShotTrail = transform.Find("Effect").transform.Find("ShotTrail").gameObject;
         m_OldTrailPos = m_ShotTrail.transform.localPosition;//记录球的原来的位置
         m_ShotTrail.SetActive(false);
+
+        //更新显示皮肤与球
+        ClothRenderer.material.mainTexture = Game.Instance.Data.GetCloseData(gm.EquipeClothIndex).texture;
+        BallRenderer.material = Game.Instance.Data.GetFootballData(gm.EquipeBallIndex).material;
+
     }
 
     private void Start()

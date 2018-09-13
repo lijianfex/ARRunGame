@@ -83,11 +83,7 @@ public class UIShop : View
 
     }
 
-    public void OnReturnClick()
-    {
-        Game.Instance.Level.LoadLevel(3);
-    }
-
+   
     public void UpdateUI()
     {
         Coin_txt.text = gm.Coin.ToString();
@@ -545,6 +541,15 @@ public class UIShop : View
     }
     #endregion
 
+    public void OnReturnClick()
+    {
+        Game.Instance.Level.LoadLevel(1);
+    }
+
+    public void OnPlayClick()
+    {
+        Game.Instance.Level.LoadLevel(3);
+    }
 
 
 }
