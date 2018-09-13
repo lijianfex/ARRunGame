@@ -15,6 +15,7 @@ public class GameModel : Model
     bool isPlay = true;//游戏是否进行
     bool isPause = false;//是否暂停
     int skillTime = 5;//技能时间
+    int lastSenceIndex;//上一场景
 
     int m_Level;
     int m_Exp;
@@ -30,10 +31,7 @@ public class GameModel : Model
     List<HeadInfo> headInfoList;
     List<ShoseInfo> shoseInfoList;
 
-    int m_EquipeBallIndex;
-    int m_EquipeClothIndex;
-    int m_EquipeHeadIndex;
-    int m_EquipeShoseIndex;
+   
 
     int m_ShotQulity;//射门精度
     int m_Shot;//射门力量
@@ -90,6 +88,19 @@ public class GameModel : Model
         set
         {
             skillTime = value;
+        }
+    }
+
+    public int LastSenceIndex
+    {
+        get
+        {
+            return lastSenceIndex;
+        }
+
+        set
+        {
+            lastSenceIndex = value;
         }
     }
 
@@ -191,46 +202,6 @@ public class GameModel : Model
             footballInfoList = value;
         }
     }
-
-    public int ShotQulity
-    {
-        get
-        {
-            return m_ShotQulity;
-        }
-
-        set
-        {
-            m_ShotQulity = value;
-        }
-    }
-
-    public int Shot
-    {
-        get
-        {
-            return m_Shot;
-        }
-
-        set
-        {
-            m_Shot = value;
-        }
-    }
-
-    public int SpeedAdd
-    {
-        get
-        {
-            return m_SpeedAdd;
-        }
-
-        set
-        {
-            m_SpeedAdd = value;
-        }
-    }
-
     public List<CloseInfo> CloseInfoList
     {
         get
@@ -243,25 +214,6 @@ public class GameModel : Model
             closeInfoList = value;
         }
     }
-
-    public int EquipeBallIndex
-    {
-        get
-        {
-            return GetEquipeBallIndex();
-        }
-
-    }
-
-    public int EquipeClothIndex
-    {
-        get
-        {
-            return GetEquipeClothIndex();
-        }
-
-    }
-
     public List<HeadInfo> HeadInfoList
     {
         get
@@ -274,17 +226,6 @@ public class GameModel : Model
             headInfoList = value;
         }
     }
-
-    public int EquipeHeadIndex
-    {
-        get
-        {
-            return GetEquipeHeadIndex();
-        }
-
-
-    }
-
     public List<ShoseInfo> ShoseInfoList
     {
         get
@@ -298,6 +239,31 @@ public class GameModel : Model
         }
     }
 
+    public int EquipeBallIndex
+    {
+        get
+        {
+            return GetEquipeBallIndex();
+        }
+
+    }
+    public int EquipeClothIndex
+    {
+        get
+        {
+            return GetEquipeClothIndex();
+        }
+
+    }
+    public int EquipeHeadIndex
+    {
+        get
+        {
+            return GetEquipeHeadIndex();
+        }
+
+
+    }
     public int EquipeShoseIndex
     {
         get
@@ -305,8 +271,47 @@ public class GameModel : Model
             return GetEquipeShoseIndex();
         }
 
-        
+
     }
+
+    public int ShotQulity
+    {
+        get
+        {
+            return m_ShotQulity;
+        }
+
+        set
+        {
+            m_ShotQulity = value;
+        }
+    }
+    public int Shot
+    {
+        get
+        {
+            return m_Shot;
+        }
+
+        set
+        {
+            m_Shot = value;
+        }
+    }
+    public int SpeedAdd
+    {
+        get
+        {
+            return m_SpeedAdd;
+        }
+
+        set
+        {
+            m_SpeedAdd = value;
+        }
+    }
+
+   
 
 
 

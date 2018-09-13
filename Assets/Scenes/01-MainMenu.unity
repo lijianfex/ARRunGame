@@ -1543,7 +1543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7, y: 0.00008066044}
+  m_AnchoredPosition: {x: 7, y: 0.000026334557}
   m_SizeDelta: {x: -104.2, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1890625546
@@ -1601,7 +1601,7 @@ Prefab:
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -41
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
@@ -1626,7 +1626,7 @@ Prefab:
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
@@ -1636,7 +1636,7 @@ Prefab:
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -430
+      value: -421
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
@@ -1695,15 +1695,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1717,7 +1717,7 @@ Prefab:
         type: 2}
       propertyPath: m_Animation
       value: 
-      objectReference: {fileID: 7400000, guid: a03d8e74ec9a72a40aa2b6961ab7e68d, type: 3}
+      objectReference: {fileID: 7400000, guid: 72f74f7223e8c6949af643b96c6ecbee, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
   m_IsPrefabParent: 0

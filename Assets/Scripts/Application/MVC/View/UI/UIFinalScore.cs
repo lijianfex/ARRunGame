@@ -17,7 +17,7 @@ public class UIFinalScore : View
     public Text Leve_txt;
     public Text Exp_txt;
     public Slider Exp_slider;
-   
+
 
     public override string Name
     {
@@ -29,7 +29,7 @@ public class UIFinalScore : View
 
     public override void HandleEvent(string name, object data = null)
     {
-       
+
     }
 
     public void Hide()
@@ -42,13 +42,13 @@ public class UIFinalScore : View
         gameObject.SetActive(true);
     }
 
-    public void UpdateUI(int dis,int coin,int goal,int exp,int level)
+    public void UpdateUI(int dis, int coin, int goal, int exp, int level)
     {
         Dis_txt.text = dis.ToString();
         Coin_txt.text = coin.ToString();
         Goal_txt.text = goal.ToString();
 
-        Score_txt.text = (coin  + dis * (goal+1)).ToString();
+        Score_txt.text = (coin + dis * (goal + 1)).ToString();
 
         //slider文字
         Exp_txt.text = exp.ToString() + "/" + (500 + level * 100).ToString();
@@ -63,8 +63,20 @@ public class UIFinalScore : View
     //重新游戏
     public void OnReplayGameClick()
     {
-        Game.Instance.Level.LoadLevel(4);
+        Game.Instance.Level.LoadLevel(Levels.Game);
     }
 
-   
+    //回到主页
+    public void OnMainMenuBtnClick()
+    {
+        Game.Instance.Level.LoadLevel(Levels.MainMenu);
+    }
+
+    //回到商城
+    public void OnShopBtnClick()
+    {
+        Game.Instance.Level.LoadLevel(Levels.Shop);
+    }
+
+
 }

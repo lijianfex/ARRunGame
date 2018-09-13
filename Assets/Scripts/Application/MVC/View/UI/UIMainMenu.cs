@@ -37,11 +37,11 @@ public class UIMainMenu : View
 
     public void OnShopBtnClick()
     {
-        Game.Instance.Level.LoadLevel(2);
+        Game.Instance.Level.LoadLevel(Levels.Shop);
     }
 
     public void OnPlayBtnClick()
     {
-        Game.Instance.Level.LoadLevel(3);
+        Game.Instance.Level.LoadLevel(Levels.BuyTools);
     }
 }

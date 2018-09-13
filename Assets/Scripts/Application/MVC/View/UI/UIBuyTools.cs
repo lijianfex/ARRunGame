@@ -121,13 +121,21 @@ public class UIBuyTools : View
     //点击开始游戏按钮
     public void OnStartGameClicK()
     {
-        Game.Instance.Level.LoadLevel(4);
+        Game.Instance.Level.LoadLevel(Levels.Game);
     }
 
     //返回上一场景
     public void OnReturnBtnClick()
     {
-        Game.Instance.Level.LoadLevel(2);
+        if (gm.LastSenceIndex == 4)
+            gm.LastSenceIndex = 2;
+        Game.Instance.Level.LoadLevel(gm.LastSenceIndex);
+    }
+
+    //返回主页
+    public void OnMainMenuBtnClick()
+    {
+        Game.Instance.Level.LoadLevel(Levels.MainMenu);
     }
 
 }

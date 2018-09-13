@@ -541,15 +541,24 @@ public class UIShop : View
     }
     #endregion
 
+    //返回上个场景
     public void OnReturnClick()
     {
-        Game.Instance.Level.LoadLevel(1);
+        if (gm.LastSenceIndex == 4)
+            gm.LastSenceIndex = 1;
+        Game.Instance.Level.LoadLevel(gm.LastSenceIndex);
     }
 
+    //开始游戏
     public void OnPlayClick()
     {
         Game.Instance.Level.LoadLevel(3);
     }
 
+    //返回主页
+    public void OnMainMenuBtnClick()
+    {
+        Game.Instance.Level.LoadLevel(Levels.MainMenu);
+    }
 
 }

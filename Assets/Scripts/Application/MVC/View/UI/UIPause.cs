@@ -58,10 +58,16 @@ public class UIPause : View
     {
        
     }
+
     //点击继续
     public void OnResumeBtnClick()
     {
         Hide();
         SendEvent(Consts.E_ResumeGame);
+    }
+
+    public void OnReturnBtnClick()
+    {
+        Game.Instance.Level.LoadLevel(Levels.BuyTools);
     }
 }

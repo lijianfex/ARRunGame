@@ -658,7 +658,7 @@ Prefab:
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 272
+      value: 268
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
@@ -717,15 +717,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1358,7 +1358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000013371822}
+  m_AnchoredPosition: {x: 0, y: -0.000001272676}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &561124885
@@ -3903,7 +3903,7 @@ GameObject:
   - component: {fileID: 1790389076}
   - component: {fileID: 1790389075}
   m_Layer: 5
-  m_Name: Set_btn
+  m_Name: MainMenu_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3954,8 +3954,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300008, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
-    m_DisabledSprite: {fileID: 21300192, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
+    m_PressedSprite: {fileID: 21300202, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
+    m_DisabledSprite: {fileID: 21300010, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -3965,7 +3965,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1790389076}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1966351886}
+        m_MethodName: OnMainMenuBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1790389076
@@ -3987,7 +3998,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300198, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
+  m_Sprite: {fileID: 21300196, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

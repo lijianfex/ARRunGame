@@ -5178,7 +5178,7 @@ GameObject:
   - component: {fileID: 566326160}
   - component: {fileID: 566326159}
   m_Layer: 5
-  m_Name: Set_btn
+  m_Name: MainMenu_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5229,8 +5229,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300008, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
-    m_DisabledSprite: {fileID: 21300192, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
+    m_PressedSprite: {fileID: 21300202, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
+    m_DisabledSprite: {fileID: 21300010, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -5240,7 +5240,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 566326160}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1446991196}
+        m_MethodName: OnMainMenuBtnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &566326160
@@ -5262,7 +5273,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300198, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
+  m_Sprite: {fileID: 21300196, guid: 137c0d237e2f9bd41ba9c81265711446, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15504,12 +15515,12 @@ Prefab:
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 222
+      value: 218
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
@@ -15568,15 +15579,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4329290130592528, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
       propertyPath: m_LocalPosition.y

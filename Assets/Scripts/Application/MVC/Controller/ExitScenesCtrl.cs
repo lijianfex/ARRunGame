@@ -9,6 +9,7 @@ public class ExitScenesCtrl : Controller
 {
     public override void Execute(object data = null)
     {
+        GameModel gm = GetModel<GameModel>();
         ScenesArgs args = data as ScenesArgs;
         if (args == null)
         {
@@ -29,5 +30,7 @@ public class ExitScenesCtrl : Controller
             default:
                 break;
         }
+        gm.LastSenceIndex = args.scenesIndex;
+
     }
 }

@@ -103,3 +103,12 @@ public enum ItemState
     Buy,
     Equiep
 }
+
+public static class Levels
+{
+   public const int MainMenu = 1;
+   public const int Shop = 2;
+   public const int BuyTools = 3;
+   public const int Game = 4;
+}
+
