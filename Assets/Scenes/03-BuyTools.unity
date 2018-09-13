@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -623,12 +623,12 @@ Prefab:
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.25185916
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.026667358
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
@@ -643,7 +643,7 @@ Prefab:
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9996444
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
@@ -658,7 +658,7 @@ Prefab:
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 268
+      value: 277.4237
       objectReference: {fileID: 0}
     - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
         type: 2}
@@ -740,6 +740,11 @@ Prefab:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400000, guid: a03d8e74ec9a72a40aa2b6961ab7e68d, type: 3}
+    - target: {fileID: 224088515473355348, guid: db8a91104bc63de49a3a07b3dd250d5d,
+        type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -3.0560002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db8a91104bc63de49a3a07b3dd250d5d, type: 2}
   m_IsPrefabParent: 0
@@ -1358,7 +1363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000001272676}
+  m_AnchoredPosition: {x: 0, y: -0.0000062950394}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &561124885

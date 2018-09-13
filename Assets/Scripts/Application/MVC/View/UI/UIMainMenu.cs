@@ -20,6 +20,7 @@ public class UIMainMenu : View
         gm = GetModel<GameModel>();
         ClothRender.material.mainTexture = Game.Instance.Data.GetCloseData(gm.EquipeClothIndex).texture;
         BallRender.material = Game.Instance.Data.GetFootballData(gm.EquipeBallIndex).material;
+        
     }
 
     public override string Name
@@ -37,11 +38,15 @@ public class UIMainMenu : View
 
     public void OnShopBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.Shop);
     }
 
     public void OnPlayBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.BuyTools);
     }
 }

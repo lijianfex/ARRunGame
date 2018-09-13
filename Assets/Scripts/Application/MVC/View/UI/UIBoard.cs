@@ -111,6 +111,10 @@ public class UIBoard : View
             {
                 value = StartTime;
             }
+            if(value==2)
+            {
+                Game.Instance.Sound.PlayEffect("Se_UI_Countdown");
+            }
             m_Curtime = value;
             Timer_txt.text = value.ToString("f2") + "s";
             Timer_slider.value = value / StartTime;
@@ -135,6 +139,7 @@ public class UIBoard : View
     //点击暂停按钮
     public void OnPauseBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         PauseArgs e = new PauseArgs
         {
             coinCount = Coin,
@@ -259,6 +264,7 @@ public class UIBoard : View
     //按钮点击吸铁石
     public void OnMagnetBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         ItemArgs e = new ItemArgs
         {
             hitCount = 1,
@@ -269,6 +275,7 @@ public class UIBoard : View
     //按钮点击加倍金币
     public void OnMultiplyBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         ItemArgs e = new ItemArgs
         {
             hitCount = 1,
@@ -279,6 +286,7 @@ public class UIBoard : View
     //按钮点击无敌口哨
     public void OnInvincibleBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         ItemArgs e = new ItemArgs
         {
             hitCount = 1,
@@ -313,6 +321,7 @@ public class UIBoard : View
 
     public void OnFootBallBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         SendEvent(Consts.E_FootShotClick);//通知PlayerMove，射球
         Football_slider.value = 0f;
     }

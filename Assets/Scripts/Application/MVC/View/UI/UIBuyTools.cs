@@ -66,6 +66,8 @@ public class UIBuyTools : View
     //点击随机购买
     public void OnRandomBuyClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         int i = Random.Range(0, 3);
         BuyToolsArgs e = new BuyToolsArgs();
         e.CoinCount = 300;
@@ -89,6 +91,8 @@ public class UIBuyTools : View
     //点击吸铁石购买
     public void OnMagnetBuyClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         BuyToolsArgs e = new BuyToolsArgs
         {
             itemType = ItemType.ItemMagnet,
@@ -100,6 +104,8 @@ public class UIBuyTools : View
     //点击双倍金币购买
     public void OnMutiplyBuyClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         BuyToolsArgs e = new BuyToolsArgs
         {
             itemType = ItemType.ItemMultiply,
@@ -110,6 +116,8 @@ public class UIBuyTools : View
     //点击无敌状态购买
     public void OnInvincibleBuyClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         BuyToolsArgs e = new BuyToolsArgs
         {
             itemType = ItemType.ItemInvincible,
@@ -121,12 +129,16 @@ public class UIBuyTools : View
     //点击开始游戏按钮
     public void OnStartGameClicK()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.Game);
     }
 
     //返回上一场景
     public void OnReturnBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         if (gm.LastSenceIndex == 4)
             gm.LastSenceIndex = 2;
         Game.Instance.Level.LoadLevel(gm.LastSenceIndex);
@@ -135,6 +147,8 @@ public class UIBuyTools : View
     //返回主页
     public void OnMainMenuBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.MainMenu);
     }
 

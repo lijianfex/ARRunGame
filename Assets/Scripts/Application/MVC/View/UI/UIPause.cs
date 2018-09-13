@@ -62,12 +62,16 @@ public class UIPause : View
     //点击继续
     public void OnResumeBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Hide();
         SendEvent(Consts.E_ResumeGame);
     }
 
     public void OnReturnBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.BuyTools);
     }
 }

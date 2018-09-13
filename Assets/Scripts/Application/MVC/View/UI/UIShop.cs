@@ -83,7 +83,7 @@ public class UIShop : View
 
     }
 
-   
+
     public void UpdateUI()
     {
         Coin_txt.text = gm.Coin.ToString();
@@ -95,6 +95,8 @@ public class UIShop : View
 
     public void OnSelectClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         UpdateUI();
     }
 
@@ -141,21 +143,21 @@ public class UIShop : View
     //足球Toggle点击
     public void OnFootball1Click()
     {
-
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         FootBallBuyBtnUpdate(0);
         selectIndex = 0;
     }
 
     public void OnFootball2Click()
     {
-
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         FootBallBuyBtnUpdate(1);
         selectIndex = 1;
 
     }
     public void OnFootball3Click()
     {
-
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         FootBallBuyBtnUpdate(2);
         selectIndex = 2;
 
@@ -185,7 +187,7 @@ public class UIShop : View
         switch (gm.FootballInfoList[selectIndex].State)
         {
             case ItemState.UnBuy:
-
+                Game.Instance.Sound.PlayEffect("Se_UI_Button");
                 ShopArgs e = new ShopArgs
                 {
                     index = selectIndex,
@@ -195,7 +197,7 @@ public class UIShop : View
                 SendEvent(Consts.E_BuyFootBall, e);
                 break;
             case ItemState.Buy:
-
+                Game.Instance.Sound.PlayEffect("Se_UI_Dress");
                 ShopArgs ee = new ShopArgs
                 {
                     index = selectIndex,
@@ -256,16 +258,19 @@ public class UIShop : View
 
     public void OnClose1Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         CloseBuyBtnUpdate(0);
         selectIndex = 0;
     }
     public void OnClose2Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         CloseBuyBtnUpdate(1);
         selectIndex = 1;
     }
     public void OnClose3Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         CloseBuyBtnUpdate(2);
         selectIndex = 2;
     }
@@ -293,7 +298,7 @@ public class UIShop : View
         switch (gm.CloseInfoList[selectIndex].State)
         {
             case ItemState.UnBuy:
-
+                Game.Instance.Sound.PlayEffect("Se_UI_Button");
                 ShopArgs e = new ShopArgs
                 {
                     index = selectIndex,
@@ -303,7 +308,7 @@ public class UIShop : View
                 SendEvent(Consts.E_CloseBuy, e);
                 break;
             case ItemState.Buy:
-
+                Game.Instance.Sound.PlayEffect("Se_UI_Dress");
                 ShopArgs ee = new ShopArgs
                 {
                     index = selectIndex,
@@ -365,16 +370,19 @@ public class UIShop : View
 
     public void OnHead1Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         HeadBuyBtnUpdate(0);
         selectIndex = 0;
     }
     public void OnHead2Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         HeadBuyBtnUpdate(1);
         selectIndex = 1;
     }
     public void OnHead3Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         HeadBuyBtnUpdate(2);
         selectIndex = 2;
     }
@@ -402,7 +410,7 @@ public class UIShop : View
         switch (gm.HeadInfoList[selectIndex].State)
         {
             case ItemState.UnBuy:
-
+                Game.Instance.Sound.PlayEffect("Se_UI_Button");
                 ShopArgs e = new ShopArgs
                 {
                     index = selectIndex,
@@ -412,7 +420,7 @@ public class UIShop : View
                 SendEvent(Consts.E_HeadBuy, e);
                 break;
             case ItemState.Buy:
-
+                Game.Instance.Sound.PlayEffect("Se_UI_Button");
                 ShopArgs ee = new ShopArgs
                 {
                     index = selectIndex,
@@ -438,7 +446,7 @@ public class UIShop : View
     #endregion
 
     #region 鞋子
-    
+
     public void UpdateShoseUI()
     {
         foreach (ShoseInfo info in gm.ShoseInfoList)
@@ -475,16 +483,19 @@ public class UIShop : View
 
     public void OnShose1Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         ShoseBuyBtnUpdate(0);
         selectIndex = 0;
     }
     public void OnShose2Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         ShoseBuyBtnUpdate(1);
         selectIndex = 1;
     }
     public void OnShose3Click()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         ShoseBuyBtnUpdate(2);
         selectIndex = 2;
     }
@@ -512,15 +523,17 @@ public class UIShop : View
         switch (gm.ShoseInfoList[selectIndex].State)
         {
             case ItemState.UnBuy:
+                Game.Instance.Sound.PlayEffect("Se_UI_Button");
                 ShopArgs e = new ShopArgs
                 {
                     index = selectIndex,
                     coin = Game.Instance.Data.GetShoseData(selectIndex).coin,
                     state = ItemState.Buy
-                };               
+                };
                 SendEvent(Consts.E_ShoseBuy, e);
                 break;
             case ItemState.Buy:
+                Game.Instance.Sound.PlayEffect("Se_UI_Button");
                 ShopArgs ee = new ShopArgs
                 {
                     index = selectIndex,
@@ -544,6 +557,7 @@ public class UIShop : View
     //返回上个场景
     public void OnReturnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         if (gm.LastSenceIndex == 4)
             gm.LastSenceIndex = 1;
         Game.Instance.Level.LoadLevel(gm.LastSenceIndex);
@@ -552,12 +566,16 @@ public class UIShop : View
     //开始游戏
     public void OnPlayClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(3);
     }
 
     //返回主页
     public void OnMainMenuBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.MainMenu);
     }
 

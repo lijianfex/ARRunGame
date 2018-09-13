@@ -418,7 +418,7 @@ public class PlayerMove : View
     public void HitAddTime()
     {
         //sendEvent 加时间
-        print("Add time");
+        //print("Add time");
         SendEvent(Consts.E_HitAddTime);//通知UIBoard
     }
 

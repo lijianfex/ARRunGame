@@ -18,15 +18,19 @@ public class EnterScenesCtrl : Controller
         switch (args.scenesIndex)
         {
             case 1:
+                Game.Instance.Sound.PlayBG("Bgm_JieMian");                
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIMainMenu").GetComponent<UIMainMenu>());
                 break;
             case 2:
+                Game.Instance.Sound.PlayBG("Bgm_JieMian");
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIShop").GetComponent<UIShop>());
                 break;
             case 3:
+                Game.Instance.Sound.PlayBG("Bgm_JieMian");
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIBuyTools").GetComponent<UIBuyTools>());
                 break;
-            case 4:                
+            case 4:
+                Game.Instance.Sound.PlayBG("Bgm_ZhanDou");
                 RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerMove>());
                 RegisterView(GameObject.FindWithTag(Tag.player).GetComponent<PlayerAnim>());
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIBoard").GetComponent<UIBoard>());

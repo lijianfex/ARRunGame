@@ -55,12 +55,14 @@ public class UIDead : View
     //鼠标点击关闭
     public void OnCloseBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         SendEvent(Consts.E_FinalShowUI);
     }
 
     //点击贿赂
     public void OnBriberyBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
         CoinArgs e = new CoinArgs
         {
             CoinCount = 500 * BriberyTime

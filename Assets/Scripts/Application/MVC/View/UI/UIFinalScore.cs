@@ -63,18 +63,24 @@ public class UIFinalScore : View
     //重新游戏
     public void OnReplayGameClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.Game);
     }
 
     //回到主页
     public void OnMainMenuBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.MainMenu);
     }
 
     //回到商城
     public void OnShopBtnClick()
     {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
         Game.Instance.Level.LoadLevel(Levels.Shop);
     }
 
