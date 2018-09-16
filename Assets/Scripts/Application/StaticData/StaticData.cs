@@ -70,7 +70,7 @@ public class StaticData : MonoSingleton<StaticData>
     //初始化头像
     void InitHeadData()
     {
-        m_HeadDataDis.Add(0, new HeadData(0, HeadSprites[0], 3,"MOMO"));
+        m_HeadDataDis.Add(0, new HeadData(0, HeadSprites[0], 4,"MOMO"));
         m_HeadDataDis.Add(1, new HeadData(300, HeadSprites[1], 5,"AIAI"));
         m_HeadDataDis.Add(2, new HeadData(500, HeadSprites[2], 7,"QIQI"));
     }
@@ -85,8 +85,8 @@ public class StaticData : MonoSingleton<StaticData>
     void InitShoseData()
     {
         m_ShoseDataDis.Add(0, new ShoseData(0, ShoseSprites[0], 100));
-        m_ShoseDataDis.Add(1, new ShoseData(40, ShoseSprites[1], 300));
-        m_ShoseDataDis.Add(2, new ShoseData(50, ShoseSprites[2], 500));
+        m_ShoseDataDis.Add(1, new ShoseData(200, ShoseSprites[1], 300));
+        m_ShoseDataDis.Add(2, new ShoseData(400, ShoseSprites[2], 500));
     }
 
     //获取鞋子信息
