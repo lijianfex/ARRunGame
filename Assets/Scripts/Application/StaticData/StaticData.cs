@@ -84,9 +84,9 @@ public class StaticData : MonoSingleton<StaticData>
     //初始化鞋子
     void InitShoseData()
     {
-        m_ShoseDataDis.Add(0, new ShoseData(0, ShoseSprites[0], 100));
-        m_ShoseDataDis.Add(1, new ShoseData(200, ShoseSprites[1], 300));
-        m_ShoseDataDis.Add(2, new ShoseData(400, ShoseSprites[2], 500));
+        m_ShoseDataDis.Add(0, new ShoseData(0, ShoseSprites[0], 200));
+        m_ShoseDataDis.Add(1, new ShoseData(200, ShoseSprites[1], 400));
+        m_ShoseDataDis.Add(2, new ShoseData(400, ShoseSprites[2], 600));
     }
 
     //获取鞋子信息
