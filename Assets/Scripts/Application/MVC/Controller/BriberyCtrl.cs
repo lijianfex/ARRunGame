@@ -22,8 +22,7 @@ public class BriberyCtrl : Controller
         }
         else
         {
-            //TODO
-            Debug.Log("金币不足");
+            dead.TipMessage("金币不足！");
         }
 
         

@@ -18,8 +18,7 @@ public class FootBallBuyCtrl : Controller
         }
         else
         {
-            //TODO
-            Debug.Log("金币不足！");
+            shop.TipMessage("金币不足！");
         }
 
         

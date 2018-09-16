@@ -29,8 +29,7 @@ public class BuyToolsCtrl : Controller
         }
         else
         {
-            //TODO
-            Debug.Log("金币不足！");
+            buyTools.TipMessage("金币不足！");
         }
         buyTools.UpdateUI();
     }

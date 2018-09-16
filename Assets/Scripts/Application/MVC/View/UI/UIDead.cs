@@ -9,6 +9,10 @@ using UnityEngine.UI;
 public class UIDead : View
 {
     public Text BriberyCoin_txt;
+
+    //-----提示----
+    public Text Message_txt;//提示
+
     int m_BriberyTime=1;//贿赂次数
 
     public override string Name
@@ -69,5 +73,18 @@ public class UIDead : View
         };
         SendEvent(Consts.E_BriberyClick,e);//----->BriberyCtrl
     }
-        
+
+    //---提示---
+    public void TipMessage(string msg)
+    {
+        Message_txt.gameObject.SetActive(true);
+        Message_txt.text = msg;
+        StartCoroutine(MessageCor());
+    }
+
+    IEnumerator MessageCor()
+    {
+        yield return new WaitForSeconds(2f);
+        Message_txt.gameObject.SetActive(false);
+    }
 }

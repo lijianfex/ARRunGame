@@ -15,6 +15,9 @@ public class UIBuyTools : View
 
     public Text CoinCount_txt;
 
+    //-----提示----
+    public Text Message_txt;//提示
+
     public SkinnedMeshRenderer ClothRender;
     public MeshRenderer BallRender;
 
@@ -195,6 +198,21 @@ public class UIBuyTools : View
         Game.Instance.Sound.PlayEffect("Se_UI_Button");
 
         Game.Instance.Level.LoadLevel(Levels.MainMenu);
+    }
+
+
+    //---提示---
+    public void TipMessage(string msg)
+    {
+        Message_txt.gameObject.SetActive(true);
+        Message_txt.text = msg;
+        StartCoroutine(MessageCor());
+    }
+
+    IEnumerator MessageCor()
+    {
+        yield return new WaitForSeconds(2f);
+        Message_txt.gameObject.SetActive(false);
     }
 
 }

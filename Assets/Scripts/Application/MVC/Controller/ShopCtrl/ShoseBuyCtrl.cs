@@ -12,15 +12,13 @@ public class ShoseBuyCtrl : Controller
         GameModel gm = GetModel<GameModel>();
 
         if (gm.GetMoney(e.coin))
-        {
-            Debug.Log(gm.Coin);
+        {           
             gm.ShoseInfoList[e.index].State = e.state;
             shop.UpdateUI();
         }
         else
         {
-            //TODO
-            Debug.Log("金币不足！");
+            shop.TipMessage("金币不足！");
         }
 
         

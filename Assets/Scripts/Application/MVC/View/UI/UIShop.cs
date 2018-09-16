@@ -19,6 +19,9 @@ public class UIShop : View
     //-----金币----
     public Text Coin_txt;//金币
 
+    //-----提示----
+    public Text Message_txt;//提示
+
 
     [Header("------足球-----")]
     public Image FootballEquipImg;//足球已装备图
@@ -93,11 +96,25 @@ public class UIShop : View
         UpdateShoseUI();
     }
 
+
     public void OnSelectClick()
     {
         Game.Instance.Sound.PlayEffect("Se_UI_Button");
 
         UpdateUI();
+    }
+
+    public void TipMessage(string msg)
+    {
+        Message_txt.gameObject.SetActive(true);
+        Message_txt.text = msg;
+        StartCoroutine(MessageCor());
+    }
+
+    IEnumerator MessageCor()
+    {
+        yield return new WaitForSeconds(2f);
+        Message_txt.gameObject.SetActive(false);
     }
 
 
