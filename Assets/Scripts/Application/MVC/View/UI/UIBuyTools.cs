@@ -8,6 +8,11 @@ public class UIBuyTools : View
     public Text MagnetCount_txt;
     public Text MultiplyCount_txt;
     public Text InvicinbleCount_txt;
+
+    public Button MagnetCancle_btn;
+    public Button MultiplyCancle_btn;
+    public Button InvicinbleCancle_btn;
+
     public Text CoinCount_txt;
 
     public SkinnedMeshRenderer ClothRender;
@@ -44,22 +49,24 @@ public class UIBuyTools : View
     public void UpdateUI()
     {
         CoinCount_txt.text = gm.Coin.ToString();
-        ShowOrHide(gm.Magnet, MagnetCount_txt);
-        ShowOrHide(gm.Multiply, MultiplyCount_txt);
-        ShowOrHide(gm.Invincible, InvicinbleCount_txt);
+        ShowOrHide(gm.Magnet, MagnetCount_txt,MagnetCancle_btn);
+        ShowOrHide(gm.Multiply, MultiplyCount_txt,MultiplyCancle_btn);
+        ShowOrHide(gm.Invincible, InvicinbleCount_txt,InvicinbleCancle_btn);
     }
 
-    void ShowOrHide(int i, Text txt)
+    void ShowOrHide(int i, Text txt,Button btn)
     {
         if (i > 0)
         {
             txt.transform.parent.gameObject.SetActive(true);
+            btn.interactable = true;
             txt.text = i.ToString();
         }
         else
         {
-            txt.transform.parent.gameObject.SetActive(true);
-            txt.text = i.ToString();
+            txt.transform.parent.gameObject.SetActive(false);
+            btn.interactable = false;
+            
         }
     }
 
@@ -70,7 +77,7 @@ public class UIBuyTools : View
 
         int i = Random.Range(0, 3);
         BuyToolsArgs e = new BuyToolsArgs();
-        e.CoinCount = 300;
+        e.CoinCount = 200;
         switch (i)
         {
             case 0:
@@ -122,6 +129,44 @@ public class UIBuyTools : View
         {
             itemType = ItemType.ItemInvincible,
             CoinCount = 300
+        };
+        SendEvent(Consts.E_BuyTools, e);
+    }
+
+    //点击吸铁石取消一个
+    public void OnMagnetCancleClick()
+    {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
+        BuyToolsArgs e = new BuyToolsArgs
+        {
+            itemType = ItemType.ItemMagnet,
+            CoinCount = -100
+        };
+        SendEvent(Consts.E_BuyTools, e);
+    }
+
+    //点击双倍金币取消一个
+    public void OnMutiplyCancleClick()
+    {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
+        BuyToolsArgs e = new BuyToolsArgs
+        {
+            itemType = ItemType.ItemMultiply,
+            CoinCount = -200
+        };
+        SendEvent(Consts.E_BuyTools, e);
+    }
+    //点击无敌状态取消一个
+    public void OnInvincibleCancleClick()
+    {
+        Game.Instance.Sound.PlayEffect("Se_UI_Button");
+
+        BuyToolsArgs e = new BuyToolsArgs
+        {
+            itemType = ItemType.ItemInvincible,
+            CoinCount = -300
         };
         SendEvent(Consts.E_BuyTools, e);
     }

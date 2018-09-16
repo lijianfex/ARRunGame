@@ -17,13 +17,13 @@ public class BuyToolsCtrl : Controller
             switch (e.itemType)
             {
                 case ItemType.ItemInvincible:
-                    gm.Invincible += 1;
+                    gm.Invincible += e.CoinCount > 0 ? 1:-1;
                     break;
                 case ItemType.ItemMultiply:
-                    gm.Multiply += 1;
+                    gm.Multiply += e.CoinCount > 0 ? 1 : -1;
                     break;
                 case ItemType.ItemMagnet:
-                    gm.Magnet += 1;
+                    gm.Magnet += e.CoinCount > 0 ? 1 : -1;
                     break;                
             }
         }
