@@ -18,6 +18,7 @@ public class SoundManager : MonoSingleton<SoundManager>
     Dictionary<string, AudioClip> m_EffectClips = new Dictionary<string, AudioClip>();
 
 
+
     protected override void Awake()
     {
         base.Awake();
@@ -26,11 +27,17 @@ public class SoundManager : MonoSingleton<SoundManager>
         m_Bg.loop = true;
 
         m_Effect = gameObject.AddComponent<AudioSource>();
+        
     }
 
     //切换播放背景音
     public void PlayBG(string clipName)
     {
+        GameModel gm = MVC.GetModle<GameModel>();
+        if(!gm.IsBgmPlay)
+        {
+            return;
+        }
         string oldName;
         if (m_Bg.clip == null)
         {
@@ -60,6 +67,8 @@ public class SoundManager : MonoSingleton<SoundManager>
                 m_Bg.Play();
             }
         }
+        PlayBGM();
+        
     }
 
     //播放音效
@@ -81,5 +90,23 @@ public class SoundManager : MonoSingleton<SoundManager>
             m_Effect.PlayOneShot(clip);
         }
     }
+
+    //播放背景音
+    public void PlayBGM()
+    {
+        GameModel gm = MVC.GetModle<GameModel>();
+        m_Bg.UnPause();
+        gm.IsBgmPlay = true;
+    }
+
+    //暂停背景音
+    public void PauseBGM()
+    {
+        GameModel gm = MVC.GetModle<GameModel>();
+        m_Bg.Pause();
+        gm.IsBgmPlay = false;
+    }
+
+    
 
 }

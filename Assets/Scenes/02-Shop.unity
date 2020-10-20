@@ -668,7 +668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 103.350006, y: -98.25}
+  m_AnchoredPosition: {x: 81, y: -47}
   m_SizeDelta: {x: 332.7, y: 153.5}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &65740700
@@ -1515,7 +1515,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5000
+  m_Text: 2000
 --- !u!222 &135528478
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2450,7 +2450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 240178736}
   m_Layer: 5
-  m_Name: Shose
+  m_Name: ShoseDetail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3861,6 +3861,7 @@ GameObject:
   - component: {fileID: 372064974}
   - component: {fileID: 372064976}
   - component: {fileID: 372064975}
+  - component: {fileID: 372064978}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3931,6 +3932,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &372064978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372064973}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1826476478, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mWorldCenterMode: 1
+  mWorldCenter: {fileID: 0}
 --- !u!1 &383038671
 GameObject:
   m_ObjectHideFlags: 0
@@ -4456,7 +4470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412924242}
   m_Layer: 5
-  m_Name: Football
+  m_Name: FootballDetail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9885,7 +9899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225389573}
   m_Layer: 5
-  m_Name: Head
+  m_Name: HeadDetail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13242,7 +13256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1718379493}
   m_Layer: 5
-  m_Name: Close
+  m_Name: CloseDetail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14522,7 +14536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1858194584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16061,6 +16075,23 @@ SkinnedMeshRenderer:
   m_PrefabParentObject: {fileID: 137214458637067912, guid: db8a91104bc63de49a3a07b3dd250d5d,
     type: 2}
   m_PrefabInternal: {fileID: 2090626364}
+--- !u!1 &2090626368 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1271651338353830, guid: db8a91104bc63de49a3a07b3dd250d5d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2090626364}
+--- !u!114 &2090626369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2090626368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f5af325253d084eb2dd81dbbe41a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 150
 --- !u!1 &2104136993
 GameObject:
   m_ObjectHideFlags: 0

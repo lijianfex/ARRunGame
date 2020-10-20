@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Item" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAABAAABAAAAAAAACAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Application\Game\Objects\Item\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddTime">
+    <Position X="3.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAASAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Application\Game\Objects\Item\AddTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coin" Collapsed="true">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAIAAABAAAAAAAAAAAASAAABAAAQEA=</HashCode>
+      <FileName>Assets\Scripts\Application\Game\Objects\Item\Coin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Invincible">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAASAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Application\Game\Objects\Item\Invincible.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Magnet">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAASAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Application\Game\Objects\Item\Magnet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mutiply">
+    <Position X="10.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAASAAABAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Application\Game\Objects\Item\Mutiply.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReusableObject" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FrameWork\Pool\ReusableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="IReusable">
+    <Position X="8.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FrameWork\Pool\IReusable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

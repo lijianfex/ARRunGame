@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VuforiaUnityInfo version="7.0">
+    <TargetSet version="5.0" toolVersion="2.8.0">
+        <CylinderTarget name="Messi_Cylinder" version="3.0" targetId="d1de55a8c8634e2e8fdd62dfdd624f86" sideLength="1.350000" topDiameter="0.600000" bottomDiameter="0.600000" sideImage="Messi_Cylinder.Body_scaled.jpg"/>
+    </TargetSet>
+</VuforiaUnityInfo>

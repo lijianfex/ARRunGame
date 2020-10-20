@@ -20,6 +20,10 @@ TagManager:
   - Ball
   - GoalKeeper
   - BallDoor
+  - ARImageUI
+  - AR_Player
+  - ARSurfaceUI
+  - ARObjectUI
   layers:
   - Default
   - TransparentFX

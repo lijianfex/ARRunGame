@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <CylinderTarget name="Messi_Cylinder" sideLength="1.350000"/>
+        <ImageTarget name="Messi_FCB" size="1.000000 1.400000"/>
+        <ImageTarget name="Messi_Bear" size="1.000000 1.400000"/>
+        <ImageTarget name="Ball" size="1.000000 1.400000"/>
+        <ImageTarget name="Messi_Music" size="1.000000 1.400000"/>
+        <ImageTarget name="Messi_Video" size="1.000000 1.400000"/>
+        <ImageTarget name="Messi_Box.Right" size="0.330000 1.130000"/>
+        <ImageTarget name="Messi_Box.Bottom" size="1.130000 0.330000"/>
+        <ImageTarget name="Messi_Box.Top" size="1.130000 0.330000"/>
+        <ImageTarget name="Messi_Box.Back" size="1.130000 1.130000"/>
+        <ImageTarget name="Messi_Box.Front" size="1.130000 1.130000"/>
+        <ImageTarget name="Messi_Box.Left" size="0.330000 1.130000"/>
+        <MultiTarget name="Messi_Box">
+            <Part name="Messi_Box.Left" translation="-0.5649999976158142 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="Messi_Box.Right" translation="0.5649999976158142 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="Messi_Box.Front" translation="0 0 0.16500000655651093" rotation="AD: 1 0 0 0"/>
+            <Part name="Messi_Box.Back" translation="0 0 -0.16500000655651093" rotation="AD: 0 1 0 180"/>
+            <Part name="Messi_Box.Top" translation="0 0.5649999976158142 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="Messi_Box.Bottom" translation="0 -0.5649999976158142 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>

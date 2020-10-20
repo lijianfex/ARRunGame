@@ -36,7 +36,7 @@ public class Game : MonoSingleton<Game>
         SendEvent(Consts.E_AppInit);
        
         //切换场景
-        Game.Instance.Level.LoadLevel(1);
+        Game.Instance.Level.LoadLevel(Levels.MainMenu);
         
     }
 
